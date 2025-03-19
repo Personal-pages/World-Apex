@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Apex</title>
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body >
+
+    <!-- HEADER -->
+    <header>
+        <div class="top-bar">
+            <div class="logo">World<span> Apex</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#Entertainment-section" >Entertainment</a></li>
+                    <li><a href="index.html#sports-section" >Sports</a></li>
+                    <li><a href="index.html#politics-section" >Politics</a></li>
+                    <li><a href="#" id="contact-link">Contact</a></li>
+                    <div class="theme-switcher" onclick="toggleTheme()">
+                        <span class="material-icons" id="theme-icon">dark_mode</span>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+        <div id="header-nav" class="nav-bar">
+            <ul>
+                <li><a href="index.html#Trending-section" >Trending</a></li>
+                <li><a href="index.html#sports-section" >Sports</a></li>
+                <li><a href="index.html#World-section" >World</a></li>
+                <li><a href="index.html#weather-section" >Weather</a></li>
+                <li><a href="index.html#Astrology-section" >Astrology</a></li>
+                <li><a href="index.html#Education-section" >Education</a></li>
+                <li><a href="index.html#Top-section" >Top News</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- BREAKING NEWS TICKER -->
+    <section class="breaking-news">
+        <marquee class="runner"> Breaking News: Major updates happening now! Stay tuned for live reports. </marquee>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main1>
+        <div class="main-news-header" id="Top-section">
+            <h1>Trending News</h1>
+        </div>
+        <section id="Top-section" class="news-container">
+
+                <div class="news-card">
+                    <img src="trend01.jpg" onerror="this.style.display='none';" alt="Image">
+                    <div class="news-content">
+                        <h2>Breaking: Global Stock Market Hits Record High</h2>
+                        <p>Stock markets worldwide surged today, reaching new all-time highs after a strong economic report.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            
+                <div class="news-card">
+                    <img src="trend02.jpg" onerror="this.style.display='none';" alt="Image">
+                    <div class="news-content">
+                        <h2>Technology: AI Predicts Weather with 95% Accuracy</h2>
+                        <p>Scientists have developed an AI-powered system that predicts weather patterns with unprecedented precision.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            
+                <div class="news-card">
+                    <img src="trend03.jpg" onerror="this.style.display='none';" alt="Image">
+                    <div class="news-content">
+                        <h2>Sports: Argentina Wins FIFA World Cup</h2>
+                        <p>Argentina clinched a thrilling victory in the FIFA World Cup final, defeating their rivals in a penalty shootout.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            
+                <div class="news-card">
+                    <img src="trend04.jpg" onerror="this.style.display='none';" alt="Image">
+                    <div class="news-content">
+                        <h2>Politics: New Tax Reforms Announced</h2>
+                        <p>The government has introduced major tax reforms aimed at boosting the economy and reducing inflation.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            
+                <div class="news-card">
+                    <img src="trend05.jpg" onerror="this.style.display='none';" alt="Image">
+                    <div class="news-content">
+                        <h2>Weather: Hurricane Alex Approaches Florida</h2>
+                        <p>Meteorologists warn that Hurricane Alex could bring heavy rains and strong winds to the southeastern U.S.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            
+                <div class="news-card">
+                    <img src="trend06.jpg" onerror="this.style.display='none';" alt="Image">
+                    <div class="news-content">
+                        <h2>Science: NASA Confirms Water on Mars</h2>
+                        <p>NASA scientists have confirmed the presence of liquid water on Mars, raising hopes for potential life.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            
+                <div class="news-card">
+                    <img src="trend07.jpg" onerror="this.style.display='none';" alt="Image">
+                    <div class="news-content">
+                        <h2>Business: Apple Unveils New iPhone</h2>
+                        <p>Apple has revealed the latest iPhone model, featuring a revolutionary new camera system and AI capabilities.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            
+                <div class="news-card">
+                    <img src="trend08.jpg" onerror="this.style.display='none';" alt="Image">
+                    <div class="news-content">
+                        <h2>Health: Scientists Develop Cancer Vaccine</h2>
+                        <p>Researchers have created a breakthrough vaccine that may help prevent several types of cancer.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            
+                <div class="news-card">
+                    <img src="trend09.jpg" onerror="this.style.display='none';" alt="Image">
+                    <div class="news-content">
+                        <h2>Education: Online Learning Overtakes Traditional Schools</h2>
+                        <p>More students are enrolling in online schools than ever before, according to a new report.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            
+                <div class="news-card">
+                    <img src="trend10.jpg" onerror="this.style.display='none';" alt="Image">
+                    <div class="news-content">
+                        <h2>Environment: Air Pollution Levels Drop Significantly</h2>
+                        <p>New data shows that air pollution levels have reached a 20-year low due to stricter regulations.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                    <div class="news-card">
+                        <img src="trend01.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Breaking: Global Stock Market Hits Record High</h2>
+                            <p>Stock markets worldwide surged today, reaching new all-time highs after a strong economic report.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend02.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Technology: AI Predicts Weather with 95% Accuracy</h2>
+                            <p>Scientists have developed an AI-powered system that predicts weather patterns with unprecedented precision.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend03.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Sports: Argentina Wins FIFA World Cup</h2>
+                            <p>Argentina clinched a thrilling victory in the FIFA World Cup final, defeating their rivals in a penalty shootout.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <!-- Adding more news cards -->
+                    
+                    <div class="news-card">
+                        <img src="trend11.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Finance: Bitcoin Surges Past $60,000</h2>
+                            <p>Bitcoin's price has skyrocketed once again, breaking past the $60,000 mark.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend12.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Science: New Cure for Alzheimer's Discovered</h2>
+                            <p>Scientists have made a breakthrough discovery that could change the future of Alzheimer's treatment.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend13.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Space: First Human Mission to Mars Announced</h2>
+                            <p>NASA has officially announced its plan for the first human mission to Mars.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend14.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Technology: Apple Unveils Revolutionary AR Glasses</h2>
+                            <p>Apple has introduced its new Augmented Reality Glasses, promising to change the way we interact with technology.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend15.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Sports: LeBron James Retires After 20-Year Career</h2>
+                            <p>Basketball legend LeBron James has officially announced his retirement after a historic career.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend16.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Environment: Amazon Rainforest Sees Drastic Recovery</h2>
+                            <p>New reports show that conservation efforts have significantly helped the Amazon Rainforest recover.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend17.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Politics: Historic Peace Agreement Signed</h2>
+                            <p>Leaders from conflicting nations have signed a historic peace treaty, ending decades of tension.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend18.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Health: Breakthrough in Cancer Treatment</h2>
+                            <p>A revolutionary cancer treatment has shown a 90% success rate in clinical trials.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend19.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Space: James Webb Telescope Discovers New Earth-like Planet</h2>
+                            <p>A newly discovered planet has conditions that could support life, according to astronomers.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend20.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Entertainment: Oscar Winners Announced</h2>
+                            <p>The Academy Awards honored the best films of the year in a star-studded ceremony.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend21.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Business: Tesla Unveils Next-Gen Electric Car</h2>
+                            <p>Elon Musk has revealed Tesla's newest electric vehicle, boasting a 600-mile range.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend22.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Tech: Google AI Passes the Turing Test</h2>
+                            <p>For the first time, an AI has passed the Turing Test, proving nearly indistinguishable from human conversation.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend23.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Sports: Record-Breaking Performance at Olympics</h2>
+                            <p>A new world record was set in the 100m sprint at this year's Olympic Games.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend24.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Finance: Global Inflation Rates Drop</h2>
+                            <p>New economic policies have helped control inflation rates worldwide.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                
+                    <div class="news-card">
+                        <img src="trend25.jpg" onerror="this.style.display='none';" alt="Image">
+                        <div class="news-content">
+                            <h2>Gaming: Grand Theft Auto 6 Release Date Announced</h2>
+                            <p>Rockstar Games has finally confirmed the release date for GTA 6, and fans are excited.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+               
+        </section>
+    </main1>
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>About US </h3>
+                    <p>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
+                        sports, and technology.</p>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#" class="scroll-link" data-section="politics-section">Politics</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#" class="scroll-link" data-section="sports-section">Sports</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="facebook-link"><img src="FB.png" alt="Facebook"></a>
+                        <a href="https://x.com/WorldApexX?t=MITbHaIp9q5MLRlecPzCOw&s=09"><img src="X.png" alt="Twitter"></a>
+                        <a href="Youtube-link"><img src="YT.png" alt="YouTube"></a>
+                        <a href="Instagram-link"><img src="IN.png" alt="Instagram"></a>
+                    </div>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for daily updates.</p>
+                    <form id="newsletter-form"></form>
+                    <form action="https://formspree.io/f/xjkgqdqb"
+                        method="POST" >
+                        <div class="input-container">
+                            <input name="email" type="email" id="email" placeholder="Enter your email" required>
+                            <button type="submit">
+                                <span class="material-icons">mail</span>
+                            </button>
+                        </div>
+                        <div id="email-error" class="error-message">
+                            <span class="material-icons error-icon">error</span>
+                            <span id="error-text"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>© 2025 World Apex | All Rights Reserved</p>
+                <p><a class="pol" href="policy.html">Privacy Policy</a> | <a class="ter" href="terms.html">Terms &
+                        Conditions</a></p>
+            </div>
+        </footer>
+        <script src="script.js" defer></script>
+    </body>
+    
+    </html>

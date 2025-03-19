@@ -1,0 +1,1004 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+html{
+    scroll-behavior: smooth;
+}
+/* GENERAL STYLES */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* font-family: 'Poppins', sans-serif; */
+    background-color: #181818; /* Dark Background */
+    
+}
+/* THEME TOGGLE BUTTON */
+.theme-switcher {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    background: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+/* HEADER */
+
+header, .nav-bar {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    transition: top 0.3s ease-in-out; /* Smooth transition */
+}
+
+header {
+    background-color: #121212; /* Adjust to your preference */
+    height: 60px; /* Adjust based on your header height */
+    z-index: 10;
+    top: 0; /* Initially at the top */
+    color: #ffffff;
+    
+}
+
+.nav-bar {
+    background-color: #1A1A1A; /* Charcoal Grey */
+    padding: 12px 20px;
+    border-bottom: 3px solid #ff6200; /* Orange border */
+    top: 60px; /* Starts right below the header */
+    z-index: 9;
+}
+/* Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo span {
+    color: #f4720ef3; /* Vibrant Orange */
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ff7300; /* Orange Hover */
+}
+
+/* Navbar */
+/* .nav-bar {
+    background-color: #1A1A1A; Charcoal Grey
+    padding: 12px 20px;
+    border-bottom: 2px solid #FF9800;
+} */
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar ul li {
+    display: inline;
+    position: relative;
+}
+
+/* Navbar Links */
+.nav-bar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    padding: 8px 14px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Animation - Glowing Underline */
+.nav-bar ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: #ff7300;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.nav-bar ul li a:hover {
+    color: #FF9800;
+}
+
+.nav-bar ul li a:hover::after {
+    width: 100%;
+    box-shadow: 0px 0px 8px #ff7300;
+}
+/* Hover effect for anchor links inside nav */
+nav a:hover {
+    color: #dd2b52;  /* Change to a different color on hover */
+    transform: scale(1.1);  /* Slightly increase the size of the link */
+}
+
+/* Optional: Adding a border or underline on hover */
+nav a:hover {
+    border-bottom: 2px solid #dd2b52;  /* Optional border */
+}
+/* BREAKING NEWS */
+.breaking-news {
+    background: rgb(255, 77, 113);
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    margin: 15px;
+    margin-top: 106px;
+    justify-content: center;
+    width: 100%;
+}
+
+/* MAIN CONTENT */
+main {
+    width: 100%;
+    
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* FEATURED NEWS */
+.news-main {
+    display: flex;
+    flex-direction: column; /* Ensures items are stacked vertically */
+    
+  }
+    
+  .feature {
+    order: 1; /* Makes Featured News appear below Trending News */
+  }
+.featured {
+    display: flex;
+    flex: 1;
+}
+
+.news-main {
+    flex: 1;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.news-main img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.news-main h2 {
+    color: rgb(255, 128, 0);
+}
+/* CATEGORIES SECTION STYLING */
+.categories-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.category-card {
+    width: 200px; /* Set a fixed or max width */
+    height: 75px;
+    padding: 15px;
+    background: #222; /* Dark background */
+    color: white;
+    border-radius: 10px;
+    text-align: center; /* Center text */
+    overflow: hidden; /* Prevent content overflow */
+    word-wrap: break-word; /* Ensure long words wrap */
+    white-space: normal; /* Allow text to wrap */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-card h4,
+.category-card p {
+    margin: 0; /* Ensure spacing between text */
+    /* max-width: 100%; Keep text inside the container */
+    word-break: break-word; /* Break long words if necessary */
+    padding: 5px;
+}
+
+.category-card:hover {
+    background: pink;
+    color: black;
+}
+
+/* FOOTER STYLING */
+/* FOOTER STYLING */
+footer {
+    background: #181818;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Footer Grid Layout */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer Sections */
+.footer-section {
+    padding: 20px;
+}
+
+.footer-section h3 {
+    color: #ff7700;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Footer Description */
+.footer-section p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Quick Links */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ff6f00;
+    text-decoration: underline;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.social-icons img {
+    width: 35px;
+    height: 35px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Newsletter */
+/* Import Google Material Icons */
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons');
+
+/* Footer Section */
+.footer-section {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+}
+
+/* Heading */
+.footer-section h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+/* Description */
+.footer-section p {
+    font-size: 12px;
+    color: #bbbbbb;
+    margin-bottom: 10px;
+}
+
+/* Input Container */
+.input-container {
+    display: flex;
+    background: #292929;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #444;
+}
+
+/* Input Field */
+.input-container input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 13px;
+    outline: none;
+}
+
+/* Subscribe Button */
+.input-container button {
+    padding: 8px 10px;
+    border: none;
+    background: #ff7300;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover Effect */
+.input-container button:hover {
+    background: #e65c00;
+    transform: scale(1.02);
+}
+
+/* Material Icon */
+.input-container button .material-icons {
+    font-size: 16px;
+}
+
+/* Error Message Container */
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #ff6f00;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 5px;
+    display: none; /* Hidden by default */
+    background: #ffb55a42;
+    padding: 5px;
+    border-radius: 4px;
+    border-left: 4px solid #ffa200;
+    text-align: left;
+}
+
+/* Error Icon */
+.error-icon {
+    font-size: 16px;
+    color: #fc8617;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background: #1a1a1a; /* Deep black background for a premium look */
+    color: #ffffff; /* Elegant orange-gold text */
+    text-align: center;
+    font-family: "Josefin Sans", serif;
+    
+    padding: 20px 0;
+    font-size: 15px;
+    position: absolute;
+    width: 100%;
+
+    bottom: 10;
+    font-family: 'Poppins', sans-serif;
+    border-top: 1px solid #ff6f00; /* Vibrant orange accent border */
+    box-shadow: 0px -3px 10px rgba(255, 183, 48, 0); /* Soft orange glow effect */
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+    letter-spacing: 0.5px;
+    /* font-family: "Josefin Sans", serif; */
+}
+
+.footer-bottom a {
+    color: #ff6200; /* Warm orange-gold for links */
+    text-decoration: none;
+    font-weight: 350;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #ff6e1a; /* Lighter orange on hover */
+    text-shadow: 0 0 10px rgba(255, 166, 0, 0.507); /* Glowing orange effect */
+}
+/* end */
+/* News Container */
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the container */
+    justify-content: center;
+    padding-left: 8%;
+    position: relative;
+}
+/* News Card */
+.news-card {
+    background-color: #222;
+    width: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 15px;
+}
+
+.news-content h2 {
+    font-size: 18px;
+    color: white;
+    margin: 0 0 10px;
+}
+
+.news-content p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.news-content a {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #FF6F61;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background0.3s;
+}
+
+.news-content a:hover {
+    background-color: #ff4a3d;
+}
+
+/* Hover Effect */
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 0px 15px var(--hover-color);
+}
+/* -------- */
+.news-header {
+     /* Keeps it at the top */
+    /* top: 140px; */
+     /* Fix to the top of the viewport */
+     top: 140px;
+    left: 0;
+    margin: -10px -10px ;
+    width: 100%; /* Full width */
+     /* Dark background */
+    color: #fff; /* White text */
+    padding: 20px 35px;
+    z-index: 0; /* Layer above all other elements */
+    /* Shadow for separation */
+    overflow: hidden;
+  }
+  
+  .news-header h1 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .news-header h1::after {
+    content: '';
+    display: block;
+    width: 65%; /* Width of the orange underline */
+    height: 4px; /* Thickness of the underline */
+    background-color: #ff5722; /* Orange color */
+    margin-top: 8px;
+  }
+  
+  a.pol a.ter {
+    font-weight: 100;
+  }
+/* weather  */
+/* General Styles */
+body {
+    /* font-family: 'Poppins', sans-serif; */
+    margin: 0;
+    background-color: #121212;
+    color: white;
+}
+
+/* Weather Section Styling */
+.container {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    max-width: 90%;
+    margin: auto;
+    color: white;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    width: 200px;
+    background: #333;
+    color: white;
+}
+
+.search-icon {
+    cursor: pointer;
+    font-size: 32px;
+    color: #ff7b00;
+}
+
+/* Weather Details */
+.weather-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.weather-box {
+    /* background: #333; */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    width: 200px;
+    text-align: center;
+    color: white;
+}
+
+#weather-description {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Chart Styling */
+.chart-container {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: auto;
+}
+
+canvas {
+    max-width: 100%;
+    height: 300px !important;
+    background: #222;
+}
+
+@media (max-width: 768px) {
+    .weather-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .weather-box {
+        width: 90%;
+    }
+}
+/* main news p and h ? */
+.main-news-content h1 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffffffdd;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #ff7300;
+    display: inline-block;
+    padding-bottom: 4px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-news-content p {
+    font-size: 16px;
+    color: #ddd;
+    line-height: 1.5;
+    text-align: justify;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-left: 3px solid #ff7300;
+    border-radius: 4px;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    margin: 10px 0;
+}
+
+/* time  */
+.news-time {
+    display: block;
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+/* recommendations */
+.news-recommendations {
+    margin-top: 20px;
+    padding: 15px;
+    background: #171717;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.news-recommendations h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.recommendation-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.recommendation {
+    min-width: 150px;
+    background: #222;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.recommendation:hover {
+    transform: scale(1.05);
+}
+
+.recommendation img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.recommendation p {
+    font-size: 14px;
+    color: #ddd;
+}
+/* floting window  */
+
+/* --- 🔹 RESPONSIVE DESIGN --- */
+@media (max-width: 1024px) {
+    .nav-bar ul {
+        flex-wrap: wrap;
+    }
+
+    .news-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjust header */
+    header {
+        height: auto;
+        padding-bottom: 10px;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-bar {
+        padding: 10px;
+    }
+
+    .nav-bar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-bar ul li {
+        display: inline-block;
+    }
+
+    .nav-bar ul li a {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .breaking-news {
+        margin-top: 130px;
+    }
+
+    main {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .news-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centers the cards */
+        gap: 20px;
+        
+        margin: 0 auto; /* Ensures full centering */
+        padding-left: 15%;
+    }
+    .news-main {
+        width: 100%;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-bar ul {
+        gap: 5px;
+    }
+
+    .nav-bar ul li a {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+
+    .breaking-news {
+        margin-top: 140px;
+    }
+    #theme-icon{
+        position: absolute;
+        top: 25px;
+        z-index: 9;
+    }
+}
+#theme-icon{
+    position: absolute;
+    top: 20px;
+    z-index: 9;
+}
+
+body:not(.dark-mode) .material-icons,  
+body:not(.dark-mode) .result,  
+body:not(.dark-mode) .runner,
+body:not(.dark-mode) span {  
+   mix-blend-mode: darken;
+}
+body:not(.dark-mode) .runner{
+    color: #121212;
+}
+body:not(.dark-mode) .news-container a {
+    color: #f1ebebfe;
+
+}
+body:not(.dark-mode) .pmain ,
+body:not(.dark-mode) .p2 {
+    color: rgb(28, 28, 28);
+
+}
+body:not(.dark-mode) .nav-bar,
+body:not(.dark-mode) .nav-bar ul li a,
+body:not(.dark-mode) .nav-bar ul{
+    background-color: #edededf3;
+}
+
+
+.magic-shape {
+    position: fixed; /* Ensures it stays on the screen */
+    pointer-events: none;
+    animation: shape-animation 1.2s ease-out;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+    z-index: 999999; /* SUPER HIGH z-index to be above everything */
+}
+
+/* Different shape styles */
+.magic-shape[data-shape="star"] {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.magic-shape[data-shape="circle"] {
+    border-radius: 50%;
+}
+
+.magic-shape[data-shape="heart"] {
+    clip-path: path("M24 4c-5-4-13 0-14 6-1-6-9-10-14-6-5 5-4 14 4 20 6 5 10 6 10 6s4-1 10-6c8-6 9-15 4-20z");
+}
+
+.magic-shape[data-shape="diamond"] {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+@keyframes shape-animation {
+    0% {
+        transform: scale(0.8) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3) rotate(30deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.8) rotate(60deg);
+        opacity: 0;
+    }
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+    .magic-shape {
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1));
+    }
+}
+
+
+/* Default Light Mode Button */
+.view-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white !important;
+    background: linear-gradient(135deg, #fd5f64, #ff8d6e);
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none; /* Prevents accidental text selection */
+    touch-action: manipulation; /* Optimizes for mobile taps */
+}
+
+/* Hover and Tap Effects */
+.view-btn:hover,
+.view-btn:focus {
+    box-shadow: 0 0 15px rgba(253, 95, 100, 0.7);
+    filter: brightness(1.1);
+}
+
+.view-btn:active {
+    transform: scale(0.98);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .view-btn {
+        position: relative;
+        display: block;
+        width: 80%;
+        max-width: 300px;
+        margin: 20px auto 0;
+        text-align: center;
+    }
+}
+
+.main-news-header {
+    /* Keeps it at the top */
+   /* top: 140px; */
+    /* Fix to the top of the viewport */
+    top: 0px;
+   left: 0px;
+   margin: -10px -10px ;
+   width: 100%; /* Full width */
+    /* Dark background */
+   color: #fff; /* White text */
+   padding: 20px 35px;
+   z-index: 0; /* Layer above all other elements */
+   /* Shadow for separation */
+   overflow: hidden;
+   position: relative;
+ }
+ 
+ .main-news-header h1 {
+   font-size: 20px;
+   margin: 0;
+   font-weight: bold;
+   position: relative;
+   text-align: center;
+ }
+ 
+ .main-news-header h1::after {
+   content: '';
+   display: block;
+   width: 95%; /* Width of the orange underline */
+   height: 3px; /* Thickness of the underline */
+   background-color: #ff5722; /* Orange color */
+   margin-top: 8px;
+ }
+ 

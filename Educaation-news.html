@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Apex</title>
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body >
+
+    <!-- HEADER -->
+    <header>
+        <div class="top-bar">
+            <div class="logo">World<span> Apex</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#Entertainment-section" >Entertainment</a></li>
+                    <li><a href="index.html#sports-section" >Sports</a></li>
+                    <li><a href="index.html#politics-section" >Politics</a></li>
+                    <li><a href="#" id="contact-link">Contact</a></li>
+                    <div class="theme-switcher" onclick="toggleTheme()">
+                        <span class="material-icons" id="theme-icon">dark_mode</span>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+        <div id="header-nav" class="nav-bar">
+            <ul>
+                <li><a href="index.html#Trending-section" >Trending</a></li>
+                <li><a href="index.html#sports-section" >Sports</a></li>
+                <li><a href="index.html#World-section" >World</a></li>
+                <li><a href="index.html#weather-section" >Weather</a></li>
+                <li><a href="index.html#Astrology-section" >Astrology</a></li>
+                <li><a href="index.html#Education-section" >Education</a></li>
+                <li><a href="index.html#Top-section" >Top News</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- BREAKING NEWS TICKER -->
+    <section class="breaking-news">
+        <marquee class="runner"> Breaking News: Major updates happening now! Stay tuned for live reports. </marquee>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main1>
+        <div class="main-news-header" id="Top-section">
+            <h1>Education News</h1>
+        </div>
+        <section id="Education-section" class="news-container">
+
+            <div class="news-card">
+                <img src="education01.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>USA: New Education Reform Bill Passed</h2>
+                    <p>The U.S. government passes a new bill aimed at improving public education standards.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="education02.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>UK: University Tuition Fees Under Review</h2>
+                    <p>The UK government considers reducing tuition fees to make higher education more affordable.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="education03.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>India: NEET & JEE Exam Dates Announced</h2>
+                    <p>The Indian education ministry has released the schedule for the NEET and JEE entrance exams.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="education04.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>China: AI-Based Learning Introduced in Schools</h2>
+                    <p>China implements AI-based learning techniques in classrooms for better student engagement.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="education05.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Germany: Vocational Training Gets a Boost</h2>
+                    <p>Germany increases funding for vocational training programs to enhance job opportunities.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="education06.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Japan: Coding Becomes Mandatory in Schools</h2>
+                    <p>Japan introduces mandatory coding lessons in school curriculums from grade 5 onwards.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="education07.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Canada: Free College Tuition for Low-Income Students</h2>
+                    <p>Canada announces free college education for students from low-income families.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="education08.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Australia: Scholarships for STEM Students</h2>
+                    <p>Australia launches new scholarships to encourage students to pursue STEM courses.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="education09.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>France: Digital Learning Expands in Rural Areas</h2>
+                    <p>France invests in digital learning tools to support education in rural areas.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="education10.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Brazil: Student Exchange Programs Resume</h2>
+                    <p>Brazil resumes international student exchange programs after pandemic restrictions ease.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <!-- More Education News up to education25.jpg -->
+        
+            <div class="news-card">
+                <img src="education11.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>South Korea: Universities to Offer AI Degrees</h2>
+                    <p>South Korean universities introduce specialized degrees in artificial intelligence.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="education12.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Russia: New Language Policy in Schools</h2>
+                    <p>Russia implements new language policies in schools to promote cultural heritage.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="education13.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Africa: E-Learning Revolution</h2>
+                    <p>African countries expand access to e-learning to support students in remote areas.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="education14.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Italy: Historic University Expands Globally</h2>
+                    <p>Italy’s oldest university announces global expansion with new campuses abroad.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="education15.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>UAE: Future Schools to Focus on AI & Robotics</h2>
+                    <p>The UAE launches an education initiative focused on AI and robotics training for students.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+        </section>
+        
+    </main1>
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>About US </h3>
+                    <p>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
+                        sports, and technology.</p>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#" class="scroll-link" data-section="politics-section">Politics</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#" class="scroll-link" data-section="sports-section">Sports</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="facebook-link"><img src="FB.png" alt="Facebook"></a>
+                        <a href="https://x.com/WorldApexX?t=MITbHaIp9q5MLRlecPzCOw&s=09"><img src="X.png" alt="Twitter"></a>
+                        <a href="Youtube-link"><img src="YT.png" alt="YouTube"></a>
+                        <a href="Instagram-link"><img src="IN.png" alt="Instagram"></a>
+                    </div>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for daily updates.</p>
+                    <form id="newsletter-form"></form>
+                    <form action="https://formspree.io/f/xjkgqdqb"
+                        method="POST" >
+                        <div class="input-container">
+                            <input name="email" type="email" id="email" placeholder="Enter your email" required>
+                            <button type="submit">
+                                <span class="material-icons">mail</span>
+                            </button>
+                        </div>
+                        <div id="email-error" class="error-message">
+                            <span class="material-icons error-icon">error</span>
+                            <span id="error-text"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>© 2025 World Apex | All Rights Reserved</p>
+                <p><a class="pol" href="policy.html">Privacy Policy</a> | <a class="ter" href="terms.html">Terms &
+                        Conditions</a></p>
+            </div>
+        </footer>
+        <script src="script.js" defer></script>
+    </body>
+    
+    </html>

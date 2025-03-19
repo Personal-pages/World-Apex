@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Apex</title>
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body >
+
+    <!-- HEADER -->
+    <header>
+        <div class="top-bar">
+            <div class="logo">World<span> Apex</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#Entertainment-section" >Entertainment</a></li>
+                    <li><a href="index.html#sports-section" >Sports</a></li>
+                    <li><a href="index.html#politics-section" >Politics</a></li>
+                    <li><a href="#" id="contact-link">Contact</a></li>
+                    <div class="theme-switcher" onclick="toggleTheme()">
+                        <span class="material-icons" id="theme-icon">dark_mode</span>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+        <div id="header-nav" class="nav-bar">
+            <ul>
+                <li><a href="index.html#Trending-section" >Trending</a></li>
+                <li><a href="index.html#sports-section" >Sports</a></li>
+                <li><a href="index.html#World-section" >World</a></li>
+                <li><a href="index.html#weather-section" >Weather</a></li>
+                <li><a href="index.html#Astrology-section" >Astrology</a></li>
+                <li><a href="index.html#Education-section" >Education</a></li>
+                <li><a href="index.html#Top-section" >Top News</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- BREAKING NEWS TICKER -->
+    <section class="breaking-news">
+        <marquee class="runner"> Breaking News: Major updates happening now! Stay tuned for live reports. </marquee>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main1>
+        <div class="main-news-header" id="Top-section">
+            <h1>Politics News</h1>
+        </div>
+        <section id="politics-section" class="news-container">
+
+            <div class="news-card">
+                <img src="politics01.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>USA: Presidential Debate Sparks Controversy</h2>
+                    <p>The latest presidential debate sees heated exchanges between candidates.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="politics02.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>UK: Prime Minister Announces Economic Reforms</h2>
+                    <p>The British Prime Minister unveils a new set of economic policies to boost growth.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="politics03.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>India: Parliament Passes Landmark Bill</h2>
+                    <p>India’s Parliament approves a major new law aimed at improving digital privacy rights.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="politics04.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>EU: New Sanctions on Russia</h2>
+                    <p>The European Union imposes fresh sanctions on Russia over the ongoing Ukraine conflict.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="politics05.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>China: President Xi Jinping’s Global Summit Speech</h2>
+                    <p>China’s President emphasizes economic cooperation at the Global Economic Summit.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="politics06.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Brazil: Corruption Scandal Rocks Government</h2>
+                    <p>A new corruption scandal emerges, involving top officials in Brazil’s government.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="politics07.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Germany: Parliament Debates Military Expansion</h2>
+                    <p>Germany’s lawmakers discuss increasing defense spending amid global tensions.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="politics08.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Canada: Government Unveils Healthcare Reforms</h2>
+                    <p>The Canadian Prime Minister announces a new plan to improve public healthcare services.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="politics09.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Russia: Putin’s Speech on National Security</h2>
+                    <p>President Vladimir Putin addresses the nation on key security concerns.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="politics10.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>France: Pension Reform Protests Continue</h2>
+                    <p>Massive protests erupt across France against the government’s pension reforms.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <!-- More Politics News up to politics25.jpg -->
+        
+            <div class="news-card">
+                <img src="politics11.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Australia: New Immigration Policies Announced</h2>
+                    <p>Australia introduces stricter immigration laws as part of its new government agenda.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="politics12.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Japan: Elections See Record Voter Turnout</h2>
+                    <p>Japan’s recent elections witness the highest voter participation in decades.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="politics13.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Mexico: Government Launches Anti-Corruption Drive</h2>
+                    <p>Mexico’s President announces a nationwide campaign against political corruption.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="politics14.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>South Africa: President’s Economic Recovery Plan</h2>
+                    <p>South Africa’s government unveils a detailed plan to recover the nation’s economy.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="politics15.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Italy: Political Parties Form New Coalition</h2>
+                    <p>Italy’s major political parties agree to form a coalition government.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+        </section>
+        
+    </main1>
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>About US </h3>
+                    <p>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
+                        sports, and technology.</p>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#" class="scroll-link" data-section="politics-section">Politics</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#" class="scroll-link" data-section="sports-section">Sports</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="facebook-link"><img src="FB.png" alt="Facebook"></a>
+                        <a href="https://x.com/WorldApexX?t=MITbHaIp9q5MLRlecPzCOw&s=09"><img src="X.png" alt="Twitter"></a>
+                        <a href="Youtube-link"><img src="YT.png" alt="YouTube"></a>
+                        <a href="Instagram-link"><img src="IN.png" alt="Instagram"></a>
+                    </div>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for daily updates.</p>
+                    <form id="newsletter-form"></form>
+                    <form action="https://formspree.io/f/xjkgqdqb"
+                        method="POST" >
+                        <div class="input-container">
+                            <input name="email" type="email" id="email" placeholder="Enter your email" required>
+                            <button type="submit">
+                                <span class="material-icons">mail</span>
+                            </button>
+                        </div>
+                        <div id="email-error" class="error-message">
+                            <span class="material-icons error-icon">error</span>
+                            <span id="error-text"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>© 2025 World Apex | All Rights Reserved</p>
+                <p><a class="pol" href="policy.html">Privacy Policy</a> | <a class="ter" href="terms.html">Terms &
+                        Conditions</a></p>
+            </div>
+        </footer>
+        <script src="script.js" defer></script>
+    </body>
+    
+    </html>

@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Apex</title>
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body onload="getLocationWeather()">
+
+    <!-- HEADER -->
+    <header>
+        <div class="top-bar">
+            <div class="logo">World <span> Apex</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" class="scroll-link" data-section="Entertainment-section">Entertainment</a></li>
+                    <li><a href="#" class="scroll-link" data-section="sports-section">Sports</a></li>
+                    <li><a href="#" class="scroll-link" data-section="politics-section">Politics</a></li>
+                    <li><a href="#" id="contact-link">Contact</a></li>
+                    <div class="theme-switcher" onclick="toggleTheme()">
+                        <span class="material-icons" id="theme-icon">dark_mode</span>
+                    </div>
+                    
+                </ul>
+               
+            </nav>
+           
+        <div id="header-nav" class="nav-bar">
+            <ul>
+                <li><a href="#" class="scroll-link" data-section="Trending-section">Trending</a></li>
+                <li><a href="#" class="scroll-link" data-section="sports-section">Sports</a></li>
+                <li><a href="#" class="scroll-link" data-section="World-section">World</a></li>
+                <li><a href="#" class="scroll-link" data-section="weather-section">Weather</a></li>
+                <li><a href="#" class="scroll-link" data-section="Astrology-section">Astrology</a></li>
+                <li><a href="#" class="scroll-link" data-section="Education-section">Education</a></li>
+                <li><a href="#" class="scroll-link" data-section="Top-section">Top News</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- BREAKING NEWS TICKER -->
+    <section class="breaking-news">
+        <marquee class="runner"> Breaking News: Major updates happening now! Stay tuned for live reports. </marquee>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main1>
+        <div class="news-header" id="Top-section">
+            <h1>Top News</h1>
+        </div>
+        <section id="Top-section" class="news-container">
+            <div class="news-card" >
+                <img src="trump&sunita1.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Trump Explains Why He Hasn’t Invited Sunita Williams to the White House Yet</h2>
+
+                    <p>Former U.S. President Donald Trump explained why astronaut Sunita Williams has not yet been invited to the White House. He cited scheduling challenges and Williams’ ongoing space missions as key reasons. Trump assured that an invitation will be sent soon to recognize her contributions to space exploration.</p>
+                    <a href="Trump&sunita.html">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"  >
+                <img src="news2.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Tech: AI Revolutionizing Healthcare</h2>
+                    <p>AI is transforming the healthcare industry with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"   >
+                <img src="news3.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Sports: Epic Showdown in Football Finals</h2>
+                    <p>The championship match saw a thrilling last-minute goal...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news4.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Entertainment: New Movie Breaks Records</h2>
+                    <p>The latest blockbuster has shattered all box office records...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news5.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Health: New Diet Trends for 2025</h2>
+                    <p>Experts reveal the latest diet plans that actually work...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news6.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Science: NASA’s New Space Mission</h2>
+                    <p>NASA announces a groundbreaking mission to explore deep space...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news7.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Business: Startup Boom in 2025</h2>
+                    <p>New startups are emerging with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="news-card"    >
+                <img src="news8.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Travel: Top Destinations for 2025</h2>
+                    <p>Explore the most breathtaking places to visit this year...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news9.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Finance: Cryptocurrency Trends</h2>
+                    <p>Experts predict the future of digital currencies in 2025...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div>
+                <a href="top-news.html" class="view-btn">View All</a>
+            </div>
+        </section>
+    </main1>
+    <main2>
+        <div class="news-header" id="Trending-section">
+            <h1>Trending</h1>
+        </div>
+        <section id="Trending-section" class="news-container">
+            <div class="news-card"    >
+                <img src="logo.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Breaking News: Market Hits Record High</h2>
+                    <p>The stock market surged to an all-time high today...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"  >
+                <img src="trump&sunita2.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Trump Explains Why He Hasn’t Invited Sunita Williams to the White House Yet</h2>
+                    <p>Former U.S. President Donald Trump explained why astronaut Sunita Williams has not yet been invited to the White House. He cited scheduling challenges and Williams’ ongoing space missions as key reasons. Trump assured that an invitation will be sent soon to recognize her contributions to space exploration.</p>
+                    <a href="Trump&sunita.html">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"   >
+                <img src="news3.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Sports: Epic Showdown in Football Finals</h2>
+                    <p>The championship match saw a thrilling last-minute goal...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news4.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Entertainment: New Movie Breaks Records</h2>
+                    <p>The latest blockbuster has shattered all box office records...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news5.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Health: New Diet Trends for 2025</h2>
+                    <p>Experts reveal the latest diet plans that actually work...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news6.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Science: NASA’s New Space Mission</h2>
+                    <p>NASA announces a groundbreaking mission to explore deep space...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news7.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Business: Startup Boom in 2025</h2>
+                    <p>New startups are emerging with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="news-card"    >
+                <img src="news8.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Travel: Top Destinations for 2025</h2>
+                    <p>Explore the most breathtaking places to visit this year...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news9.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Finance: Cryptocurrency Trends</h2>
+                    <p>Experts predict the future of digital currencies in 2025...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div>
+                <a href="Trending-news.html" class="view-btn">View All</a>
+            </div>
+        </section>
+    </main2>
+    <main3>
+        <div class="news-header" id="sports-section">
+            <h1>Sports</h1>
+        </div>
+        <section id="sports-section" class="news-container">
+            <div class="news-card"    >
+                <img src="logo.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Breaking News: Market Hits Record High</h2>
+                    <p>The stock market surged to an all-time high today...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"  >
+                <img src="news2.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Tech: AI Revolutionizing Healthcare</h2>
+                    <p>AI is transforming the healthcare industry with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"   >
+                <img src="news3.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Sports: Epic Showdown in Football Finals</h2>
+                    <p>The championship match saw a thrilling last-minute goal...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news4.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Entertainment: New Movie Breaks Records</h2>
+                    <p>The latest blockbuster has shattered all box office records...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news5.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Health: New Diet Trends for 2025</h2>
+                    <p>Experts reveal the latest diet plans that actually work...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news6.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Science: NASA’s New Space Mission</h2>
+                    <p>NASA announces a groundbreaking mission to explore deep space...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news7.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Business: Startup Boom in 2025</h2>
+                    <p>New startups are emerging with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="news-card"    >
+                <img src="news8.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Travel: Top Destinations for 2025</h2>
+                    <p>Explore the most breathtaking places to visit this year...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news9.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Finance: Cryptocurrency Trends</h2>
+                    <p>Experts predict the future of digital currencies in 2025...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div>
+                <a href="Sports-news.html" class="view-btn">View All</a>
+            </div>
+        </section>
+    </main3>
+    <main4>
+        <div class="news-header" id="Entertainment">
+            <h1>Entertainment</h1>
+        </div>
+        <section id="Entertainment-section" class="news-container">
+            <div class="news-card"    >
+                <img src="logo.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Breaking News: Market Hits Record High</h2>
+                    <p>The stock market surged to an all-time high today...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"  >
+                <img src="news2.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Tech: AI Revolutionizing Healthcare</h2>
+                    <p>AI is transforming the healthcare industry with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"   >
+                <img src="news3.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Sports: Epic Showdown in Football Finals</h2>
+                    <p>The championship match saw a thrilling last-minute goal...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news4.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Entertainment: New Movie Breaks Records</h2>
+                    <p>The latest blockbuster has shattered all box office records...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news5.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Health: New Diet Trends for 2025</h2>
+                    <p>Experts reveal the latest diet plans that actually work...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news6.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Science: NASA’s New Space Mission</h2>
+                    <p>NASA announces a groundbreaking mission to explore deep space...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news7.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Business: Startup Boom in 2025</h2>
+                    <p>New startups are emerging with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="news-card"    >
+                <img src="news8.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Travel: Top Destinations for 2025</h2>
+                    <p>Explore the most breathtaking places to visit this year...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news9.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Finance: Cryptocurrency Trends</h2>
+                    <p>Experts predict the future of digital currencies in 2025...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div>
+                <a href="Entertainment-news.html" class="view-btn">View All</a>
+            </div>
+        </section>
+    </main4>
+    <main5>
+        <div class="news-header" id="World-section">
+            <h1>World</h1>
+        </div>
+        <section id="World-section" class="news-container">
+            <div class="news-card"    >
+                <img src="logo.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Breaking News: Market Hits Record High</h2>
+                    <p>The stock market surged to an all-time high today...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"  >
+                <img src="news2.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Tech: AI Revolutionizing Healthcare</h2>
+                    <p>AI is transforming the healthcare industry with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"   >
+                <img src="news3.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Sports: Epic Showdown in Football Finals</h2>
+                    <p>The championship match saw a thrilling last-minute goal...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news4.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Entertainment: New Movie Breaks Records</h2>
+                    <p>The latest blockbuster has shattered all box office records...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news5.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Health: New Diet Trends for 2025</h2>
+                    <p>Experts reveal the latest diet plans that actually work...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news6.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Science: NASA’s New Space Mission</h2>
+                    <p>NASA announces a groundbreaking mission to explore deep space...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news7.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Business: Startup Boom in 2025</h2>
+                    <p>New startups are emerging with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="news-card"    >
+                <img src="news8.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Travel: Top Destinations for 2025</h2>
+                    <p>Explore the most breathtaking places to visit this year...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news9.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Finance: Cryptocurrency Trends</h2>
+                    <p>Experts predict the future of digital currencies in 2025...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div>
+                <a href="World-news.html" class="view-btn">View All</a>
+            </div>
+        </section>
+    </main5>
+    <main6>
+        <div class="news-header" id="politics-section">
+            <h1>Politics</h1>
+        </div>
+        <section id="politics-section" class="news-container">
+            <div class="news-card"    >
+                <img src="logo.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Breaking News: Market Hits Record High</h2>
+                    <p>The stock market surged to an all-time high today...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"  >
+                <img src="news2.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Tech: AI Revolutionizing Healthcare</h2>
+                    <p>AI is transforming the healthcare industry with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"   >
+                <img src="news3.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Sports: Epic Showdown in Football Finals</h2>
+                    <p>The championship match saw a thrilling last-minute goal...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news4.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Entertainment: New Movie Breaks Records</h2>
+                    <p>The latest blockbuster has shattered all box office records...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news5.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Health: New Diet Trends for 2025</h2>
+                    <p>Experts reveal the latest diet plans that actually work...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news6.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Science: NASA’s New Space Mission</h2>
+                    <p>NASA announces a groundbreaking mission to explore deep space...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news7.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Business: Startup Boom in 2025</h2>
+                    <p>New startups are emerging with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="news-card"    >
+                <img src="news8.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Travel: Top Destinations for 2025</h2>
+                    <p>Explore the most breathtaking places to visit this year...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news9.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Finance: Cryptocurrency Trends</h2>
+                    <p>Experts predict the future of digital currencies in 2025...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div>
+                <a href="Poltitics-news.html" class="view-btn">View All</a>
+            </div>
+        </section>
+    </main6>
+    <main7>
+        <div class="news-header" id="Education-section">
+            <h1>Education</h1>
+        </div>
+        <section id="Education-section" class="news-container">
+            <div class="news-card"    >
+                <img src="logo.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Breaking News: Market Hits Record High</h2>
+                    <p>The stock market surged to an all-time high today...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"  >
+                <img src="news2.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Tech: AI Revolutionizing Healthcare</h2>
+                    <p>AI is transforming the healthcare industry with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"   >
+                <img src="news3.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Sports: Epic Showdown in Football Finals</h2>
+                    <p>The championship match saw a thrilling last-minute goal...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news4.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Entertainment: New Movie Breaks Records</h2>
+                    <p>The latest blockbuster has shattered all box office records...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news5.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Health: New Diet Trends for 2025</h2>
+                    <p>Experts reveal the latest diet plans that actually work...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news6.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Science: NASA’s New Space Mission</h2>
+                    <p>NASA announces a groundbreaking mission to explore deep space...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news7.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Business: Startup Boom in 2025</h2>
+                    <p>New startups are emerging with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="news-card"    >
+                <img src="news8.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Travel: Top Destinations for 2025</h2>
+                    <p>Explore the most breathtaking places to visit this year...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news9.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Finance: Cryptocurrency Trends</h2>
+                    <p>Experts predict the future of digital currencies in 2025...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div>
+                <a href="Educaation-news.html" class="view-btn">View All</a>
+            </div>
+        </section>
+    </main7>
+    <main8>
+        <div class="news-header" id="Astrology-section">
+            <h1>Astrology</h1>
+        </div>
+        <section id="Astrology-section" class="news-container">
+            <div class="news-card"    >
+                <img src="logo.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Breaking News: Market Hits Record High</h2>
+                    <p>The stock market surged to an all-time high today...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"  >
+                <img src="news2.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Tech: AI Revolutionizing Healthcare</h2>
+                    <p>AI is transforming the healthcare industry with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"   >
+                <img src="news3.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Sports: Epic Showdown in Football Finals</h2>
+                    <p>The championship match saw a thrilling last-minute goal...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news4.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Entertainment: New Movie Breaks Records</h2>
+                    <p>The latest blockbuster has shattered all box office records...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news5.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Health: New Diet Trends for 2025</h2>
+                    <p>Experts reveal the latest diet plans that actually work...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news6.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Science: NASA’s New Space Mission</h2>
+                    <p>NASA announces a groundbreaking mission to explore deep space...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news7.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Business: Startup Boom in 2025</h2>
+                    <p>New startups are emerging with innovative solutions...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="news-card"    >
+                <img src="news8.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Travel: Top Destinations for 2025</h2>
+                    <p>Explore the most breathtaking places to visit this year...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card"    >
+                <img src="news9.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Finance: Cryptocurrency Trends</h2>
+                    <p>Experts predict the future of digital currencies in 2025...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div>
+                <a href="Astrology-news.html" class="view-btn">View All</a>
+            </div>
+        </section>
+    </main8>
+    <main9>
+        <div class="news-header" id="weather-section">
+            <h1>Weather</h1>
+        </div>
+        <section id="weather-section">
+            <div class="container">
+                <h1>Weather App</h1>
+
+                <!-- Search Box -->
+                <div class="search">
+                    <input type="text" id="city" placeholder="Enter city or postal code">
+                    <span class="material-icons search-icon" onclick="getWeather()">search</span>
+                </div>
+
+                <!-- Weather Details -->
+                <h2 id="location">City Name</h2>
+                <div id="weather-icon-container">
+                    <img id="weather-icon" src="" alt="Weather Icon">
+                </div>
+                <h3 id="weather-description"><span id="description"></span></h3>
+
+                <div class="weather-container">
+                    <div class="weather-box"><span class="material-icons">thermostat</span>
+                        <p class="result"><b>Temperature:</b> <span id="temperature"></span>°C</p>
+                    </div>
+                    <div class="weather-box"><span class="material-icons">device_thermostat</span>
+                        <p class="result"><b>Real Feel:</b> <span id="feels_like"></span>°C</p>
+                    </div>
+                    <div class="weather-box"><span class="material-icons">air</span>
+                        <p class="result"><b>Wind Speed:</b> <span id="wind"></span> km/h</p>
+                    </div>
+                    <div class="weather-box"><span class="material-icons">water_drop</span>
+                        <p class="result"><b>Humidity:</b> <span id="humidity"></span>%</p>
+                    </div>
+                    <div class="weather-box"><span class="material-icons">speed</span>
+                        <p class="result"><b>Pressure:</b> <span id="pressure"></span> Pa</p>
+                    </div>
+                    <div class="weather-box"><span class="material-icons">eco</span>
+                        <p class="result"><b>Air Quality:</b> <span id="aqi"></span></p>
+                    </div>
+                    <div class="weather-box"><span class="material-icons">wb_sunny</span>
+                        <p class="result"><b>UV Index:</b> <span id="uv"></span></p>
+                    </div>
+                    <div class="weather-box"><span class="material-icons">wb_twilight</span>
+                        <p class="result"><b>Sunrise:</b> <span id="sunrise"></span></p>
+                    </div>
+                    <div class="weather-box"><span class="material-icons">nights_stay</span>
+                        <p class="result"><b>Sunset:</b> <span id="sunset"></span></p>
+                    </div>
+                </div>
+
+                <!-- Graphs -->
+                <h2>24-Hour Forecast</h2>
+                <div class="chart-container"><canvas id="hourlyChart"></canvas></div>
+
+                <h2>5-Day Forecast</h2>
+                <div class="chart-container"><canvas id="dailyChart"></canvas></div>
+            </div>
+        </section>
+    </main9>
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About US </h3>
+                <p>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
+                    sports, and technology.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#" class="scroll-link" data-section="politics-section">Politics</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#" class="scroll-link" data-section="sports-section">Sports</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="facebook-link"><img src="FB.png" alt="Facebook"></a>
+                    <a href="https://x.com/WorldApexX?t=MITbHaIp9q5MLRlecPzCOw&s=09"><img src="X.png" alt="Twitter"></a>
+                    <a href="Youtube-link"><img src="YT.png" alt="YouTube"></a>
+                    <a href="Instagram-link"><img src="IN.png" alt="Instagram"></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for daily updates.</p>
+                <form id="newsletter-form"></form>
+                <form action="https://formspree.io/f/xjkgqdqb"
+                    method="POST" >
+                    <div class="input-container">
+                        <input name="email" type="email" id="email" placeholder="Enter your email" required>
+                        <button type="submit">
+                            <span class="material-icons">mail</span>
+                        </button>
+                    </div>
+                    <div id="email-error" class="error-message">
+                        <span class="material-icons error-icon">error</span>
+                        <span id="error-text"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 World Apex | All Rights Reserved</p>
+            <p><a class="pol" href="policy.html">Privacy Policy</a> | <a class="ter" href="terms.html">Terms &
+                    Conditions</a></p>
+        </div>
+    </footer>
+    <script src="script.js" defer>
+           document.addEventListener("DOMContentLoaded", function () {
+            let cityInput = document.getElementById("city");
+            let searchBtn = document.getElementById("searchBtn");
+
+            // Listen for Enter key press
+            cityInput.addEventListener("keypress", function (event) {
+                console.log("Key pressed:", event.key); // Debugging
+                if (event.key === "Enter" || event.keyCode === 13) {
+                    event.preventDefault();
+                    getWeather();
+                }
+            });
+
+            // Listen for search button click
+            searchBtn.addEventListener("click", getWeather);
+        });
+
+        // Function to fetch weather (for now, just displays alert)
+        function getWeather() {
+            let city = document.getElementById("city").value.trim();
+            console.log("City input:", city); // Debugging
+
+            if (city !== "") {
+                alert("Fetching weather for: " + city);
+                // Here, you can add your API call logic
+            } else {
+                alert("Please enter a valid city or postal code.");
+            }
+        }
+    </script>
+</body>
+
+</html>

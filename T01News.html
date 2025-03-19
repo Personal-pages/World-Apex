@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Details</title>
+    <link rel="stylesheet" href="Newsstyles.css">
+</head>
+<body>
+
+    <header>
+        <h1>World Apex</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">World</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Entertainment</a></li>
+                <div class="theme-switcher" onclick="toggleTheme()">
+                    <span class="material-icons" id="theme-icon">dark_mode</span>
+                </div>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article class="news-details">
+            <h2 id="news-title">News Title</h2>
+            <p class="news-meta">Published on <span id="news-date"></span> at <span id="news-time"></span> | By <span id="news-author">Author</span></p>
+            <img id="news-image" src="logo.jpg" alt="News Image">
+            <p id="news-content">Detailed news content goes here...</p>
+        </article>
+
+        <section class="recommended-news">
+            <h3>Recommended News</h3>
+            <div class="news-scroller">
+                <div class="news-items">
+                    <div class="news-item">
+                        <img src="logo.jpg" alt="News 1">
+                        <h4>Breaking News</h4>
+                        <p>Latest update on global events...</p>
+                        <a href="news1.html">Read More</a>
+                    </div>
+                    <div class="news-item">
+                        <img src="news2.jpg" alt="News 2">
+                        <h4>Technology</h4>
+                        <p>New AI breakthrough...</p>
+                        <a href="news2.html">Read More</a>
+                    </div>
+                    <div class="news-item">
+                        <img src="news3.jpg" alt="News 3">
+                        <h4>Sports</h4>
+                        <p>Exciting match highlights...</p>
+                        <a href="news3.html">Read More</a>
+                    </div>
+                    <div class="news-item">
+                        <img src="news4.jpg" alt="News 4">
+                        <h4>Health</h4>
+                        <p>New medical research findings...</p>
+                        <a href="news4.html">Read More</a>
+                    </div>
+                    <div class="news-item">
+                        <img src="news5.jpg" alt="News 5">
+                        <h4>Entertainment</h4>
+                        <p>Latest celebrity trends...</p>
+                        <a href="news5.html">Read More</a>
+                    </div>
+                    <div class="news-item">
+                        <img src="news6.jpg" alt="News 6">
+                        <h4>Business</h4>
+                        <p>Stock market updates...</p>
+                        <a href="news6.html">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 World Apex . All rights reserved.</p>
+    </footer>
+
+    <script>
+        function updateDateTime() {
+            let now = new Date();
+            document.getElementById("news-date").innerText = now.toLocaleDateString();
+            document.getElementById("news-time").innerText = now.toLocaleTimeString();
+        }
+        updateDateTime();
+
+        // Hover-based scrolling
+        const newsScroller = document.querySelector('.news-scroller');
+        newsScroller.addEventListener('mousemove', (e) => {
+            const width = newsScroller.clientWidth;
+            const scrollWidth = newsScroller.scrollWidth;
+            const mouseX = e.clientX - newsScroller.getBoundingClientRect().left;
+            const scrollLeft = (mouseX / width) * (scrollWidth - width);
+            newsScroller.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>

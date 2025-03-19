@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Apex</title>
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body >
+
+    <!-- HEADER -->
+    <header>
+        <div class="top-bar">
+            <div class="logo">World<span> Apex</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#Entertainment-section" >Entertainment</a></li>
+                    <li><a href="index.html#sports-section" >Sports</a></li>
+                    <li><a href="index.html#politics-section" >Politics</a></li>
+                    <li><a href="#" id="contact-link">Contact</a></li>
+                    <div class="theme-switcher" onclick="toggleTheme()">
+                        <span class="material-icons" id="theme-icon">dark_mode</span>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+        <div id="header-nav" class="nav-bar">
+            <ul>
+                <li><a href="index.html#Trending-section" >Trending</a></li>
+                <li><a href="index.html#sports-section" >Sports</a></li>
+                <li><a href="index.html#World-section" >World</a></li>
+                <li><a href="index.html#weather-section" >Weather</a></li>
+                <li><a href="index.html#Astrology-section" >Astrology</a></li>
+                <li><a href="index.html#Education-section" >Education</a></li>
+                <li><a href="index.html#Top-section" >Top News</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- BREAKING NEWS TICKER -->
+    <section class="breaking-news">
+        <marquee class="runner"> Breaking News: Major updates happening now! Stay tuned for live reports. </marquee>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main1>
+        <div class="main-news-header" id="Top-section">
+            <h1>Sports News</h1>
+        </div>
+        <section id="sports-section" class="news-container">
+
+            <div class="news-card">
+                <img src="sport01.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Football: Argentina Wins FIFA World Cup</h2>
+                    <p>Argentina secures a dramatic victory in the World Cup final, winning in a penalty shootout.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport02.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Cricket: India Defeats Australia in Test Series</h2>
+                    <p>India clinches a thrilling 2-1 Test series win against Australia, with Virat Kohli leading the charge.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport03.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Basketball: LeBron James Breaks All-Time Scoring Record</h2>
+                    <p>LeBron James surpasses Kareem Abdul-Jabbar to become the NBA's all-time leading scorer.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport04.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Tennis: Novak Djokovic Wins 25th Grand Slam Title</h2>
+                    <p>Djokovic continues his dominance in tennis, securing his 25th Grand Slam title at Wimbledon.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport05.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Formula 1: Max Verstappen Wins Another F1 Championship</h2>
+                    <p>Red Bull’s Max Verstappen claims his fourth Formula 1 World Championship title in a dominant season.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport06.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Olympics: New World Record Set in 100m Sprint</h2>
+                    <p>Athlete shatters the 100m sprint record at the Olympics, clocking an incredible 9.55 seconds.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport07.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Golf: Tiger Woods Returns to PGA Tour</h2>
+                    <p>Golf legend Tiger Woods makes a stunning comeback to the PGA Tour after injury recovery.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport08.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Football: Lionel Messi Scores 800th Career Goal</h2>
+                    <p>Messi reaches another milestone, scoring his 800th career goal in a thrilling club match.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport09.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Boxing: Tyson Fury Retains Heavyweight Title</h2>
+                    <p>Fury wins another boxing match to retain his Heavyweight Championship belt.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport10.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Cricket: Pakistan Wins T20 World Cup</h2>
+                    <p>Pakistan secures a thrilling victory to claim the T20 World Cup trophy.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <!-- Adding more sports news (up to sport25.jpg) -->
+        
+            <div class="news-card">
+                <img src="sport11.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Football: Real Madrid Wins Champions League Again</h2>
+                    <p>Real Madrid continues its European dominance with another Champions League victory.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport12.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Wrestling: WWE Star John Cena Announces Retirement</h2>
+                    <p>WWE legend John Cena reveals plans to retire after decades in the wrestling industry.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport13.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Swimming: Michael Phelps’ Record Finally Broken</h2>
+                    <p>A young swimmer breaks Michael Phelps’ long-standing Olympic record.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport14.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Football: Cristiano Ronaldo Signs Huge Contract</h2>
+                    <p>Ronaldo secures a record-breaking contract with a new football club.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport15.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>UFC: Conor McGregor’s Comeback Fight Announced</h2>
+                    <p>UFC superstar Conor McGregor set to make his highly anticipated return to the Octagon.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport16.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Cricket: England Claims Ashes Victory</h2>
+                    <p>England regains the Ashes trophy after an intense battle against Australia.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport17.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Cycling: Tour de France Winner Dominates Competition</h2>
+                    <p>The Tour de France champion secures victory with a record-breaking time.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+            <div class="news-card">
+                <img src="sport18.jpg" onerror="this.style.display='none';" alt="Image">
+                <div class="news-content">
+                    <h2>Hockey: Canada Wins Ice Hockey World Cup</h2>
+                    <p>Canada defeats their rivals to claim the Ice Hockey World Cup title.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        
+        </section>
+        
+    </main1>
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>About US </h3>
+                    <p>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
+                        sports, and technology.</p>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#" class="scroll-link" data-section="politics-section">Politics</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#" class="scroll-link" data-section="sports-section">Sports</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="facebook-link"><img src="FB.png" alt="Facebook"></a>
+                        <a href="https://x.com/WorldApexX?t=MITbHaIp9q5MLRlecPzCOw&s=09"><img src="X.png" alt="Twitter"></a>
+                        <a href="Youtube-link"><img src="YT.png" alt="YouTube"></a>
+                        <a href="Instagram-link"><img src="IN.png" alt="Instagram"></a>
+                    </div>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for daily updates.</p>
+                    <form id="newsletter-form"></form>
+                    <form action="https://formspree.io/f/xjkgqdqb"
+                        method="POST" >
+                        <div class="input-container">
+                            <input name="email" type="email" id="email" placeholder="Enter your email" required>
+                            <button type="submit">
+                                <span class="material-icons">mail</span>
+                            </button>
+                        </div>
+                        <div id="email-error" class="error-message">
+                            <span class="material-icons error-icon">error</span>
+                            <span id="error-text"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>© 2025 World Apex | All Rights Reserved</p>
+                <p><a class="pol" href="policy.html">Privacy Policy</a> | <a class="ter" href="terms.html">Terms &
+                        Conditions</a></p>
+            </div>
+        </footer>
+        <script src="script.js" defer></script>
+    </body>
+    
+    </html>
