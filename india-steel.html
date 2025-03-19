@@ -12,7 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <!-- Google Material Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -61,17 +62,49 @@
         <div class="main-news-card">
             <div class="image-slider" id="slider">
                 <div class="slider-wrapper">
-                    <img src="trump&sunita1.jpg" alt="Main News Image"  onerror="this.style.display='none';" class="main-news-img">
-                    <img src="trump&sunita2.jpg"  onerror="this.style.display='none';" alt="Image 2" class="main-news-img">
-                    <img src="trump&sunita3.jpg"  onerror="this.style.display='none';" alt="Image 3" class="main-news-img">
-                    <img src="T101.png"  onerror="this.style.display='none';" alt="Image 4" class="main-news-img">
+                    <img src="india-steel.jpeg" alt="Main News Image"  onerror="this.style.display='none';" class="main-news-img">
+                    <img src="india-steel2.jpeg"  onerror="this.style.display='none';" alt="Image 2" class="main-news-img">
+                    <img src="india-steel3.jpeg"  onerror="this.style.display='none';" alt="Image 3" class="main-news-img">
+                    <img src="logo.jpg"  onerror="this.style.display='none';" alt="Image 4" class="main-news-img">
                 </div>
             </div>
             <div class="main-news-content">
-                <h1>Trump Explains Why He Hasn’t Invited Sunita Williams to the White House Yet
+                <h1>India Proposes 12% Safeguard Duty on Steel Imports
                 </h1>
-<span class="news-time">Published:  March 19, 2025 | 02:44 PM</span>
-<p class="pmain">Donald Trump, in a recent statement, clarified why Indian-American astronaut Sunita Williams has not yet been invited to the White House. He mentioned that her commitments with NASA and continuous space missions have made scheduling a meeting difficult. Trump emphasized his admiration for Williams’ contributions to space exploration and assured that she will be honored appropriately at a suitable time. He added that recognizing astronauts’ achievements is a priority, and the delay is not due to a lack of appreciation but rather logistical constraints. As Williams continues her missions, Trump stated that the invitation will be extended when the timing aligns with both her and the White House’s schedule.</p>
+<span class="news-time">Published:  March 19, 2025 | ​3:24 AM</span>
+<p class="pmain"> <span class="material-icons icon">gavel</span> <strong>Government's Move to Protect Domestic Steel Industry</strong><br><br>
+
+    India is planning to impose a <strong>12% safeguard duty on steel imports</strong> to protect its domestic industry from an influx of cheap foreign steel. The Ministry of Steel has proposed this measure in response to concerns raised by local steel manufacturers about unfair competition from countries like <strong>China, Japan, and South Korea</strong>.<br><br>
+
+    <span class="material-icons icon">help_outline</span> <strong>Why is India Imposing This Duty?</strong><br><br>
+
+    <span class="material-icons icon">trending_down</span> <strong>Increase in Cheap Imports:</strong> Indian steelmakers have reported a surge in imports at lower prices, mainly from <strong>China and Vietnam</strong>, threatening domestic producers.<br><br>
+
+    <span class="material-icons icon">bar_chart</span> <strong>Global Steel Price Fluctuations:</strong> Due to oversupply in international markets, foreign steel is being dumped into India at a price lower than the production cost.<br><br>
+
+    <span class="material-icons icon">work_outline</span> <strong>Protecting Domestic Jobs:</strong> Many Indian steel companies have warned of job cuts if the government does not intervene, as declining sales are impacting employment in the sector.<br><br>
+
+    <span class="material-icons icon">groups</span> <strong>Who Will Be Affected?</strong><br><br>
+
+    <span class="material-icons icon">thumb_up</span> <strong>Winners:</strong> Indian steel producers like <strong>Tata Steel, JSW Steel, and SAIL</strong> will benefit from reduced foreign competition.<br><br>
+
+    <span class="material-icons icon">thumb_down</span> <strong>Losers:</strong> Industries relying on imported steel—such as <strong>automobile and infrastructure companies</strong>—may face increased costs, potentially leading to higher prices for consumers.<br><br>
+
+    <span class="material-icons icon">public</span> <strong>International Trade Impact</strong><br><br>
+
+    <span class="material-icons icon">flag</span> <strong>China & South Korea Oppose the Move:</strong> India’s major steel suppliers may file complaints with the <strong>World Trade Organization (WTO)</strong>, arguing that such duties are trade barriers.<br><br>
+
+    <span class="material-icons icon">build</span> <strong>Boost for "Make in India":</strong> The move aligns with India’s push for <strong>self-reliance</strong> in manufacturing and infrastructure, reducing dependence on foreign steel.<br><br>
+
+    <span class="material-icons icon">schedule</span> <strong>What’s Next?</strong><br><br>
+
+    <span class="material-icons icon">hourglass_empty</span> The proposal is currently <strong>under review by the Finance Ministry</strong> and is expected to be implemented <strong>in the coming months</strong> if approved.<br><br>
+
+    <span class="material-icons icon">campaign</span> Steel-consuming industries are lobbying for a lower tariff, while domestic steelmakers demand even stronger protection.<br><br>
+
+    This <strong>12% safeguard duty</strong> could <strong>reshape India’s steel market</strong>, boosting local production while increasing costs for sectors dependent on imported steel.
+</p>
+
                 <div class="dots-container">
                     <span class="dot active" onclick="moveToSlide(0)"></span>
                     <span class="dot" onclick="moveToSlide(1)"></span>
@@ -189,7 +222,15 @@ body.dark-mode .dot.active {
     background: white;
     box-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
 }
-
+.icon {
+    font-size: 18px;   /* Adjust icon size */
+    vertical-align: middle;  /* Align icons to middle of text */
+    margin-right: 5px;  /* Add some spacing between icon and text */
+    color: #cccccc;  /* Optional: Adjust icon color */
+}
+body:not(.dark-mode) .icon{
+    color: #333;
+}
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
@@ -317,16 +358,7 @@ body.dark-mode .dot.active {
     </script> 
 
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2022659342961679"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-2022659342961679"
-     data-ad-slot="2145288351"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2022659342961679"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
