@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <title>World Apex</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2022659342961679"
+     crossorigin="anonymous"></script>
+</head>
+<body  >
+
+    <!-- HEADER -->
+    <header>
+        <div class="top-bar">
+            <div class="logo">World<span> Apex</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#Entertainment-section" >Entertainment</a></li>
+                    <li><a href="index.html#sports-section" >Sports</a></li>
+                    <li><a href="index.html#politics-section" >Politics</a></li>
+                    <li><a href="#" id="contact-link">Contact</a></li>
+                    <div class="theme-switcher" onclick="toggleTheme()">
+                        <span class="material-icons" id="theme-icon">dark_mode</span>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+        <div id="header-nav" class="nav-bar">
+            <ul>
+                <li><a href="index.html#Trending-section" >Trending</a></li>
+                <li><a href="index.html#sports-section" >Sports</a></li>
+                <li><a href="index.html#World-section" >World</a></li>
+                <li><a href="index.html#weather-section" >Weather</a></li>
+                <li><a href="index.html#Astrology-section" >Astrology</a></li>
+                <li><a href="index.html#Technology-section" >Technology</a></li>
+                <li><a href="index.html#Top-section" >Top News</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- BREAKING NEWS TICKER -->
+    <section class="breaking-news">
+        <marquee class="runner">Breaking News: Major updates happening now! Stay tuned for live reports.</marquee>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-container">
+        <div class="main-news-card">
+            <div class="image-slider" id="slider">
+                <div class="slider-wrapper">
+                    <img src="chhaava-movie.png" alt="Main News Image"  onerror="this.style.display='none';" class="main-news-img">
+                    <img src="chhaava-movie2.png"  onerror="this.style.display='none';" alt="Image 2" class="main-news-img">
+                    <img src="chhaava-movie3.png"  onerror="this.style.display='none';" alt="Image 3" class="main-news-img">
+                    <img src="chhaava-movie.png"  onerror="this.style.display='none';" alt="Image 4" class="main-news-img">
+                </div>
+            </div>
+            <div class="main-news-content">
+                <h1>Vicky Kaushal’s ‘Chhaava’ Faces Online Circulation, Police Begin Investigation.
+                </h1>
+<span class="news-time">Published:  March 21, 2025 | 10:22 AM </span>
+<p class="pmain">
+    <span class="material-icons icon">movie</span> <strong>‘Chhaava’ Caught in Online Circulation, Authorities Respond</strong><br><br>
+
+    Vicky Kaushal’s much-anticipated film <span class="soft-bold">‘Chhaava’</span> has appeared on various online platforms ahead of its scheduled release. Following concerns from the film’s production team, authorities have taken <span class="soft-bold">immediate action</span> to address the situation.<br><br>
+
+    <span class="material-icons icon">gavel</span> <strong>Legal Action & Investigation</strong><br><br>
+
+    <span class="material-icons icon">policy</span> <strong>Case Registered:</strong> Law enforcement has filed a case under relevant sections and is working to identify the source of circulation.<br><br>
+
+    <span class="material-icons icon">security</span> <strong>Cybercrime Involvement:</strong> Officials from the <span class="soft-bold">cybercrime division</span> are actively tracking digital footprints to prevent further spread.<br><br>
+
+    <span class="material-icons icon">campaign</span> <strong>Industry Reactions</strong><br><br>
+
+    <span class="material-icons icon">warning</span> <strong>Impact on the Film Industry:</strong> Experts say such incidents could <span class="soft-bold">affect box office collections</span> and urge stronger measures to safeguard films.<br><br>
+
+    <span class="material-icons icon">group</span> <strong>Support from Bollywood:</strong> Several actors and filmmakers have voiced their support for Vicky Kaushal and the ‘Chhaava’ team, advocating for <span class="soft-bold">better online content protection</span>.<br><br>
+
+    <span class="material-icons icon">hourglass_bottom</span> <strong>What’s Next?</strong><br><br>
+
+    <span class="material-icons icon">handshake</span> Authorities are working closely with digital platforms to <span class="soft-bold">take down unauthorized content</span> while urging audiences to support cinema through official channels.<br><br>
+
+    <span class="material-icons icon">celebration</span> <strong>Excitement Continues:</strong> Despite the situation, anticipation remains high for ‘Chhaava’, set to hit theaters soon.
+</p>
+
+
+
+
+                <div class="dots-container">
+                    <span class="dot active" onclick="moveToSlide(0)"></span>
+                    <span class="dot" onclick="moveToSlide(1)"></span>
+                    <span class="dot" onclick="moveToSlide(2)"></span>
+                    <span class="dot" onclick="moveToSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="news-recommendations">
+        <div class="news-header" id="recommendation-section"  >
+            <h1>Recommendation</h1>
+          </div>
+        <div class="recommendation-list">
+            <div href="index.html" class="recommendation">
+                <img src="X.png"  onerror="this.style.display='none';" alt="Image">
+                <p class="p2">Stock Market Surges Amid Economic Optimism</p>
+            </div>
+            <div class="recommendation">
+                <img src="logo.jpg"  onerror="this.style.display='none';" alt="Image">
+                <p class="p2">AI Breakthroughs: What’s Coming Next in 2025</p>
+            </div>
+            <div class="recommendation">
+                <img src="logo.jpg"  onerror="this.style.display='none';" alt="Image">
+                <p class="p2">Tech Giants Invest Billions in Renewable Energy</p>
+            </div>
+            <div class="recommendation">
+                <img src="logo.jpg"  onerror="this.style.display='none';" alt="Image">
+                <p class="p2">Tech Giants Invest Billions in Renewable Energy</p>
+            </div>
+           
+        </div>
+    </div>
+    <style>
+        .main-container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .main-news-card {
+            background: #171717e8;
+            color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        .image-slider {
+            width: 50%;
+            max-height: 300px;
+            overflow: hidden;
+            position: relative;
+            cursor: grab;
+        }
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .main-news-img {
+            width: 100%;
+            height: 300px; /* Fixed height */
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0;
+            margin-top: 50px;
+        }
+        .main-news-content {
+            flex: 1;
+            min-width: 0; /* Ensures text wraps properly */
+        }
+        .main-news-content p {
+            max-height: 200px; /* Controls paragraph height */
+            overflow-y: auto; /* Enables scrolling if text is too long */
+        }
+        .dots-container {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.soft-bold {
+        font-weight: 400; /* Softer than bold, stronger than normal */
+    }
+    
+    .bold-heading {
+        font-weight: 700; /* Full bold for subheadings */
+    }
+/* Default: Light Mode (Dot is Dark) */
+.dot {
+    width: 10px;
+    height: 10px;
+    background: black !important;  /* Dark in Light Mode */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 
+                       50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    opacity: 0.6;
+}
+
+/* Dark Mode: Dot becomes Light */
+body.dark-mode .dot {
+    background: white !important;  /* Light in Dark Mode */
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
+}
+
+/* Active State */
+.dot.active {
+    background: black;  /* Default for active in light mode */
+    opacity: 1;
+    transform: scale(1.2);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Dark Mode Active State */
+body.dark-mode .dot.active {
+    background: white;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
+}
+.icon {
+    font-size: 18px;   /* Adjust icon size */
+    vertical-align: middle;  /* Align icons to middle of text */
+    margin-right: 5px;  /* Add some spacing between icon and text */
+    color: #cccccc;  /* Optional: Adjust icon color */
+}
+body:not(.dark-mode) .icon{
+    color: #333;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .main-news-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* IMAGE SLIDER */
+.image-slider {
+    width: 50%;
+    aspect-ratio: 16/9; /* Maintains a landscape ratio */
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.main-news-img {
+    width: 100%;
+    height: auto; /* Automatically adjust height */
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 15px;
+    }
+
+    .main-news-card {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .image-slider {
+        width: 100%;
+        height: 200px;
+    }
+
+    .main-news-img {
+        height: 200px;
+    }
+
+    .main-news-content p {
+        max-height: none;
+    }
+
+    .recommendation-list {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-news-card {
+        padding: 10px;
+    }
+
+    .main-news-img {
+        height: 180px;
+    }
+
+    .recommendation {
+        min-width: 120px;
+    }
+}
+
+
+    </style>
+    
+    <script>
+        let slider = document.querySelector('.slider-wrapper');
+        let dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+        let startX, isDragging = false, moveX = 0;
+    
+        function updateSlidePosition() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+        }
+    
+        function moveToSlide(index) {
+            currentIndex = index;
+            updateSlidePosition();
+        }
+    
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % dots.length;
+            updateSlidePosition();
+        }
+    
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + dots.length) % dots.length;
+            updateSlidePosition();
+        }
+    
+        slider.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX;
+        });
+    
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            moveX = e.clientX - startX;
+        });
+    
+        slider.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+            if (moveX < -50) nextSlide();
+            else if (moveX > 50) prevSlide();
+            isDragging = false;
+            moveX = 0;
+        });
+    
+        slider.addEventListener('mouseleave', () => isDragging = false);
+        
+        setInterval(nextSlide, 5000);
+    </script> 
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2022659342961679"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-2022659342961679"
+     data-ad-slot="7058741675"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- FOOTER -->
+<footer id="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About US</h3>
+            <p>World Apex delivers the latest headlines with accuracy and speed, covering politics, business, sports, and technology.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#" class="scroll-link" data-section="politics-section" >Politics</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#" class="scroll-link" data-section="sports-section" >Sports</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="facebook-link"><img src="FB.png" alt="Facebook"></a>
+                    <a href="https://x.com/WorldApexX?t=MITbHaIp9q5MLRlecPzCOw&s=09"><img src="X.png" alt="Twitter"></a>
+                    <a href="Youtube-link"><img src="YT.png" alt="YouTube"></a>
+                    <a href="Instagram-link"><img src="IN.png" alt="Instagram"></a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter for daily updates.</p>
+            <form id="newsletter-form">
+                <div class="input-container">
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <button type="submit">
+                        <span class="material-icons">mail</span>
+                    </button>
+                </div>
+                <div id="email-error" class="error-message">
+                    <span class="material-icons error-icon">error</span>
+                    <span id="error-text"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 World Apex | All Rights Reserved</p>
+        <p><a class="pol" href="policy.html">Privacy Policy</a> | <a class="ter" href="terms.html">Terms & Conditions</a></p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
