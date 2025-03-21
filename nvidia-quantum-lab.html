@@ -12,7 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <!-- Google Material Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -61,22 +62,52 @@
         <div class="main-news-card">
             <div class="image-slider" id="slider">
                 <div class="slider-wrapper">
-                    <img src="trump&sunita1.jpg" alt="Main News Image"  onerror="this.style.display='none';" class="main-news-img">
-                    <img src="trump&sunita2.jpg"  onerror="this.style.display='none';" alt="Image 2" class="main-news-img">
-                    <img src="trump&sunita3.jpg"  onerror="this.style.display='none';" alt="Image 3" class="main-news-img">
-                    <img src="T101.png"  onerror="this.style.display='none';" alt="Image 4" class="main-news-img">
+                    <img src="nvidia-quantum.png" alt="Main News Image"  onerror="this.style.display='none';" class="main-news-img">
+                    <img src="nvidia-quantum2.png"  onerror="this.style.display='none';" alt="Image 2" class="main-news-img">
+                    <img src="nvidia-quantum.png"  onerror="this.style.display='none';" alt="Image 3" class="main-news-img">
+                    <img src="nvidia-quantum2.png"  onerror="this.style.display='none';" alt="Image 4" class="main-news-img">
                 </div>
             </div>
             <div class="main-news-content">
-                <h1>Trump Explains Why He Hasn’t Invited Sunita Williams to the White House Yet
+                <h1>Nvidia to Open Quantum Computing Lab, CEO Confirms.
                 </h1>
-<span class="news-time">Published:  March 19, 2025 | 02:44 PM</span>
-<p class="pmain">Donald Trump, in a recent statement, clarified why Indian-American astronaut Sunita Williams has not yet been invited to the White House. He mentioned that her commitments with NASA and continuous space missions have made scheduling a meeting difficult. Trump emphasized his admiration for Williams’ contributions to space exploration and assured that she will be honored appropriately at a suitable time. He added that recognizing astronauts’ achievements is a priority, and the delay is not due to a lack of appreciation but rather logistical constraints. As Williams continues her missions, Trump stated that the invitation will be extended when the timing aligns with both her and the White House’s schedule.</p>
+<span class="news-time">Published:  March 21, 2025 | 09:28 AM </span>
+<p class="pmain">
+    <span class="material-icons icon">computer</span> <strong>Nvidia Expands into Quantum Computing</strong><br><br>
+
+    Nvidia CEO <span class="soft-bold">Jensen Huang</span> has announced the company’s plans to open a <span class="soft-bold">quantum computing lab</span>, marking a major step toward integrating quantum technology with AI and high-performance computing.<br><br>
+
+    <span class="material-icons icon">science</span> <strong>Why Quantum Computing?</strong><br><br>
+
+    <span class="material-icons icon">trending_up</span> <strong>AI & Quantum Synergy:</strong> Nvidia aims to <span class="soft-bold">merge quantum algorithms</span> with its powerful <span class="soft-bold">GPU technology</span> to enhance computing speed and efficiency.<br><br>
+
+    <span class="material-icons icon">memory</span> <strong>Next-Gen Processing Power:</strong> Quantum computing could revolutionize fields like <span class="soft-bold">drug discovery, cryptography, and AI training</span> by solving problems faster than traditional computers.<br><br>
+
+    <span class="material-icons icon">location_on</span> <strong>Where Will the Lab Be?</strong><br><br>
+
+    <span class="material-icons icon">business</span> The new Nvidia Quantum Lab will be based in <span class="soft-bold">Silicon Valley</span>, with additional partnerships at leading research institutions.<br><br>
+
+    <span class="material-icons icon">public</span> <strong>Industry Impact & Competition</strong><br><br>
+
+    <span class="material-icons icon">flag</span> <strong>Rivalry with IBM & Google:</strong> Nvidia joins the race with <span class="soft-bold">IBM, Google, and Intel</span>, all working on quantum computing breakthroughs.<br><br>
+
+    <span class="material-icons icon">handshake</span> <strong>Collaboration with Researchers:</strong> Nvidia will work with <span class="soft-bold">universities and AI startups</span> to explore real-world quantum applications.<br><br>
+
+    <span class="material-icons icon">hourglass_empty</span> <strong>What’s Next?</strong><br><br>
+
+    <span class="material-icons icon">event</span> The lab is set to open in <span class="soft-bold">early 2026</span>, with Nvidia already investing heavily in quantum R&D.<br><br>
+
+    <span class="material-icons icon">celebration</span> <strong>A New Era in Computing:</strong> If successful, Nvidia’s quantum research could <span class="soft-bold">reshape the future of AI and data processing</span> globally.
+</p>
+
+
+
+
                 <div class="dots-container">
                     <span class="dot active" onclick="moveToSlide(0)"></span>
                     <span class="dot" onclick="moveToSlide(1)"></span>
                     <span class="dot" onclick="moveToSlide(2)"></span>
-                    <!-- <span class="dot" onclick="moveToSlide(3)"></span> -->
+                    <span class="dot" onclick="moveToSlide(3)"></span>
                 </div>
             </div>
         </div>
@@ -157,6 +188,13 @@
     justify-content: center;
 }
 
+.soft-bold {
+        font-weight: 400; /* Softer than bold, stronger than normal */
+    }
+    
+    .bold-heading {
+        font-weight: 700; /* Full bold for subheadings */
+    }
 /* Default: Light Mode (Dot is Dark) */
 .dot {
     width: 10px;
@@ -189,7 +227,15 @@ body.dark-mode .dot.active {
     background: white;
     box-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
 }
-
+.icon {
+    font-size: 18px;   /* Adjust icon size */
+    vertical-align: middle;  /* Align icons to middle of text */
+    margin-right: 5px;  /* Add some spacing between icon and text */
+    color: #cccccc;  /* Optional: Adjust icon color */
+}
+body:not(.dark-mode) .icon{
+    color: #333;
+}
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
@@ -317,16 +363,7 @@ body.dark-mode .dot.active {
     </script> 
 
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2022659342961679"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-2022659342961679"
-     data-ad-slot="2145288351"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2022659342961679"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
