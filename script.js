@@ -443,3 +443,26 @@ document.addEventListener("click", function (e) {
         }, 1200);
     }
 });
+
+
+// Change Language Based on Selection
+document.getElementById("language").addEventListener("change", (event) => {
+    const lang = event.target.value;
+    setLanguage(lang);
+});
+
+// Function to Set Language
+function setLanguage(lang) {
+    const translations = {
+        en: { title: "Welcome", description: "This is a simple multi-language website." },
+        es: { title: "Bienvenido", description: "Este es un sitio web multilingüe simple." },
+        fr: { title: "Bienvenue", description: "Ceci est un site Web multilingue simple." },
+        de: { title: "Willkommen", description: "Dies ist eine einfache mehrsprachige Website." },
+        hi: { title: "स्वागत है", description: "यह एक साधारण बहुभाषी वेबसाइट है।" },
+        ar: { title: "أهلا بك", description: "هذا موقع متعدد اللغات بسيط." },
+        zh: { title: "欢迎", description: "这是一个简单的多语言网站。" }
+    };
+
+    document.getElementById("title").textContent = translations[lang].title;
+    document.getElementById("description").textContent = translations[lang].description;
+}

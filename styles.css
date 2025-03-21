@@ -1002,3 +1002,83 @@ body:not(.dark-mode) .nav-bar ul{
    margin-top: 8px;
  }
  
+ /* Custom Dropdown */
+.custom-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px; /* Smaller text */
+    margin-bottom: 5px;
+}
+
+/* Dropdown Styling */
+.dropdown select {
+    appearance: none;
+    background: white;
+    font-size: 14px; /* Smaller font */
+    font-weight: bold;
+    padding: 8px 12px; /* Reduced padding */
+    border-radius: 6px;
+    border: 1.5px solid #ff7f00; /* Orange */
+    cursor: pointer;
+    width: 80px; /* Smaller width */
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Add a custom dropdown arrow */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Hover & Focus Effects */
+.dropdown select:hover,
+.dropdown select:focus {
+    background: #ff7f00; /* Orange */
+    color: white;
+    border-color: #cc6600; /* Darker Orange */
+}
+
+/* Style dropdown options */
+select option {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: white;
+    color: #333;
+    padding: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .custom-dropdown {
+        width: 95%;
+    }
+    
+    .dropdown select {
+        width: 160px; /* Adjusted for smaller screens */
+        font-size: 13px;
+        padding: 6px;
+    }
+    .dropdown select {
+    appearance: none;
+    background: white;
+    font-size: 14px; /* Smaller font */
+    font-weight: bold;
+    padding: 8px 12px; /* Reduced padding */
+    margin-top: -10px;
+    border-radius: 6px;
+    border: 1.5px solid #ff7f00; /* Orange */
+    cursor: pointer;
+    width: 80px; /* Smaller width */
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+}
