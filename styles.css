@@ -79,10 +79,13 @@ nav ul {
 
 nav ul li {
     display: inline;
+    margin: auto;
+    padding: 0;
 }
 
 nav ul li a {
     color: white;
+    bottom: 0px;
     text-decoration: none;
     font-size: 15px;
     transition: color 0.3s ease-in-out;
@@ -103,7 +106,7 @@ nav ul li a:hover {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 22px;
+    gap: 35px;
     margin: 0;
     padding: 0;
 }
@@ -120,7 +123,7 @@ nav ul li a:hover {
     font-size: 16px;
     font-weight: bold;
     position: relative;
-    padding: 8px 14px;
+    /* padding: 8px 14px; */
     transition: color 0.3s ease-in-out;
 }
 
@@ -835,19 +838,18 @@ canvas {
         font-size: 13px;
         padding: 6px 8px;
     }
-
+    
     .breaking-news {
         margin-top: 140px;
     }
     #theme-icon{
         position: absolute;
-        top: 25px;
+        
         z-index: 9;
     }
 }
 #theme-icon{
     position: absolute;
-    top: 20px;
     z-index: 9;
 }
 
@@ -1026,7 +1028,7 @@ label {
     border-radius: 6px;
     border: 1.5px solid #ff7f00; /* Orange */
     cursor: pointer;
-    width: 80px; /* Smaller width */
+    width: 100px; /* Smaller width */
     text-align: center;
     transition: all 0.3s ease-in-out;
 }
@@ -1055,30 +1057,18 @@ select option {
     padding: 8px;
 }
 
-/* Responsive */
+/* Responsive - Adjust for Small Screens */
 @media (max-width: 768px) {
     .custom-dropdown {
-        width: 95%;
+        width: auto; /* Allows it to shrink */
+        max-width: 100px;
+        text-align: center;
     }
-    
-    .dropdown select {
-        width: 160px; /* Adjusted for smaller screens */
-        font-size: 13px;
-        padding: 6px;
-    }
-    .dropdown select {
-    appearance: none;
-    background: white;
-    font-size: 14px; /* Smaller font */
-    font-weight: bold;
-    padding: 8px 12px; /* Reduced padding */
-    margin-top: -10px;
-    border-radius: 6px;
-    border: 1.5px solid #ff7f00; /* Orange */
-    cursor: pointer;
-    width: 80px; /* Smaller width */
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-}
 
+    .dropdown select {
+        width: 90px; /* Slightly larger for better touch usability */
+        font-size: 12px;
+        padding: 5px 8px;
+        margin-top: -5px;
+    }
 }
