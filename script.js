@@ -289,7 +289,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // 🎨 **Light Mode Colors (RGBA)**
             const lightModeColors = {
-                background: "rgba(248, 249, 250, 1)",    
+                background: "rgba(248, 249, 250, 1)",
+                h5Bg: " #ff4d71"    ,
                 headerBg: "rgba(252, 252, 252, 0.95)",    
                 headerText: "rgba(34, 34, 34, 1)",
                 navBg: "rgba(242, 242, 242, 0.95)",     
