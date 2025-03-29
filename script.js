@@ -445,3 +445,70 @@ document.addEventListener("click", function (e) {
     }
 });
 //  translation 
+document.addEventListener("DOMContentLoaded", async function () {
+    const languageSelect = document.getElementById("language");
+
+    // Load saved language from localStorage (if available)
+    const savedLanguage = localStorage.getItem("selectedLanguage");
+    if (savedLanguage) {
+        languageSelect.value = savedLanguage;
+        await translatePage(savedLanguage);
+    }
+
+    // Event listener for language change
+    languageSelect.addEventListener("change", async function () {
+        let targetLang = this.value;
+        localStorage.setItem("selectedLanguage", targetLang); // Save selection
+        await translatePage(targetLang);
+    });
+
+    async function translatePage(targetLang) {
+        let elements = document.querySelectorAll("[data-translate], .translatable");
+
+        let texts = [];
+        let elementMap = new Map();
+
+        elements.forEach((el, index) => {
+            if (!el.dataset.originalText) {
+                el.dataset.originalText = el.textContent.trim(); // Store original text
+            }
+            texts.push(el.dataset.originalText);
+            elementMap.set(index, el);
+        });
+
+        if (texts.length === 0) return;
+
+        let requestData = {
+            from: "en",
+            to: targetLang,
+            data: texts,
+            platform: "api"
+        };
+
+        try {
+            let response = await fetch("https://api-b2b.backenster.com/b1/api/v3/translate", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer a_hDUMEd7r1wJYYjRRrTnDy2n1EZiX24ksaOwRGN3KhJoosflDEMu3BCUKJAYk1ATBCVypEN23WrCAl6b3"
+                },
+                body: JSON.stringify(requestData)
+            });
+
+            let data = await response.json();
+
+            if (data.result) {
+                data.result.forEach((translatedText, index) => {
+                    let el = elementMap.get(index);
+                    if (el) {
+                        el.textContent = translatedText;
+                    }
+                });
+            } else {
+                console.error("Translation failed: No results received.");
+            }
+        } catch (error) {
+            console.error("Translation Error:", error);
+        }
+    }
+});

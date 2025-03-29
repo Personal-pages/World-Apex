@@ -26,132 +26,145 @@
     <!-- HEADER -->
     <header>
         <div class="top-bar">
-            <div class="logo">World<span> Apex</span></div>
+            <div class="logo">World <span> Apex</span></div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#Entertainment-section" >Entertainment</a></li>
-                    <li><a href="index.html#sports-section" >Sports</a></li>
-                    <li><a href="index.html#politics-section" >Politics</a></li>
-                    <li><a href="#" id="contact-link">Contact</a></li>
+                    <li><a data-translate href="index.html">Home</a></li>
+                    <li><a data-translate href="#" id="contact-link">Contact</a></li>
+                    <li><a data-translate href="World-news.html" >World</a></li>
+                    <div class="dropdown">
+                        <select id="language">
+                            <option value="en" selected>English 🇬🇧</option>
+                            <option value="es">Español 🇪🇸</option>
+                            <option value="fr">Français 🇫🇷</option>
+                            <option value="de">Deutsch 🇩🇪</option>
+                            <option value="hi">हिन्दी 🇮🇳</option>
+                            <option value="ar">العربية 🇸🇦</option>
+                            <option value="zh">中文 🇨🇳</option>
+                        </select>
+                    </div>
+                                       
                     <div class="theme-switcher" onclick="toggleTheme()">
                         <span class="material-icons" id="theme-icon">dark_mode</span>
                     </div>
+                   
                 </ul>
+               
             </nav>
         </div>
         <div id="header-nav" class="nav-bar">
             <ul>
-                <li><a href="index.html#Trending-section" >Trending</a></li>
-                <li><a href="index.html#sports-section" >Sports</a></li>
-                <li><a href="index.html#World-section" >World</a></li>
-                <li><a href="index.html#weather-section" >Weather</a></li>
-                <li><a href="index.html#Astrology-section" >Astrology</a></li>
-                <li><a href="index.html#Technology-section" >Technology</a></li>
-                <li><a href="index.html#Top-section" >Top News</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Trending-news.html"  >Trending</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="index.html#weather-section" >Weather</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Entertainment-news.html" >Entertainment</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Sports-news.html" >Sports</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Poltitics-news.html" >Politics</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Astrology-news.html" >Astrology</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Technology-news.html" >Technology</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="top-news.html" >Top News</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- BREAKING NEWS TICKER -->
-    <section class="breaking-news">
-        <marquee class="runner"> Breaking News: Major updates happening now! Stay tuned for live reports. </marquee>
+     <!-- BREAKING NEWS TICKER -->
+     <section class="breaking-news">
+        <marquee data-translate class="runner"> Breaking News: Major updates happening now! Stay tuned for live reports. </marquee>
     </section>
 
     <!-- MAIN CONTENT -->
     <main1>
         <div class="main-news-header" id="Top-section">
-            <h1>Astrology</h1>
+            <h1 data-translate>Astrology</h1>
         </div>
         <section id="Astrology-section" class="news-container">
 
             <div class="news-card">
                 <img src="astrology01.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Weekly Horoscope: What’s in Store for Your Sign?</h2>
-                    <p>Check out this week’s horoscope predictions for love, career, and health.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Weekly Horoscope: What’s in Store for Your Sign?</h2>
+                    <p data-translate>Check out this week’s horoscope predictions for love, career, and health.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="astrology02.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Mercury Retrograde: How It Affects You</h2>
-                    <p>Mercury is in retrograde again—find out what this means for your zodiac sign.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Mercury Retrograde: How It Affects You</h2>
+                    <p data-translate>Mercury is in retrograde again—find out what this means for your zodiac sign.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="astrology03.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Full Moon in Virgo: Manifestation & Energy Shifts</h2>
-                    <p>The upcoming full moon in Virgo brings strong energy shifts. Learn how to harness it.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Full Moon in Virgo: Manifestation & Energy Shifts</h2>
+                    <p data-translate>The upcoming full moon in Virgo brings strong energy shifts. Learn how to harness it.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="astrology04.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Saturn Return: What It Means for Your Future</h2>
-                    <p>If you’re around 27-30 years old, your Saturn Return is coming. Here’s what to expect.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Saturn Return: What It Means for Your Future</h2>
+                    <p data-translate>If you’re around 27-30 years old, your Saturn Return is coming. Here’s what to expect.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="astrology05.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Lucky Numbers for Each Zodiac Sign</h2>
-                    <p>Astrologers reveal the lucky numbers that could bring you fortune based on your sign.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Lucky Numbers for Each Zodiac Sign</h2>
+                    <p data-translate>Astrologers reveal the lucky numbers that could bring you fortune based on your sign.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="astrology06.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Venus in Leo: Romance & Passion Soar</h2>
-                    <p>As Venus moves into Leo, passion and romance take center stage for many signs.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Venus in Leo: Romance & Passion Soar</h2>
+                    <p data-translate>As Venus moves into Leo, passion and romance take center stage for many signs.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="astrology07.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>New Moon Rituals: Setting Intentions</h2>
-                    <p>Discover powerful new moon rituals to manifest your dreams and goals.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>New Moon Rituals: Setting Intentions</h2>
+                    <p data-translate>Discover powerful new moon rituals to manifest your dreams and goals.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="astrology08.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>2025 Astrology Predictions: Big Changes Ahead</h2>
-                    <p>Astrologers predict major planetary shifts and what they mean for the world.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>2025 Astrology Predictions: Big Changes Ahead</h2>
+                    <p data-translate>Astrologers predict major planetary shifts and what they mean for the world.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="astrology09.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Which Zodiac Signs Are the Luckiest in 2025?</h2>
-                    <p>Find out which signs are expected to experience great luck in 2025.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Which Zodiac Signs Are the Luckiest in 2025?</h2>
+                    <p data-translate>Find out which signs are expected to experience great luck in 2025.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="astrology10.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>How the Lunar Eclipse Will Impact You</h2>
-                    <p>The upcoming lunar eclipse brings transformation and changes—see how it affects you.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>How the Lunar Eclipse Will Impact You</h2>
+                    <p data-translate>The upcoming lunar eclipse brings transformation and changes—see how it affects you.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
@@ -160,45 +173,45 @@
             <div class="news-card">
                 <img src="astrology11.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Which Crystals Are Best for Your Zodiac Sign?</h2>
-                    <p>Discover which healing crystals align best with your zodiac sign’s energy.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Which Crystals Are Best for Your Zodiac Sign?</h2>
+                    <p data-translate>Discover which healing crystals align best with your zodiac sign’s energy.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="astrology12.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Retrograde Season: A Survival Guide</h2>
-                    <p>Several planets are going retrograde—here’s how to stay balanced during this period.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Retrograde Season: A Survival Guide</h2>
+                    <p data-translate>Several planets are going retrograde—here’s how to stay balanced during this period.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="astrology13.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Love Compatibility: Which Signs Match Best?</h2>
-                    <p>Check which zodiac signs have the strongest love compatibility and why.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Love Compatibility: Which Signs Match Best?</h2>
+                    <p data-translate>Check which zodiac signs have the strongest love compatibility and why.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="astrology14.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>How the Sun Sign Affects Personality</h2>
-                    <p>Understanding how your sun sign influences your personality traits.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>How the Sun Sign Affects Personality</h2>
+                    <p data-translate>Understanding how your sun sign influences your personality traits.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="astrology15.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Chakra Healing for Each Zodiac Sign</h2>
-                    <p>Find out how chakra healing techniques can align with your astrological sign.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Chakra Healing for Each Zodiac Sign</h2>
+                    <p data-translate>Find out how chakra healing techniques can align with your astrological sign.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
@@ -222,26 +235,26 @@
         <footer id="footer">
             <div class="footer-container">
                 <div class="footer-section">
-                    <h3>About US </h3>
-                    <p>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
+                    <h3 data-translate>About US </h3>
+                    <p data-translate>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
                         sports, and technology.</p>
                 </div>
     
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3 data-translate>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#" class="scroll-link" data-section="politics-section">Politics</a></li>
-                        <li><a href="#">Business</a></li>
-                        <li><a href="#">Technology</a></li>
-                        <li><a href="#" class="scroll-link" data-section="sports-section">Sports</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a data-translate href="index.html">Home</a></li>
+                        <li><a data-translate href="index.html">Blog</a></li>
+                        <li><a data-translate href="Poltitics-news.html"   >Politics</a></li>
+                        <li><a data-translate href="#">Business</a></li>
+                        <li><a data-translate href="Technology-news.html">Technology</a></li>
+                        <li><a data-translate href="Sports-news.html" >Sports</a></li>
+                        <li><a data-translate href="#">Contact</a></li>
                     </ul>
                 </div>
     
                 <div class="footer-section">
-                    <h3>Follow Us</h3>
+                    <h3 data-translate>Follow Us</h3>
                     <div class="social-icons">
                         <a href="facebook-link"><img src="FB.png" alt="Facebook"></a>
                         <a href="https://x.com/WorldApexX?t=MITbHaIp9q5MLRlecPzCOw&s=09"><img src="X.png" alt="Twitter"></a>
@@ -251,8 +264,8 @@
                 </div>
     
                 <div class="footer-section">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for daily updates.</p>
+                    <h3 data-translate>Newsletter</h3>
+                    <p data-translate>Subscribe to our newsletter for daily updates.</p>
                     <form id="newsletter-form"></form>
                     <form action="https://formspree.io/f/xjkgqdqb"
                         method="POST" >
@@ -271,8 +284,8 @@
             </div>
     
             <div class="footer-bottom">
-                <p>© 2025 World Apex | All Rights Reserved</p>
-                <p><a class="pol" href="policy.html">Privacy Policy</a> | <a class="ter" href="terms.html">Terms &
+                <p >© 2025 World Apex | All Rights Reserved</p>
+                <p ><a  class="pol" href="policy.html">Privacy Policy</a> | <a class="ter" href="terms.html">Terms &
                         Conditions</a></p>
             </div>
         </footer>

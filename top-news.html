@@ -26,294 +26,291 @@
     <!-- HEADER -->
     <header>
         <div class="top-bar">
-            <div class="logo">World<span> Apex</span></div>
+            <div class="logo">World <span> Apex</span></div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#Entertainment-section" >Entertainment</a></li>
-                    <li><a href="index.html#sports-section" >Sports</a></li>
-                    <li><a href="index.html#politics-section" >Politics</a></li>
-                    <li><a href="#" id="contact-link">Contact</a></li>
+                    <li><a data-translate href="index.html">Home</a></li>
+                    <li><a data-translate href="#" id="contact-link">Contact</a></li>
+                    <li><a data-translate href="World-news.html"  >World</a></li>
+                    <div class="dropdown">
+                        <select id="language">
+                            <option value="en" selected>English 🇬🇧</option>
+                            <option value="es">Español 🇪🇸</option>
+                            <option value="fr">Français 🇫🇷</option>
+                            <option value="de">Deutsch 🇩🇪</option>
+                            <option value="hi">हिन्दी 🇮🇳</option>
+                            <option value="ar">العربية 🇸🇦</option>
+                            <option value="zh">中文 🇨🇳</option>
+                        </select>
+                    </div>
+                                       
                     <div class="theme-switcher" onclick="toggleTheme()">
                         <span class="material-icons" id="theme-icon">dark_mode</span>
                     </div>
+                   
                 </ul>
+               
             </nav>
         </div>
         <div id="header-nav" class="nav-bar">
             <ul>
-                <li><a href="index.html#Trending-section" >Trending</a></li>
-                <li><a href="index.html#sports-section" >Sports</a></li>
-                <li><a href="index.html#World-section" >World</a></li>
-                <li><a href="index.html#weather-section" >Weather</a></li>
-                <li><a href="index.html#Astrology-section" >Astrology</a></li>
-                <li><a href="index.html#Technology-section" >Technology</a></li>
-                <li><a href="index.html#Top-section" >Top News</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Trending-news.html"  >Trending</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="index.html#weather-section" >Weather</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Entertainment-news.html" >Entertainment</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Sports-news.html" >Sports</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Poltitics-news.html" >Politics</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Astrology-news.html" >Astrology</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Technology-news.html" >Technology</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="top-news.html" >Top News</a></li>
             </ul>
         </div>
     </header>
 
     <!-- BREAKING NEWS TICKER -->
     <section class="breaking-news">
-        <marquee class="runner"> Breaking News: Major updates happening now! Stay tuned for live reports. </marquee>
+        <marquee data-translate class="runner"> Breaking News: Major updates happening now! Stay tuned for live reports. </marquee>
     </section>
+
 
     <!-- MAIN CONTENT -->
     <main1>
         <div class="main-news-header" id="Top-section">
-            <h1>Top News</h1>
+            <h1 data-translate>Top News</h1>
         </div>
         <section id="Top-section" class="news-container">
             <div class="news-card">
+                <img src="spacex-returns.jpg" onerror="this.style.display='none';" alt="SpaceX Dragon Capsule">
+                <div class="news-content">
+                    <h2 data-translate>Elon Musk's SpaceX Dragon Capsule Returns Astronauts After Extended ISS Mission</h2>
+                    <p data-translate>After spending 286 days in space, NASA astronauts Sunita Williams and Butch Wilmore safely returned to Earth aboard SpaceX’s Dragon capsule. Their mission was extended due to Boeing Starliner delays.</p>
+                    <a data-translate href="spacex-return.html">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <img src="eagles-free-agency.jpg" onerror="this.style.display='none';" alt="Philadelphia Eagles NFL Free Agency">
+                <div class="news-content">
+                    <h2 data-translate>Philadelphia Eagles Make Key Moves in NFL Free Agency</h2>
+                    <p data-translate>The Philadelphia Eagles have signed key defensive players, including Azeez Ojulari and Adoree' Jackson, while offloading others to manage their salary cap efficiently.</p>
+                    <a data-translate href="eagles-free-agency.html">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <img src="japan-earthquake.jpg" onerror="this.style.display='none';" alt="Japan Earthquake Recovery">
+                <div class="news-content">
+                    <h2 data-translate>Japan Begins Post-Earthquake Recovery Efforts</h2>
+                    <p data-translate>Japan has started recovery operations after a massive 7.8-magnitude earthquake struck the country, displacing thousands and causing significant damage to infrastructure.</p>
+                    <a data-translate href="japan-earthquakehtml">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <img src="tech-layoffs.jpg" onerror="this.style.display='none';" alt="Tech Layoffs">
+                <div class="news-content">
+                    <h2 data-translate>Major Tech Layoffs: Thousands Lose Jobs Amid Economic Slowdown</h2>
+                    <p data-translate>Tech giants including Google, Amazon, and Meta have announced mass layoffs as companies struggle with declining revenue and AI-driven job automation.</p>
+                    <a data-translate href="tech-layoffs.html">Read More</a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <img src="israel-crisis.jpg" onerror="this.style.display='none';" alt="Israel Political Crisis">
+                <div class="news-content">
+                    <h2 data-translate>Israeli Government Faces Crisis Amid Protests and Political Turmoil</h2>
+                    <p data-translate>Mass protests continue in Israel as the government faces backlash over judicial reforms and corruption scandals, pushing the country into political instability.</p>
+                    <a data-translate href="israel-crisis.html">Read More</a>
+                </div>
+            </div>
+            
+            
+            <div class="news-card">
                 <img src="trump&sunita1.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Trump and Putin Agree to Temporary Ceasefire in Ukraine</h2>
-                    <p>Former U.S. President Donald Trump and Russian President Vladimir Putin have agreed on a temporary ceasefire in Ukraine. The deal, mediated by European nations, aims to reduce ongoing hostilities but remains fragile as key terms are still being negotiated. Many experts doubt the long-term sustainability of the agreement.</p>
-                    <a href="ceasefire.html">Read More</a>
+                    <h2 data-translate>Trump and Putin Agree to Temporary Ceasefire in Ukraine</h2>
+                    <p data-translate>Former U.S. President Donald Trump and Russian President Vladimir Putin have agreed on a temporary ceasefire in Ukraine. The deal, mediated by European nations, aims to reduce ongoing hostilities but remains fragile as key terms are still being negotiated. Many experts doubt the long-term sustainability of the agreement.</p>
+                    <a data-translate href="Trump&sunita.html">Read More</a>
                 </div>
             </div>
             
             <div class="news-card">
-                <img src="india-steel.jpg" onerror="this.style.display='none';" alt="Image">
+                <img src="india-steel.jpeg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>India Proposes 12% Safeguard Duty on Steel Imports</h2>
-                    <p>The Indian government has proposed a 12% safeguard duty on steel imports to protect local manufacturers from cheaper foreign alternatives. Industry experts believe this move will help stabilize local steel production but could lead to increased costs for infrastructure projects.</p>
-                    <a href="india-steel.html">Read More</a>
+                    <h2 data-translate>India Proposes 12% Safeguard Duty on Steel Imports</h2>
+                    <p data-translate>The Indian government has proposed a 12% safeguard duty on steel imports to protect local manufacturers from cheaper foreign alternatives. Industry experts believe this move will help stabilize local steel production but could lead to increased costs for infrastructure projects.</p>
+                    <a data-translate href="india-steel.html">Read More</a>
                 </div>
             </div>
             
             <div class="news-card">
-                <img src="astronaut-return.jpg" onerror="this.style.display='none';" alt="Image">
+                <img src="astronaut-return.jpeg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Stranded Astronauts Return to Earth After Nine Months</h2>
-                    <p>Three astronauts who were stranded in space due to technical issues with their spacecraft have finally returned to Earth after nine months. The delay was caused by a malfunctioning re-entry capsule, leading to extended stay aboard the International Space Station.</p>
-                    <a href="astronaut-return.html">Read More</a>
+                    <h2 data-translate>Stranded Astronauts Return to Earth After Nine Months</h2>
+                    <p data-translate>Three astronauts who were stranded in space due to technical issues with their spacecraft have finally returned to Earth after nine months. The delay was caused by a malfunctioning re-entry capsule, leading to extended stay aboard the International Space Station.</p>
+                    <a data-translate href="astronaut-return.html">Read More</a>
                 </div>
             </div>
             
-            <div class="news-card">
-                <img src="sudan-rights.jpg" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2>UN Reports Severe Human Rights Violations in Sudan</h2>
-                    <p>The United Nations has released a report detailing widespread human rights violations in Sudan, including mass displacement and war crimes. The conflict continues to escalate as international pressure mounts for a resolution.</p>
-                    <a href="sudan-rights.html">Read More</a>
-                </div>
-            </div>
-            
-            <div class="news-card">
-                <img src="netanyahu-security.jpg" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2>Israel's Netanyahu Seeks to Dismiss Security Agency Chief</h2>
-                    <p>Prime Minister Benjamin Netanyahu has sparked controversy by seeking to dismiss Israel's security agency chief. The move has raised concerns over political interference in national defense matters, leading to protests from opposition leaders.</p>
-                    <a href="netanyahu-security.html">Read More</a>
-                </div>
-            </div>
-            
-            <div class="news-card">
-                <img src="us-tornado.jpg" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2>Massive Tornadoes Cause Devastation in Central US</h2>
-                    <p>Multiple tornadoes have struck central U.S., causing widespread destruction and leaving thousands without power. Emergency response teams are actively working to rescue stranded residents, and the federal government has pledged disaster relief funds.</p>
-                    <a href="us-tornado.html">Read More</a>
-                </div>
-            </div>
-            
-            <div class="news-card">
-                <img src="dalai-lama.jpg" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2>Dalai Lama Announces Successor to Be Born Outside China</h2>
-                    <p>In a major statement, the Dalai Lama has declared that his successor will be chosen from outside Chinese influence. This decision challenges China's control over Tibetan Buddhist practices and is expected to heighten political tensions.</p>
-                    <a href="dalai-lama.html">Read More</a>
-                </div>
-            </div>
-            
-            <div class="news-card">
-                <img src="indonesia-politics.jpg" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2>Indonesia's President Plans 'Super Party' to Boost Influence</h2>
-                    <p>In a bid to consolidate power, Indonesia’s President has announced plans to form a 'Super Party' by merging multiple political factions. Critics argue this could weaken democratic opposition, while supporters claim it will bring political stability.</p>
-                    <a href="indonesia-politics.html">Read More</a>
-                </div>
-            </div>
-            
-            <div class="news-card">
-                <img src="europe-defense.jpg" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2>European Leaders Strengthen Defense Amid Russian Aggression</h2>
-                    <p>In response to growing security threats, European nations have announced a significant boost in military spending. The move aims to counteract increasing Russian military activity near NATO borders, with leaders stressing the need for stronger defense alliances.</p>
-                    <a href="europe-defense.html">Read More</a>
-                </div>
-            </div>
-            
-            
-                <div class="news-card">
-                    <img src="T101.png" onerror="this.style.display='none';" alt="Image">
-                    <div class="news-content">
-                        <h2>India vs. Pakistan: Champions Trophy Showdown</h2>
-                        <p>Pakistan set a target of 241 runs, with Saud Shakeel scoring 62. India, at 115/2 in 21 overs, has Kohli leading the chase with 41.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-            
+                       
                 <div class="news-card">
                     <img src="logo.jpg" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>Stock Market Surges Amid Tech Boom</h2>
-                        <p>The stock market saw a 3% rise today, led by tech giants Apple and Tesla posting record gains.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>Stock Market Surges Amid Tech Boom</h2>
+                        <p data-translate>The stock market saw a 3% rise today, led by tech giants Apple and Tesla posting record gains.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>NASA Discovers New Earth-Like Planet</h2>
-                        <p>Astronomers have identified a new exoplanet with conditions potentially suitable for life.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>NASA Discovers New Earth-Like Planet</h2>
+                        <p data-translate>Astronomers have identified a new exoplanet with conditions potentially suitable for life.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T104.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>Hollywood Actors Announce Major Strike</h2>
-                        <p>Hollywood actors have officially gone on strike, demanding better pay and working conditions.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>Hollywood Actors Announce Major Strike</h2>
+                        <p data-translate>Hollywood actors have officially gone on strike, demanding better pay and working conditions.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T105.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>Heavy Rains Cause Flooding in New York</h2>
-                        <p>Severe rainfall has led to major flooding in parts of New York, disrupting daily life.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>Heavy Rains Cause Flooding in New York</h2>
+                        <p data-translate>Severe rainfall has led to major flooding in parts of New York, disrupting daily life.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T106.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>AI Breakthrough: New Chatbot Beats Human Intelligence</h2>
-                        <p>A revolutionary AI chatbot has surpassed human intelligence in multiple tests.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>AI Breakthrough: New Chatbot Beats Human Intelligence</h2>
+                        <p data-translate>A revolutionary AI chatbot has surpassed human intelligence in multiple tests.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T107.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>Electric Cars Overtake Gas Vehicles in Sales</h2>
-                        <p>For the first time in history, electric vehicle sales have surpassed gas-powered cars.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>Electric Cars Overtake Gas Vehicles in Sales</h2>
+                        <p data-translate>For the first time in history, electric vehicle sales have surpassed gas-powered cars.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T108.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>World Leaders Meet for Climate Summit</h2>
-                        <p>Global leaders gathered today to discuss urgent climate action plans for 2030.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>World Leaders Meet for Climate Summit</h2>
+                        <p data-translate>Global leaders gathered today to discuss urgent climate action plans for 2030.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T109.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>Olympics 2024: New Sports Added</h2>
-                        <p>Skateboarding and climbing are among the new sports included in the upcoming Olympic Games.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>Olympics 2024: New Sports Added</h2>
+                        <p data-translate>Skateboarding and climbing are among the new sports included in the upcoming Olympic Games.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T110.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>Rare Solar Eclipse to Occur Next Week</h2>
-                        <p>Scientists predict a rare solar eclipse will be visible in multiple countries next week.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>Rare Solar Eclipse to Occur Next Week</h2>
+                        <p data-translate>Scientists predict a rare solar eclipse will be visible in multiple countries next week.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T111.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>Technology Firms Announce AI Alliance</h2>
-                        <p>Major tech companies have joined forces to advance AI research and development.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>Technology Firms Announce AI Alliance</h2>
+                        <p data-translate>Major tech companies have joined forces to advance AI research and development.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T112.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>Famous Author Releases New Bestseller</h2>
-                        <p>The highly anticipated novel by a best-selling author is now available worldwide.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>Famous Author Releases New Bestseller</h2>
+                        <p data-translate>The highly anticipated novel by a best-selling author is now available worldwide.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T113.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>Health Experts Recommend New Diet Trends</h2>
-                        <p>Nutritionists suggest a new diet plan that promotes better metabolism and overall health.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>Health Experts Recommend New Diet Trends</h2>
+                        <p data-translate>Nutritionists suggest a new diet plan that promotes better metabolism and overall health.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T114.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>New Smartphone Model Breaks Sales Records</h2>
-                        <p>The latest smartphone release has shattered previous sales records in just 24 hours.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>New Smartphone Model Breaks Sales Records</h2>
+                        <p data-translate>The latest smartphone release has shattered previous sales records in just 24 hours.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T115.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>Scientists Develop Cure for Rare Disease</h2>
-                        <p>A groundbreaking medical breakthrough offers hope to thousands of patients worldwide.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>Scientists Develop Cure for Rare Disease</h2>
+                        <p data-translate>A groundbreaking medical breakthrough offers hope to thousands of patients worldwide.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T116.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>SpaceX Successfully Launches New Rocket</h2>
-                        <p>SpaceX's latest rocket launch was a success, opening new possibilities for space exploration.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>SpaceX Successfully Launches New Rocket</h2>
+                        <p data-translate>SpaceX's latest rocket launch was a success, opening new possibilities for space exploration.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T117.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>Football Star Announces Retirement</h2>
-                        <p>One of the world's greatest football players has officially announced their retirement.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>Football Star Announces Retirement</h2>
+                        <p data-translate>One of the world's greatest football players has officially announced their retirement.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T118.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>Major Cybersecurity Attack Hits Businesses</h2>
-                        <p>A massive cyberattack has impacted several global companies, causing security concerns.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>Major Cybersecurity Attack Hits Businesses</h2>
+                        <p data-translate>A massive cyberattack has impacted several global companies, causing security concerns.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>
             
                 <div class="news-card">
                     <img src="T119.png" onerror="this.style.display='none';" alt="Image">
                     <div class="news-content">
-                        <h2>Breakthrough in Renewable Energy Technology</h2>
-                        <p>Scientists have developed a new, more efficient way to harness renewable energy.</p>
-                        <a href="#">Read More</a>
+                        <h2 data-translate>Breakthrough in Renewable Energy Technology</h2>
+                        <p data-translate>Scientists have developed a new, more efficient way to harness renewable energy.</p>
+                        <a data-translate href="#">Read More</a>
                     </div>
                 </div>            
         </section>
@@ -335,26 +332,26 @@
         <footer id="footer">
             <div class="footer-container">
                 <div class="footer-section">
-                    <h3>About US </h3>
-                    <p>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
+                    <h3 data-translate>About US </h3>
+                    <p data-translate>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
                         sports, and technology.</p>
                 </div>
     
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3 data-translate>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#" class="scroll-link" data-section="politics-section">Politics</a></li>
-                        <li><a href="#">Business</a></li>
-                        <li><a href="#">Technology</a></li>
-                        <li><a href="#" class="scroll-link" data-section="sports-section">Sports</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a data-translate href="index.html">Home</a></li>
+                        <li><a data-translate href="index.html">Blog</a></li>
+                        <li><a data-translate href="Poltitics-news.html"   >Politics</a></li>
+                        <li><a data-translate href="#">Business</a></li>
+                        <li><a data-translate href="Technology-news.html">Technology</a></li>
+                        <li><a data-translate href="Sports-news.html" >Sports</a></li>
+                        <li><a data-translate href="#">Contact</a></li>
                     </ul>
                 </div>
     
                 <div class="footer-section">
-                    <h3>Follow Us</h3>
+                    <h3 data-translate>Follow Us</h3>
                     <div class="social-icons">
                         <a href="facebook-link"><img src="FB.png" alt="Facebook"></a>
                         <a href="https://x.com/WorldApexX?t=MITbHaIp9q5MLRlecPzCOw&s=09"><img src="X.png" alt="Twitter"></a>
@@ -364,8 +361,8 @@
                 </div>
     
                 <div class="footer-section">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for daily updates.</p>
+                    <h3 data-translate>Newsletter</h3>
+                    <p data-translate>Subscribe to our newsletter for daily updates.</p>
                     <form id="newsletter-form"></form>
                     <form action="https://formspree.io/f/xjkgqdqb"
                         method="POST" >

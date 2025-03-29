@@ -26,132 +26,145 @@
     <!-- HEADER -->
     <header>
         <div class="top-bar">
-            <div class="logo">World<span> Apex</span></div>
+            <div class="logo">World <span> Apex</span></div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#Entertainment-section" >Entertainment</a></li>
-                    <li><a href="index.html#sports-section" >Sports</a></li>
-                    <li><a href="index.html#politics-section" >Politics</a></li>
-                    <li><a href="#" id="contact-link">Contact</a></li>
+                    <li><a data-translate href="index.html">Home</a></li>
+                    <li><a data-translate href="#" id="contact-link">Contact</a></li>
+                    <li><a data-translate href="World-news.html"  >World</a></li>
+                    <div class="dropdown">
+                        <select id="language">
+                            <option value="en" selected>English 🇬🇧</option>
+                            <option value="es">Español 🇪🇸</option>
+                            <option value="fr">Français 🇫🇷</option>
+                            <option value="de">Deutsch 🇩🇪</option>
+                            <option value="hi">हिन्दी 🇮🇳</option>
+                            <option value="ar">العربية 🇸🇦</option>
+                            <option value="zh">中文 🇨🇳</option>
+                        </select>
+                    </div>
+                                       
                     <div class="theme-switcher" onclick="toggleTheme()">
                         <span class="material-icons" id="theme-icon">dark_mode</span>
                     </div>
+                   
                 </ul>
+               
             </nav>
         </div>
         <div id="header-nav" class="nav-bar">
             <ul>
-                <li><a href="index.html#Trending-section" >Trending</a></li>
-                <li><a href="index.html#sports-section" >Sports</a></li>
-                <li><a href="index.html#World-section" >World</a></li>
-                <li><a href="index.html#weather-section" >Weather</a></li>
-                <li><a href="index.html#Astrology-section" >Astrology</a></li>
-                <li><a href="index.html#Technology-section" >Technology</a></li>
-                <li><a href="index.html#Top-section" >Top News</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Trending-news.html"  >Trending</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="index.html#weather-section" >Weather</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Entertainment-news.html" >Entertainment</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Sports-news.html" >Sports</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Poltitics-news.html" >Politics</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Astrology-news.html" >Astrology</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Technology-news.html" >Technology</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="top-news.html" >Top News</a></li>
             </ul>
         </div>
     </header>
 
     <!-- BREAKING NEWS TICKER -->
     <section class="breaking-news">
-        <marquee class="runner"> Breaking News: Major updates happening now! Stay tuned for live reports. </marquee>
+        <marquee data-translate class="runner"> Breaking News: Major updates happening now! Stay tuned for live reports. </marquee>
     </section>
 
     <!-- MAIN CONTENT -->
     <main1>
         <div class="main-news-header" id="Top-section">
-            <h1>Entertainment News</h1>
+            <h1 data-translate>Entertainment News</h1>
         </div>
         <section id="Entertainment-section" class="news-container">
 
             <div class="news-card">
                 <img src="entertainment01.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Hollywood: New Avengers Movie Announced</h2>
-                    <p>Marvel Studios officially confirms the next Avengers movie, set to release in 2026.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Hollywood: New Avengers Movie Announced</h2>
+                    <p data-translate>Marvel Studios officially confirms the next Avengers movie, set to release in 2026.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="entertainment02.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Bollywood: Shah Rukh Khan’s New Blockbuster</h2>
-                    <p>SRK’s latest movie crosses ₹1000 crore at the box office, breaking records worldwide.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Bollywood: Shah Rukh Khan’s New Blockbuster</h2>
+                    <p data-translate>SRK’s latest movie crosses ₹1000 crore at the box office, breaking records worldwide.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="entertainment03.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Music: Taylor Swift Drops Surprise Album</h2>
-                    <p>Global pop icon Taylor Swift releases a surprise album at midnight, fans go crazy!</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Music: Taylor Swift Drops Surprise Album</h2>
+                    <p data-translate>Global pop icon Taylor Swift releases a surprise album at midnight, fans go crazy!</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="entertainment04.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Oscars 2025: Best Picture Winner Revealed</h2>
-                    <p>The prestigious Academy Awards announce this year's Best Picture winner!</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Oscars 2025: Best Picture Winner Revealed</h2>
+                    <p data-translate>The prestigious Academy Awards announce this year's Best Picture winner!</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="entertainment05.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>K-Pop: BTS Announces World Tour</h2>
-                    <p>BTS surprises fans with a world tour announcement, set to begin later this year.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>K-Pop: BTS Announces World Tour</h2>
+                    <p data-translate>BTS surprises fans with a world tour announcement, set to begin later this year.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="entertainment06.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Netflix: Most-Watched Show of the Year</h2>
-                    <p>A Netflix original series sets a record as the most-watched show in streaming history.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Netflix: Most-Watched Show of the Year</h2>
+                    <p data-translate>A Netflix original series sets a record as the most-watched show in streaming history.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="entertainment07.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Bollywood: Ranbir Kapoor & Alia Bhatt’s New Movie</h2>
-                    <p>Real-life couple Ranbir and Alia’s new film creates a buzz in the industry.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Bollywood: Ranbir Kapoor & Alia Bhatt’s New Movie</h2>
+                    <p data-translate>Real-life couple Ranbir and Alia’s new film creates a buzz in the industry.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="entertainment08.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Grammy Awards: Beyoncé Wins Album of the Year</h2>
-                    <p>Beyoncé wins big at the Grammys, taking home Album of the Year for her latest release.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Grammy Awards: Beyoncé Wins Album of the Year</h2>
+                    <p data-translate>Beyoncé wins big at the Grammys, taking home Album of the Year for her latest release.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="entertainment09.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Hollywood: Tom Cruise’s New Action Thriller</h2>
-                    <p>Tom Cruise stars in a high-octane action thriller that has fans on the edge of their seats.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Hollywood: Tom Cruise’s New Action Thriller</h2>
+                    <p data-translate>Tom Cruise stars in a high-octane action thriller that has fans on the edge of their seats.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="entertainment10.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Bollywood: Deepika Padukone Joins Hollywood Project</h2>
-                    <p>Bollywood superstar Deepika Padukone lands a major role in an upcoming Hollywood film.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Bollywood: Deepika Padukone Joins Hollywood Project</h2>
+                    <p data-translate>Bollywood superstar Deepika Padukone lands a major role in an upcoming Hollywood film.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
@@ -160,45 +173,45 @@
             <div class="news-card">
                 <img src="entertainment11.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Disney: Frozen 3 Officially in Development</h2>
-                    <p>Disney confirms the development of Frozen 3, set to bring back beloved characters.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Disney: Frozen 3 Officially in Development</h2>
+                    <p data-translate>Disney confirms the development of Frozen 3, set to bring back beloved characters.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="entertainment12.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Hollywood: Fast & Furious Franchise to End</h2>
-                    <p>Vin Diesel announces that the Fast & Furious franchise will conclude after the next movie.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Hollywood: Fast & Furious Franchise to End</h2>
+                    <p data-translate>Vin Diesel announces that the Fast & Furious franchise will conclude after the next movie.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="entertainment13.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Music: Ed Sheeran Announces Retirement?</h2>
-                    <p>Speculations arise as Ed Sheeran hints at taking a long break from music.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Music: Ed Sheeran Announces Retirement?</h2>
+                    <p data-translate>Speculations arise as Ed Sheeran hints at taking a long break from music.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="entertainment14.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Bollywood: Priyanka Chopra’s Next Big Film</h2>
-                    <p>Priyanka Chopra signs a major Bollywood and Hollywood collaboration project.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Bollywood: Priyanka Chopra’s Next Big Film</h2>
+                    <p data-translate>Priyanka Chopra signs a major Bollywood and Hollywood collaboration project.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="entertainment15.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Streaming Wars: Amazon Prime vs. Netflix</h2>
-                    <p>Amazon Prime Video and Netflix battle for streaming dominance with exclusive releases.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Streaming Wars: Amazon Prime vs. Netflix</h2>
+                    <p data-translate>Amazon Prime Video and Netflix battle for streaming dominance with exclusive releases.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
@@ -222,37 +235,37 @@
         <footer id="footer">
             <div class="footer-container">
                 <div class="footer-section">
-                    <h3>About US </h3>
-                    <p>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
+                    <h3 data-translate>About US </h3>
+                    <p data-translate>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
                         sports, and technology.</p>
                 </div>
     
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3 data-translate>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#" class="scroll-link" data-section="politics-section">Politics</a></li>
-                        <li><a href="#">Business</a></li>
-                        <li><a href="#">Technology</a></li>
-                        <li><a href="#" class="scroll-link" data-section="sports-section">Sports</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a data-translate href="index.html">Home</a></li>
+                        <li><a data-translate href="index.html">Blog</a></li>
+                        <li><a data-translate href="Poltitics-news.html"   >Politics</a></li>
+                        <li><a data-translate href="#">Business</a></li>
+                        <li><a data-translate href="Technology-news.html">Technology</a></li>
+                        <li><a data-translate href="Sports-news.html" >Sports</a></li>
+                        <li><a data-translate href="#">Contact</a></li>
                     </ul>
                 </div>
     
                 <div class="footer-section">
-                    <h3>Follow Us</h3>
+                    <h3 data-translate>Follow Us</h3>
                     <div class="social-icons">
-                        <a href="facebook-link"><img src="FB.png" alt="Facebook"></a>
-                        <a href="https://x.com/WorldApexX?t=MITbHaIp9q5MLRlecPzCOw&s=09"><img src="X.png" alt="Twitter"></a>
-                        <a href="Youtube-link"><img src="YT.png" alt="YouTube"></a>
-                        <a href="Instagram-link"><img src="IN.png" alt="Instagram"></a>
+                        <a data-translate href="facebook-link"><img src="FB.png" alt="Facebook"></a>
+                        <a data-translate href="https://x.com/WorldApexX?t=MITbHaIp9q5MLRlecPzCOw&s=09"><img src="X.png" alt="Twitter"></a>
+                        <a data-translate href="Youtube-link"><img src="YT.png" alt="YouTube"></a>
+                        <a data-translate href="Instagram-link"><img src="IN.png" alt="Instagram"></a>
                     </div>
                 </div>
     
                 <div class="footer-section">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for daily updates.</p>
+                    <h3 data-translate>Newsletter</h3>
+                    <p data-translate>Subscribe to our newsletter for daily updates.</p>
                     <form id="newsletter-form"></form>
                     <form action="https://formspree.io/f/xjkgqdqb"
                         method="POST" >
@@ -271,8 +284,8 @@
             </div>
     
             <div class="footer-bottom">
-                <p>© 2025 World Apex | All Rights Reserved</p>
-                <p><a class="pol" href="policy.html">Privacy Policy</a> | <a class="ter" href="terms.html">Terms &
+                <p >© 2025 World Apex | All Rights Reserved</p>
+                <p ><a class="pol" href="policy.html">Privacy Policy</a> | <a class="ter" href="terms.html">Terms &
                         Conditions</a></p>
             </div>
         </footer>

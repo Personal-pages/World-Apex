@@ -26,132 +26,145 @@
     <!-- HEADER -->
     <header>
         <div class="top-bar">
-            <div class="logo">World<span> Apex</span></div>
+            <div class="logo">World <span> Apex</span></div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#Entertainment-section" >Entertainment</a></li>
-                    <li><a href="index.html#sports-section" >Sports</a></li>
-                    <li><a href="index.html#politics-section" >Politics</a></li>
-                    <li><a href="#" id="contact-link">Contact</a></li>
+                    <li><a data-translate href="index.html">Home</a></li>
+                    <li><a data-translate href="#" id="contact-link">Contact</a></li>
+                    <li><a data-translate href="World-news.html"  >World</a></li>
+                    <div class="dropdown">
+                        <select id="language">
+                            <option value="en" selected>English 🇬🇧</option>
+                            <option value="es">Español 🇪🇸</option>
+                            <option value="fr">Français 🇫🇷</option>
+                            <option value="de">Deutsch 🇩🇪</option>
+                            <option value="hi">हिन्दी 🇮🇳</option>
+                            <option value="ar">العربية 🇸🇦</option>
+                            <option value="zh">中文 🇨🇳</option>
+                        </select>
+                    </div>
+                                       
                     <div class="theme-switcher" onclick="toggleTheme()">
                         <span class="material-icons" id="theme-icon">dark_mode</span>
                     </div>
+                   
                 </ul>
+               
             </nav>
         </div>
         <div id="header-nav" class="nav-bar">
             <ul>
-                <li><a href="index.html#Trending-section" >Trending</a></li>
-                <li><a href="index.html#sports-section" >Sports</a></li>
-                <li><a href="index.html#World-section" >World</a></li>
-                <li><a href="index.html#weather-section" >Weather</a></li>
-                <li><a href="index.html#Astrology-section" >Astrology</a></li>
-                <li><a href="index.html#Technology-section" >Technology</a></li>
-                <li><a href="index.html#Top-section" >Top News</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Trending-news.html"  >Trending</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="index.html#weather-section" >Weather</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Entertainment-news.html" >Entertainment</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Sports-news.html" >Sports</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Poltitics-news.html" >Politics</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Astrology-news.html" >Astrology</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Technology-news.html" >Technology</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="top-news.html" >Top News</a></li>
             </ul>
         </div>
     </header>
 
     <!-- BREAKING NEWS TICKER -->
     <section class="breaking-news">
-        <marquee class="runner"> Breaking News: Major updates happening now! Stay tuned for live reports. </marquee>
+        <marquee data-translate class="runner"> Breaking News: Major updates happening now! Stay tuned for live reports. </marquee>
     </section>
 
     <!-- MAIN CONTENT -->
     <main1>
         <div class="main-news-header" id="Top-section">
-            <h1>World News</h1>
+            <h1 data-translate>World News</h1>
         </div>
         <section id="World-section" class="news-container">
 
             <div class="news-card">
                 <img src="world01.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Global: UN Holds Emergency Summit on Climate Crisis</h2>
-                    <p>The United Nations convenes an emergency summit to address the escalating climate crisis.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Global: UN Holds Emergency Summit on Climate Crisis</h2>
+                    <p data-translate>The United Nations convenes an emergency summit to address the escalating climate crisis.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="world02.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>USA: Presidential Elections Heat Up</h2>
-                    <p>The race for the White House intensifies as candidates gear up for the next debate.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>USA: Presidential Elections Heat Up</h2>
+                    <p data-translate>The race for the White House intensifies as candidates gear up for the next debate.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="world03.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Europe: France Introduces New Immigration Laws</h2>
-                    <p>The French government passes strict new immigration reforms sparking protests.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Europe: France Introduces New Immigration Laws</h2>
+                    <p data-translate>The French government passes strict new immigration reforms sparking protests.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="world04.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>China: Economic Growth Slows Amid Trade War</h2>
-                    <p>China’s economic growth rate declines as global trade tensions rise.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>China: Economic Growth Slows Amid Trade War</h2>
+                    <p data-translate>China’s economic growth rate declines as global trade tensions rise.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="world05.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Russia-Ukraine Conflict: Ceasefire Talks Underway</h2>
-                    <p>New diplomatic efforts are in place to establish a ceasefire in the ongoing conflict.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Russia-Ukraine Conflict: Ceasefire Talks Underway</h2>
+                    <p data-translate>New diplomatic efforts are in place to establish a ceasefire in the ongoing conflict.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="world06.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Middle East: Peace Agreement Signed</h2>
-                    <p>Two rival nations in the Middle East sign a historic peace agreement in Geneva.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Middle East: Peace Agreement Signed</h2>
+                    <p data-translate>Two rival nations in the Middle East sign a historic peace agreement in Geneva.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="world07.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>UK: King Charles III Addresses Parliament</h2>
-                    <p>King Charles III delivers a historic speech addressing key national concerns.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>UK: King Charles III Addresses Parliament</h2>
+                    <p data-translate>King Charles III delivers a historic speech addressing key national concerns.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="world08.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Germany: Major Protests Over Energy Prices</h2>
-                    <p>Thousands take to the streets in Germany protesting the rise in energy costs.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Germany: Major Protests Over Energy Prices</h2>
+                    <p data-translate>Thousands take to the streets in Germany protesting the rise in energy costs.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="world09.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Africa: New Initiative to Combat Deforestation</h2>
-                    <p>African nations launch a major initiative to tackle deforestation and climate change.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Africa: New Initiative to Combat Deforestation</h2>
+                    <p data-translate>African nations launch a major initiative to tackle deforestation and climate change.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="world10.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>South America: Amazon Rainforest Fires Intensify</h2>
-                    <p>Massive wildfires continue to spread across the Amazon, endangering wildlife.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>South America: Amazon Rainforest Fires Intensify</h2>
+                    <p data-translate>Massive wildfires continue to spread across the Amazon, endangering wildlife.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
@@ -160,45 +173,45 @@
             <div class="news-card">
                 <img src="world11.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>India: Chandrayaan-4 Mission Announced</h2>
-                    <p>ISRO reveals plans for the next lunar exploration mission, Chandrayaan-4.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>India: Chandrayaan-4 Mission Announced</h2>
+                    <p data-translate>ISRO reveals plans for the next lunar exploration mission, Chandrayaan-4.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="world12.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Japan: Tsunami Warning Issued After Earthquake</h2>
-                    <p>A powerful earthquake triggers tsunami warnings along Japan’s coastline.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Japan: Tsunami Warning Issued After Earthquake</h2>
+                    <p data-translate>A powerful earthquake triggers tsunami warnings along Japan’s coastline.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="world13.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>NASA: New Exoplanet Discovered</h2>
-                    <p>NASA astronomers confirm the discovery of a new potentially habitable exoplanet.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>NASA: New Exoplanet Discovered</h2>
+                    <p data-translate>NASA astronomers confirm the discovery of a new potentially habitable exoplanet.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="world14.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Australia: Historic Heatwave Hits</h2>
-                    <p>Australia faces record-breaking temperatures as heatwave grips the nation.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Australia: Historic Heatwave Hits</h2>
+                    <p data-translate>Australia faces record-breaking temperatures as heatwave grips the nation.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
             <div class="news-card">
                 <img src="world15.jpg" onerror="this.style.display='none';" alt="Image">
                 <div class="news-content">
-                    <h2>Canada: Wildfires Force Mass Evacuations</h2>
-                    <p>Thousands are evacuated as wildfires continue to spread across Canada.</p>
-                    <a href="#">Read More</a>
+                    <h2 data-translate>Canada: Wildfires Force Mass Evacuations</h2>
+                    <p data-translate>Thousands are evacuated as wildfires continue to spread across Canada.</p>
+                    <a data-translate href="#">Read More</a>
                 </div>
             </div>
         
@@ -222,26 +235,26 @@
         <footer id="footer">
             <div class="footer-container">
                 <div class="footer-section">
-                    <h3>About US </h3>
-                    <p>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
+                    <h3 data-translate>About US </h3>
+                    <p data-translate>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
                         sports, and technology.</p>
                 </div>
     
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3 data-translate>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#" class="scroll-link" data-section="politics-section">Politics</a></li>
-                        <li><a href="#">Business</a></li>
-                        <li><a href="#">Technology</a></li>
-                        <li><a href="#" class="scroll-link" data-section="sports-section">Sports</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a data-translate href="index.html">Home</a></li>
+                        <li><a data-translate href="index.html">Blog</a></li>
+                        <li><a data-translate href="Poltitics-news.html" >Politics</a></li>
+                        <li><a data-translate href="#">Business</a></li>
+                        <li><a data-translate href="Technology-news.html">Technology</a></li>
+                        <li><a data-translate href="Sports-news.html" >Sports</a></li>
+                        <li><a data-translate href="#">Contact</a></li>
                     </ul>
                 </div>
     
                 <div class="footer-section">
-                    <h3>Follow Us</h3>
+                    <h3 data-translate>Follow Us</h3>
                     <div class="social-icons">
                         <a href="facebook-link"><img src="FB.png" alt="Facebook"></a>
                         <a href="https://x.com/WorldApexX?t=MITbHaIp9q5MLRlecPzCOw&s=09"><img src="X.png" alt="Twitter"></a>
@@ -251,8 +264,8 @@
                 </div>
     
                 <div class="footer-section">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for daily updates.</p>
+                    <h3 data-translate>Newsletter</h3>
+                    <p data-translate>Subscribe to our newsletter for daily updates.</p>
                     <form id="newsletter-form"></form>
                     <form action="https://formspree.io/f/xjkgqdqb"
                         method="POST" >
