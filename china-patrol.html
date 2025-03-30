@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-adsense-account" content="ca-pub-2022659342961679">
+    <title>World Apex</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2022659342961679"
+     crossorigin="anonymous"></script>
+     
+</head>
+
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white">
+
+    <!-- HEADER -->
+    <header>
+        <div class="top-bar">
+            <div class="logo">World <span> Apex</span></div>
+            <nav>
+                <ul>
+                    <li><a data-translate href="index.html">Home</a></li>
+                    <li><a data-translate href="#" id="contact-link">Contact</a></li>
+                    <li><a data-translate href="index.html#World-section" >World</a></li>
+                    <div class="dropdown">
+                        <select id="language">
+                            <option value="en" selected>English 🇬🇧</option>
+                            <option value="es">Español 🇪🇸</option>
+                            <option value="fr">Français 🇫🇷</option>
+                            <option value="de">Deutsch 🇩🇪</option>
+                            <option value="hi">हिन्दी 🇮🇳</option>
+                            <option value="ar">العربية 🇸🇦</option>
+                            <option value="zh">中文 🇨🇳</option>
+                        </select>
+                    </div>
+                                       
+                    <div class="theme-switcher" onclick="toggleTheme()">
+                        <span class="material-icons" id="theme-icon">dark_mode</span>
+                    </div>
+                   
+                </ul>
+               
+            </nav>
+        </div>
+        <div id="header-nav" class="nav-bar">
+            <ul>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="index.html#Trending-section">Trending</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="index.html#weather-section" >Weather</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="index.html#Entertainment-section" >Entertainment</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="index.html#sports-section" >Sports</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="index.html#politics-section" >Politics</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="index.html#Astrology-section" >Astrology</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="index.html#Technology-section" >Technology</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="index.html#Top-section" >Top News</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- BREAKING NEWS TICKER -->
+    <section class="breaking-news">
+        <marquee data-translate class="runner"> Breaking News: Major updates happening now! Stay tuned for live reports. </marquee>
+    </section>
+    <main class="main-container">
+        <div class="main-news-card">
+            <div class="image-slider" id="slider">
+                <div class="slider-wrapper">
+                    <img src="china-patrol1.png" alt="China Military Patrol" onerror="this.style.display='none';" class="main-news-img">
+                    <img src="china-patrol2.png" onerror="this.style.display='none';" alt="Image 2" class="main-news-img">
+                    <img src="china-patrol3.png" onerror="this.style.display='none';" alt="Image 3" class="main-news-img">
+                    <img src="china-patrol4.png" onerror="this.style.display='none';" alt="Image 4" class="main-news-img">
+                </div>
+            </div>
+            <div class="main-news-content">
+                <h1 data-translate="">China Conducts Military Patrol in South China Sea, Warns Philippines</h1>
+                <span data-translate class="news-time">Published: March 30, 2025 | 08:45 AM</span>
+                <p class="pmain">
+                    <span class="material-icons icon">military_tech</span>
+                    <strong data-translate>China Conducts Military Patrol in Disputed Waters</strong><br><br>
+                    <span data-translate>China has intensified its</span>
+                    <span class="soft-bold" data-translate>military presence</span>
+                    <span data-translate>in the South China Sea by launching extensive</span>
+                    <span class="soft-bold" data-translate>naval and aerial patrols</span>.
+                    <span data-translate>This move has escalated tensions with the</span>
+                    <span class="soft-bold" data-translate>Philippines</span>
+                    <span data-translate>and other regional players.</span><br><br>
+    
+                    <span class="material-icons icon">priority_high</span>
+                    <strong data-translate>Why It Matters?</strong><br><br>
+    
+                    <span class="material-icons icon">sailing</span>
+                    <strong data-translate>Strategic Control:</strong>
+                    <span data-translate>The South China Sea is a vital global trade route, and China aims to</span>
+                    <span class="soft-bold" data-translate>assert dominance</span>
+                    <span data-translate>over its claimed territories.</span><br><br>
+    
+                    <span class="material-icons icon">warning</span>
+                    <strong data-translate>Threats to Regional Stability:</strong>
+                    <span data-translate>The Philippines has reported multiple</span>
+                    <span class="soft-bold" data-translate>Chinese incursions</span>
+                    <span data-translate>near its exclusive economic zone, raising</span>
+                    <span class="soft-bold" data-translate>sovereignty concerns</span>.
+                    <br><br>
+    
+                    <span class="material-icons icon">record_voice_over</span>
+                    <strong data-translate>China’s Official Statement</strong><br><br>
+    
+                    <span class="material-icons icon">campaign</span>
+                    <strong data-translate>Beijing’s Justification:</strong>
+                    <span data-translate>China’s Ministry of Defense declared the patrols were</span>
+                    <span class="soft-bold" data-translate>“routine operations”</span>
+                    <span data-translate>to protect its territorial integrity.</span><br><br>
+    
+                    <span class="material-icons icon">gavel</span>
+                    <strong data-translate>Warning to the Philippines:</strong>
+                    <span data-translate>China issued a stern warning, urging the Philippines to</span>
+                    <span class="soft-bold" data-translate>halt military cooperation</span>
+                    <span data-translate>with external forces like the US and avoid further escalation.</span><br><br>
+    
+                    <span class="material-icons icon">public</span>
+                    <strong data-translate>International Reactions</strong><br><br>
+    
+                    <span class="material-icons icon">flag</span>
+                    <strong data-translate>US and Allies:</strong>
+                    <span data-translate>The US condemned China’s actions, calling them a</span>
+                    <span class="soft-bold" data-translate>“direct threat to regional security.”</span><br><br>
+    
+                    <span class="material-icons icon">groups</span>
+                    <strong data-translate>ASEAN Response:</strong>
+                    <span data-translate>Neighboring countries urged peaceful dialogue but expressed</span>
+                    <span class="soft-bold" data-translate>concern over rising tensions</span>.
+                    <br><br>
+    
+                    <span class="material-icons icon">hourglass_empty</span>
+                    <strong data-translate>What’s Next?</strong><br><br>
+    
+                    <span class="material-icons icon">handshake</span>
+                    <strong data-translate>Diplomatic Talks Expected:</strong>
+                    <span data-translate>China and the Philippines may engage in</span>
+                    <span class="soft-bold" data-translate>high-level discussions</span>
+                    <span data-translate>to prevent further escalation.</span><br><br>
+    
+                    <span class="material-icons icon">security</span>
+                    <strong data-translate>Increased Military Presence:</strong>
+                    <span data-translate>Both nations may strengthen their</span>
+                    <span class="soft-bold" data-translate>defense strategies</span>
+                    <span data-translate>in the contested waters.</span><br><br>
+                </p>
+                <div class="dots-container">
+                    <span class="dot active" onclick="moveToSlide(0)"></span>
+                    <span class="dot" onclick="moveToSlide(1)"></span>
+                    <span class="dot" onclick="moveToSlide(2)"></span>
+                    <span class="dot" onclick="moveToSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div class="news-recommendations">
+        <div class="news-header" id="recommendation-section">
+            <h1 data-translate>Recommendation</h1>
+        </div>
+        <div class="recommendation-list" id="recommendations-container">
+            <!-- 4 random recommendations will be inserted here -->
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const recommendations = [
+                { img: "X.png", title: "Stock Market Surges Amid Economic Optimism", link: "index.html" },
+                { img: "logo.jpg", title: "AI Breakthroughs: What’s Coming Next in 2025", link: "index.html" },
+                { img: "tech.jpg", title: "Tech Giants Invest Billions in Renewable Energy", link: "index.html" },
+                { img: "crypto.jpg", title: "Cryptocurrency Regulations Tighten Worldwide", link: "index.html" },
+                { img: "news1.jpg", title: "Scientists Discover New Exoplanet with Signs of Life", link: "index.html" },
+                { img: "news2.jpg", title: "Electric Cars Outsell Gasoline Vehicles for First Time", link: "index.html" },
+                { img: "news3.jpg", title: "Major Cyberattack Hits Global Banking Systems", link: "index.html" },
+                { img: "news4.jpg", title: "New Medical Breakthrough Extends Human Lifespan", link: "index.html" }
+            ];
+    
+            const container = document.getElementById("recommendations-container");
+    
+            // Shuffle & Pick 4 Random
+            const shuffled = recommendations.sort(() => 0.5 - Math.random()).slice(0, 4);
+    
+            // Create a fragment for smooth insertion (avoids flashing issues)
+            const fragment = document.createDocumentFragment();
+    
+            shuffled.forEach(rec => {
+                const recDiv = document.createElement("div");
+                recDiv.classList.add("recommendation");
+    
+                const img = new Image();
+                img.src = rec.img;
+                img.alt = "Image";
+                img.style.display = "none"; // Hide initially to avoid flicker
+                img.onload = function () {
+                    this.style.display = "block"; // Show only when fully loaded
+                };
+                img.onerror = function () {
+                    this.src = "logo.jpg"; // Replace with fallback image
+                    this.style.display = "block"; // Ensure fallback shows
+                };
+    
+                const p = document.createElement("p");
+                p.classList.add("p2");
+                p.setAttribute("data-translate", "true");
+                p.textContent = rec.title;
+    
+                recDiv.appendChild(img);
+                recDiv.appendChild(p);
+                fragment.appendChild(recDiv);
+            });
+    
+            // Append all at once (prevents reflow glitches)
+            container.appendChild(fragment);
+        });
+    </script>
+    
+    <style>
+        .main-container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .main-news-card {
+            background: #171717e8;
+            color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        .image-slider {
+            width: 50%;
+            max-height: 300px;
+            overflow: hidden;
+            position: relative;
+            cursor: grab;
+        }
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .main-news-img {
+            width: 100%;
+            height: 300px; /* Fixed height */
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0;
+            margin-top: 50px;
+        }
+        .main-news-content {
+            flex: 1;
+            min-width: 0; /* Ensures text wraps properly */
+        }
+        .main-news-content p {
+            max-height: 200px; /* Controls paragraph height */
+            overflow-y: auto; /* Enables scrolling if text is too long */
+        }
+        .dots-container {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.soft-bold {
+        font-weight: 400; /* Softer than bold, stronger than normal */
+    }
+    
+    .bold-heading {
+        font-weight: 700; /* Full bold for subheadings */
+    }
+/* Default: Light Mode (Dot is Dark) */
+.dot {
+    width: 10px;
+    height: 10px;
+    background: black !important;  /* Dark in Light Mode */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 
+                       50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    opacity: 0.6;
+}
+
+/* Dark Mode: Dot becomes Light */
+body.dark-mode .dot {
+    background: white !important;  /* Light in Dark Mode */
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
+}
+
+/* Active State */
+.dot.active {
+    background: black;  /* Default for active in light mode */
+    opacity: 1;
+    transform: scale(1.2);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Dark Mode Active State */
+body.dark-mode .dot.active {
+    background: white;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
+}
+.icon {
+    font-size: 18px;   /* Adjust icon size */
+    vertical-align: middle;  /* Align icons to middle of text */
+    margin-right: 5px;  /* Add some spacing between icon and text */
+    color: #cccccc;  /* Optional: Adjust icon color */
+}
+body:not(.dark-mode) .icon{
+    color: #333;
+}
+.recommendation-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Space between items */
+    justify-content: center; /* Center items */
+}
+
+.recommendation {
+    width: 250px; /* Fixed width for uniformity */
+    height: 300px; /* Fixed height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #f5f5f5; /* Light background */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.2s ease-in-out;
+}
+
+.recommendation:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.recommendation img {
+    width: 100%; /* Image fills container */
+    height: 150px; /* Fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 6px;
+}
+
+.recommendation p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .main-news-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* IMAGE SLIDER */
+.image-slider {
+    width: 50%;
+    aspect-ratio: 16/9; /* Maintains a landscape ratio */
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.main-news-img {
+    width: 100%;
+    height: auto; /* Automatically adjust height */
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 15px;
+    }
+
+    .main-news-card {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .image-slider {
+        width: 100%;
+        height: 200px;
+    }
+
+    .main-news-img {
+        height: 200px;
+    }
+
+    .main-news-content p {
+        max-height: none;
+    }
+
+    .recommendation-list {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-news-card {
+        padding: 10px;
+    }
+
+    .main-news-img {
+        height: 180px;
+    }
+
+    .recommendation {
+        min-width: 120px;
+    }
+}
+</style>
+<script>
+    let slider = document.querySelector('.slider-wrapper');
+    let dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+    let startX, isDragging = false, moveX = 0;
+
+    function updateSlidePosition() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    }
+
+    function moveToSlide(index) {
+        currentIndex = index;
+        updateSlidePosition();
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % dots.length;
+        updateSlidePosition();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + dots.length) % dots.length;
+        updateSlidePosition();
+    }
+
+    slider.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        moveX = e.clientX - startX;
+    });
+
+    slider.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        if (moveX < -50) nextSlide();
+        else if (moveX > 50) prevSlide();
+        isDragging = false;
+        moveX = 0;
+    });
+
+    slider.addEventListener('mouseleave', () => isDragging = false);
+    
+    setInterval(nextSlide, 5000);
+</script> 
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3 data-translate>About US </h3>
+            <p data-translate>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
+                sports, and technology.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3 data-translate>Quick Links</h3>
+            <ul>
+                <li><a data-translate href="index.html">Home</a></li>
+                <li><a data-translate href="index.html#World-section">World</a></li>
+                <li><a data-translate href="index.html#Politics-section" >Politics</a></li>
+                <li><a data-translate href="index.html#weather-section">Weather</a></li>
+                <li><a data-translate href="index.html#Technology-section">Technology</a></li>
+                <li><a data-translate href="index.html#sports-section">Sports</a></li>
+                <li><a data-translate href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3 data-translate>Follow Us</h3>
+            <div class="social-icons">
+                <a  href="facebook-link"><img src="FB.png" alt="Facebook"></a>
+                <a  href="https://x.com/WorldApexX?t=MITbHaIp9q5MLRlecPzCOw&s=09"><img src="X.png" alt="Twitter"></a>
+                <a  href="Youtube-link"><img src="YT.png" alt="YouTube"></a>
+                <a  href="Instagram-link"><img src="IN.png" alt="Instagram"></a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3 data-translate>Newsletter</h3>
+            <p data-translate>Subscribe to our newsletter for daily updates.</p>
+            <form id="newsletter-form"></form>
+            <form action="https://formspree.io/f/xjkgqdqb"
+                method="POST" >
+                <div class="input-container">
+                    <input data-translate name="email" type="email" id="email" placeholder="Enter your email" required>
+                    <button type="submit">
+                        <span class="material-icons">mail</span>
+                    </button>
+                </div>
+                <div id="email-error" class="error-message">
+                    <span class="material-icons error-icon">error</span>
+                    <span id="error-text"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p >© 2025 World Apex | All Rights Reserved</p>
+        <p ><a  class="pol" href="policy.html">Privacy Policy</a> | <a class="ter" href="terms.html">Terms &
+                Conditions</a></p>
+    </div>
+</footer>
+
+
+<script src="script.js" defer>
+</script>
+</body>
+
+</html>

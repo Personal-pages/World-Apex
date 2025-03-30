@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-adsense-account" content="ca-pub-2022659342961679">
+    <title>World Apex</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2022659342961679"
+     crossorigin="anonymous"></script>
+    <style>
+        /* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Main Container */
+.main-container {
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Image Slider */
+.image-slider {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.news-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Navigation Dots */
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background-color: #007bff;
+}
+
+/* News Content */
+h1 {
+    font-size: 1.8em;
+    color: #333;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.news-content {
+    margin-top: 20px;
+}
+
+.news-section {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.news-section span {
+    font-size: 22px;
+    color: #ff8000d6;
+    margin-right: 10px;
+}
+
+.news-section p {
+    margin: 0;
+    font-size: 1em;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .main-container {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .news-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .news-section span {
+        margin-bottom: 5px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="top-bar">
+            <div class="logo">World <span> Apex</span></div>
+            <nav>
+                <ul>
+                    <li><a data-translate href="index.html">Home</a></li>
+                    <li><a data-translate href="#" id="contact-link">Contact</a></li>
+                    <li><a data-translate href="#" class="scroll-link" data-section="World-section">World</a></li>
+                    <div class="dropdown">
+                        <select id="language">
+                            <option value="en" selected>English 🇬🇧</option>
+                            <option value="es">Español 🇪🇸</option>
+                            <option value="fr">Français 🇫🇷</option>
+                            <option value="de">Deutsch 🇩🇪</option>
+                            <option value="hi">हिन्दी 🇮🇳</option>
+                            <option value="ar">العربية 🇸🇦</option>
+                            <option value="zh">中文 🇨🇳</option>
+                        </select>
+                    </div>
+                                       
+                    <div class="theme-switcher" onclick="toggleTheme()">
+                        <span class="material-icons" id="theme-icon">dark_mode</span>
+                    </div>
+                   
+                </ul>
+               
+            </nav>
+        </div>
+        <div id="header-nav" class="nav-bar">
+            <ul>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="Trending-section">Trending</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="weather-section">Weather</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="Entertainment-section">Entertainment</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="sports-section">Sports</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="politics-section">Politics</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="Astrology-section">Astrology</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="Technology-section">Technology</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="Top-section">Top News</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="main-container">
+        <div class="main-news-card">
+            <div class="image-slider">
+                <div class="slider-wrapper" id="slider">
+                    <img src="china-philippines.jpg" alt="China-Philippines Tensions" class="news-image" onerror="this.src='default.jpg';">
+                    <img src="south-china-sea.jpg" alt="South China Sea" class="news-image" onerror="this.src='default.jpg';">
+                    <img src="philippines-protest.jpg" alt="Philippines Protest" class="news-image" onerror="this.src='default.jpg';">
+                </div>
+            </div>
+            <div class="dots-container">
+                <span class="dot active" onclick="changeSlide(0)"></span>
+                <span class="dot" onclick="changeSlide(1)"></span>
+                <span class="dot" onclick="changeSlide(2)"></span>
+            </div>
+            <h1>China Strengthens Its Presence in South China Sea</h1>
+            <div class="news-content">
+                <div class="news-section">
+                    <span class="material-icons">flag</span>
+                    <p>China has intensified its military patrols in the South China Sea, issuing a stern warning to the Philippines over ongoing territorial disputes.</p>
+                </div>
+                <div class="news-section">
+                    <span class="material-icons">location_on</span>
+                    <p>The patrols were concentrated around the Second Thomas Shoal, an area where Philippine ships have been regularly deployed.</p>
+                </div>
+                <div class="news-section">
+                    <span class="material-icons">campaign</span>
+                    <p>Beijing defended its actions, stating that the military drills were "routine operations" aimed at safeguarding China’s sovereignty.</p>
+                </div>
+                <div class="news-section">
+                    <span class="material-icons">gavel</span>
+                    <p>The Philippine government has strongly criticized China’s maneuvers, calling them "unlawful and a violation of international maritime laws."</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".news-image");
+        const dots = document.querySelectorAll(".dot");
+        function showSlide(index) {
+            const slider = document.getElementById("slider");
+            slider.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+        }
+        function changeSlide(index) {
+            currentIndex = index;
+            showSlide(currentIndex);
+        }
+        function autoSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+        setInterval(autoSlide, 3000);
+    </script>
+</body>
+</html>
