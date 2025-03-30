@@ -562,3 +562,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Append all at once (prevents reflow glitches)
     container.appendChild(fragment);
 });
+
+function enableLazyLoading() {
+    document.querySelectorAll("p").forEach((p) => {
+        p.classList.add("translating"); // Apply content-visibility only during translation
+    });
+}
+
+// Call this function when translation starts
+enableLazyLoading();
