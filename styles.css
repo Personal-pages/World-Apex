@@ -1076,3 +1076,213 @@ select option {
 
 /* full detailed test  */
 
+.main-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.main-news-card {
+    background: #171717e8;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+.image-slider {
+    width: 50%;
+    max-height: 300px;
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+}
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.main-news-img {
+    width: 100%;
+    height: 300px; /* Fixed height */
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+    margin-top: 50px;
+}
+.main-news-content {
+    flex: 1;
+    min-width: 0; /* Ensures text wraps properly */
+}
+.main-news-content p {
+    max-height: 200px; /* Controls paragraph height */
+    overflow-y: auto; /* Enables scrolling if text is too long */
+}
+.dots-container {
+display: flex;
+gap: 5px;
+margin-top: 10px;
+justify-content: center;
+}
+
+.soft-bold {
+font-weight: 400; /* Softer than bold, stronger than normal */
+}
+
+.bold-heading {
+font-weight: 700; /* Full bold for subheadings */
+}
+/* Default: Light Mode (Dot is Dark) */
+.dot {
+width: 10px;
+height: 10px;
+background: black !important;  /* Dark in Light Mode */
+clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 
+               50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+display: inline-block;
+cursor: pointer;
+transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+opacity: 0.6;
+}
+
+/* Dark Mode: Dot becomes Light */
+body.dark-mode .dot {
+background: white !important;  /* Light in Dark Mode */
+box-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
+}
+
+/* Active State */
+.dot.active {
+background: black;  /* Default for active in light mode */
+opacity: 1;
+transform: scale(1.2);
+box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Dark Mode Active State */
+body.dark-mode .dot.active {
+background: white;
+box-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
+}
+.icon {
+font-size: 18px;   /* Adjust icon size */
+vertical-align: middle;  /* Align icons to middle of text */
+margin-right: 5px;  /* Add some spacing between icon and text */
+color: #cccccc;  /* Optional: Adjust icon color */
+}
+body:not(.dark-mode) .icon{
+color: #333;
+}
+.recommendation-list {
+display: flex;
+flex-wrap: wrap;
+gap: 16px; /* Space between items */
+justify-content: center; /* Center items */
+}
+
+.recommendation {
+width: 250px; /* Fixed width for uniformity */
+height: 300px; /* Fixed height */
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+background: #f5f5f5; /* Light background */
+padding: 10px;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+transition: transform 0.2s ease-in-out;
+}
+
+.recommendation:hover {
+transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.recommendation img {
+width: 100%; /* Image fills container */
+height: 150px; /* Fixed height */
+object-fit: cover; /* Maintain aspect ratio */
+border-radius: 6px;
+}
+
+.recommendation p {
+font-size: 16px;
+font-weight: bold;
+margin-top: 10px;
+color: #333;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+.main-news-card {
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+/* IMAGE SLIDER */
+.image-slider {
+width: 50%;
+aspect-ratio: 16/9; /* Maintains a landscape ratio */
+overflow: hidden;
+position: relative;
+cursor: grab;
+}
+
+.slider-wrapper {
+display: flex;
+transition: transform 0.5s ease-in-out;
+}
+
+.main-news-img {
+width: 100%;
+height: auto; /* Automatically adjust height */
+object-fit: cover;
+border-radius: 10px;
+flex-shrink: 0;
+}
+}
+
+@media (max-width: 768px) {
+.main-container {
+padding: 15px;
+}
+
+.main-news-card {
+flex-direction: column;
+padding: 15px;
+}
+
+.image-slider {
+width: 100%;
+height: 200px;
+}
+
+.main-news-img {
+height: 200px;
+}
+
+.main-news-content p {
+max-height: none;
+}
+
+.recommendation-list {
+justify-content: center;
+}
+}
+
+@media (max-width: 480px) {
+.main-news-card {
+padding: 10px;
+}
+
+.main-news-img {
+height: 180px;
+}
+
+.recommendation {
+min-width: 120px;
+}
+}

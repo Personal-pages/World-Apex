@@ -512,3 +512,53 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const recommendations = [
+        { img: "X.png", title: "Stock Market Surges Amid Economic Optimism", link: "index.html" },
+        { img: "logo.jpg", title: "AI Breakthroughs: What’s Coming Next in 2025", link: "index.html" },
+        { img: "tech.jpg", title: "Tech Giants Invest Billions in Renewable Energy", link: "index.html" },
+        { img: "crypto.jpg", title: "Cryptocurrency Regulations Tighten Worldwide", link: "index.html" },
+        { img: "news1.jpg", title: "Scientists Discover New Exoplanet with Signs of Life", link: "index.html" },
+        { img: "news2.jpg", title: "Electric Cars Outsell Gasoline Vehicles for First Time", link: "index.html" },
+        { img: "news3.jpg", title: "Major Cyberattack Hits Global Banking Systems", link: "index.html" },
+        { img: "news4.jpg", title: "New Medical Breakthrough Extends Human Lifespan", link: "index.html" }
+    ];
+
+    const container = document.getElementById("recommendations-container");
+
+    // Shuffle & Pick 4 Random
+    const shuffled = recommendations.sort(() => 0.5 - Math.random()).slice(0, 4);
+
+    // Create a fragment for smooth insertion (avoids flashing issues)
+    const fragment = document.createDocumentFragment();
+
+    shuffled.forEach(rec => {
+        const recDiv = document.createElement("div");
+        recDiv.classList.add("recommendation");
+
+        const img = new Image();
+        img.src = rec.img;
+        img.alt = "Image";
+        img.style.display = "none"; // Hide initially to avoid flicker
+        img.onload = function () {
+            this.style.display = "block"; // Show only when fully loaded
+        };
+        img.onerror = function () {
+            this.src = "logo.jpg"; // Replace with fallback image
+            this.style.display = "block"; // Ensure fallback shows
+        };
+
+        const p = document.createElement("p");
+        p.classList.add("p2");
+        p.setAttribute("data-translate", "true");
+        p.textContent = rec.title;
+
+        recDiv.appendChild(img);
+        recDiv.appendChild(p);
+        fragment.appendChild(recDiv);
+    });
+
+    // Append all at once (prevents reflow glitches)
+    container.appendChild(fragment);
+});
