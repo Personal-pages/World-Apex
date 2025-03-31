@@ -541,6 +541,12 @@ enableLazyLoading();
 
 // Function to request location and store permission
 function requestLocationPermission() {
+    // Check if permission was already granted before
+    if (localStorage.getItem("locationPermission") === "granted") {
+        console.log("Permission already granted. Using stored location.");
+        return;
+    }
+
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -549,8 +555,9 @@ function requestLocationPermission() {
                     longitude: position.coords.longitude,
                     timestamp: position.timestamp
                 };
-                // Store location data in localStorage
+                // Store location data and permission status in localStorage
                 localStorage.setItem("userLocation", JSON.stringify(userLocation));
+                localStorage.setItem("locationPermission", "granted");
                 console.log("Location stored:", userLocation);
             },
             (error) => {
@@ -573,6 +580,10 @@ function getStoredLocation() {
     }
 }
 
-// Example Usage
-requestLocationPermission();
+// Run only if permission was never given or denied
+if (localStorage.getItem("locationPermission") !== "granted") {
+    requestLocationPermission();
+}
+
+// Fetch stored location without re-asking
 getStoredLocation();
