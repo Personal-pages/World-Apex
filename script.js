@@ -50,12 +50,11 @@ document.querySelectorAll('.scroll-link').forEach(link => {
     });
 });
 
-// weather
-const apiKey = "3fcd1d33745f573bf4ae7d9f58f7e85a"; 
+// Weather App Fix
+const apiKey = "3fcd1d33745f573bf4ae7d9f58f7e85a";
 let hourlyChartInstance = null;
 let dailyChartInstance = null;
 
-// Capital Cities for Countries
 const capitalCities = {
     "USA": "Washington",
     "United States": "Washington",
@@ -75,7 +74,6 @@ const capitalCities = {
     "Spain": "Madrid"
 };
 
-// Fetch Weather Data
 async function getWeather(cityOrCountry = null, lat = null, lon = null) {
     let apiUrl;
     if (!cityOrCountry && lat === null && lon === null) {
@@ -87,16 +85,13 @@ async function getWeather(cityOrCountry = null, lat = null, lon = null) {
         return;
     }
 
-    // If country name is entered, use its capital
     if (capitalCities[cityOrCountry]) {
         cityOrCountry = capitalCities[cityOrCountry];
     }
 
-    if (lat !== null && lon !== null) {
-        apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-    } else {
-        apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityOrCountry}&appid=${apiKey}&units=metric`;
-    }
+    apiUrl = lat !== null && lon !== null
+        ? `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
+        : `https://api.openweathermap.org/data/2.5/weather?q=${cityOrCountry}&appid=${apiKey}&units=metric`;
 
     try {
         const response = await fetch(apiUrl);
@@ -107,7 +102,6 @@ async function getWeather(cityOrCountry = null, lat = null, lon = null) {
             return;
         }
 
-        // Update Weather Details
         document.getElementById("location").innerText = `${data.name}, ${data.sys.country}`;
         document.getElementById("temperature").innerText = data.main.temp;
         document.getElementById("feels_like").innerText = data.main.feels_like;
@@ -117,37 +111,19 @@ async function getWeather(cityOrCountry = null, lat = null, lon = null) {
         document.getElementById("sunrise").innerText = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
         document.getElementById("sunset").innerText = new Date(data.sys.sunset * 1000).toLocaleTimeString();
         document.getElementById("description").innerText = data.weather[0].description;
+        document.getElementById("weather-icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
-        // Update Enhanced Weather Icons Based on Time of Day
-        updateWeatherIcon(data.weather[0].icon, data.sys.sunrise, data.sys.sunset, data.dt);
-
-        // Fetch Additional Data
-        getAirQuality(data.coord.lat, data.coord.lon);
-        getUVIndex(data.coord.lat, data.coord.lon);
-        getForecast(data.coord.lat, data.coord.lon);
-
+        await getAirQuality(data.coord.lat, data.coord.lon);
+        await getUVIndex(data.coord.lat, data.coord.lon);
+        await getForecast(data.coord.lat, data.coord.lon);
     } catch (error) {
         console.error("Error fetching weather data:", error);
     }
 }
 
-// Enhanced Weather Icon Based on Day/Night
-function updateWeatherIcon(iconCode, sunrise, sunset, currentTime) {
-    let iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-    
-    // Check if it's night time
-    if (currentTime < sunrise || currentTime > sunset) {
-        iconUrl = iconUrl.replace("d", "n");
-    }
-
-    document.getElementById("weather-icon").src = iconUrl;
-}
-
-// Fetch Air Quality Index (AQI)
 async function getAirQuality(lat, lon) {
     try {
-        const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-        const response = await fetch(url);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`);
         const data = await response.json();
         document.getElementById("aqi").innerText = data.list[0].main.aqi;
     } catch (error) {
@@ -155,11 +131,9 @@ async function getAirQuality(lat, lon) {
     }
 }
 
-// Fetch UV Index
 async function getUVIndex(lat, lon) {
     try {
-        const url = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-        const response = await fetch(url);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`);
         const data = await response.json();
         document.getElementById("uv").innerText = data.value;
     } catch (error) {
@@ -167,14 +141,12 @@ async function getUVIndex(lat, lon) {
     }
 }
 
-// Fetch 24-Hour & 5-Day Forecast
 async function getForecast(lat, lon) {
     try {
-        const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-        const response = await fetch(url);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
         const data = await response.json();
 
-        const labels = data.list.map(item => new Date(item.dt * 1000).getHours() + ":00");
+        const labels = data.list.map(item => new Date(item.dt * 1000).toLocaleTimeString());
         const temps = data.list.map(item => item.main.temp);
 
         updateChart("hourlyChart", labels.slice(0, 8), temps.slice(0, 8), "24-Hour Forecast");
@@ -184,13 +156,9 @@ async function getForecast(lat, lon) {
     }
 }
 
-// Update Chart.js Graphs
 function updateChart(canvasId, labels, data, label) {
     const canvas = document.getElementById(canvasId);
-    if (!canvas) {
-        console.error(`Canvas ${canvasId} not found`);
-        return;
-    }
+    if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
 
@@ -216,7 +184,6 @@ function updateChart(canvasId, labels, data, label) {
     if (canvasId === "dailyChart") dailyChartInstance = chartInstance;
 }
 
-// Auto-detect location or default to India (Delhi)
 function getLocationWeather() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -571,3 +538,41 @@ function enableLazyLoading() {
 
 // Call this function when translation starts
 enableLazyLoading();
+
+// Function to request location and store permission
+function requestLocationPermission() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const userLocation = {
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude,
+                    timestamp: position.timestamp
+                };
+                // Store location data in localStorage
+                localStorage.setItem("userLocation", JSON.stringify(userLocation));
+                console.log("Location stored:", userLocation);
+            },
+            (error) => {
+                console.error("Error getting location:", error);
+                localStorage.setItem("locationPermission", "denied");
+            }
+        );
+    } else {
+        console.error("Geolocation is not supported by this browser.");
+    }
+}
+
+// Function to check stored location
+function getStoredLocation() {
+    const storedLocation = localStorage.getItem("userLocation");
+    if (storedLocation) {
+        console.log("Stored Location:", JSON.parse(storedLocation));
+    } else {
+        console.log("No stored location found.");
+    }
+}
+
+// Example Usage
+requestLocationPermission();
+getStoredLocation();
