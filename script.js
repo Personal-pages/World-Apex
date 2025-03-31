@@ -539,14 +539,30 @@ function enableLazyLoading() {
 // Call this function when translation starts
 enableLazyLoading();
 
-// Function to request location and store permission
-function requestLocationPermission() {
-    // Check if permission was already granted before
-    if (localStorage.getItem("locationPermission") === "granted") {
-        console.log("Permission already granted. Using stored location.");
-        return;
-    }
+// Check and request location permission
+function checkAndRequestLocation() {
+    navigator.permissions.query({ name: "geolocation" }).then((permissionStatus) => {
+        if (permissionStatus.state === "granted") {
+            console.log("Permission already granted. Using stored location.");
+            getStoredLocation();
+        } else if (permissionStatus.state === "prompt") {
+            requestLocationPermission();
+        } else {
+            console.log("Permission denied. Cannot access location.");
+        }
 
+        // Listen for permission changes (e.g., user changes in settings)
+        permissionStatus.onchange = () => {
+            console.log("Permission changed to:", permissionStatus.state);
+            if (permissionStatus.state === "granted") {
+                requestLocationPermission();
+            }
+        };
+    });
+}
+
+// Function to request location
+function requestLocationPermission() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -555,14 +571,12 @@ function requestLocationPermission() {
                     longitude: position.coords.longitude,
                     timestamp: position.timestamp
                 };
-                // Store location data and permission status in localStorage
+                // Store location data in localStorage
                 localStorage.setItem("userLocation", JSON.stringify(userLocation));
-                localStorage.setItem("locationPermission", "granted");
                 console.log("Location stored:", userLocation);
             },
             (error) => {
                 console.error("Error getting location:", error);
-                localStorage.setItem("locationPermission", "denied");
             }
         );
     } else {
@@ -570,7 +584,7 @@ function requestLocationPermission() {
     }
 }
 
-// Function to check stored location
+// Function to get stored location
 function getStoredLocation() {
     const storedLocation = localStorage.getItem("userLocation");
     if (storedLocation) {
@@ -580,10 +594,5 @@ function getStoredLocation() {
     }
 }
 
-// Run only if permission was never given or denied
-if (localStorage.getItem("locationPermission") !== "granted") {
-    requestLocationPermission();
-}
-
-// Fetch stored location without re-asking
-getStoredLocation();
+// Run the function
+checkAndRequestLocation();
