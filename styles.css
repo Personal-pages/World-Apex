@@ -1407,3 +1407,21 @@ footer#chat-footer {
     }
   }
   
+  body.dark-mode .news-recommendations {
+    background-color: #111;
+    color: #eee;
+  }
+  
+  body.dark-mode .news-recommendations h1{
+    color: #ffffff;
+    border-color: #333;
+  }
+  
+  body.dark-mode .recommendation-list > div {
+    background-color: #1a1a1a;
+    border-color: #333;
+    color: #ccc;
+  }
+  body.dark-mode .recommendation-list p {
+    color: #eee; 
+  }

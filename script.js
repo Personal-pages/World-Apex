@@ -597,3 +597,34 @@ function enableLazyLoading() {
 // Call this function when translation starts
 enableLazyLoading();
 
+const fallbackImage = 'logo.webp';
+
+  function applyFallback(img) {
+    if (!img.dataset.fallbackSet) {
+      img.onerror = function () {
+        this.onerror = null;
+        this.src = fallbackImage;
+      };
+      img.dataset.fallbackSet = "true";
+    }
+  }
+
+  // Apply fallback to all existing images
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('img').forEach(applyFallback);
+  });
+
+  // Watch for dynamically added images
+  const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+      mutation.addedNodes.forEach(node => {
+        if (node.tagName === 'IMG') {
+          applyFallback(node);
+        } else if (node.querySelectorAll) {
+          node.querySelectorAll('img').forEach(applyFallback);
+        }
+      });
+    });
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
