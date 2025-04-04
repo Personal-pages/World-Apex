@@ -50,150 +50,187 @@ document.querySelectorAll('.scroll-link').forEach(link => {
     });
 });
 
-// Weather App Fix
-const apiKey = "3fcd1d33745f573bf4ae7d9f58f7e85a";
-let hourlyChartInstance = null;
-let dailyChartInstance = null;
+// weather
+document.addEventListener("DOMContentLoaded", () => {
+    const cityInput = document.getElementById("city");
+    const locationText = document.getElementById("location");
 
-const capitalCities = {
-    "USA": "Washington",
-    "United States": "Washington",
-    "India": "New Delhi",
-    "Japan": "Tokyo",
-    "France": "Paris",
-    "Germany": "Berlin",
-    "UK": "London",
-    "United Kingdom": "London",
-    "Canada": "Ottawa",
-    "Australia": "Canberra",
-    "Russia": "Moscow",
-    "China": "Beijing",
-    "Brazil": "Brasilia",
-    "South Korea": "Seoul",
-    "Italy": "Rome",
-    "Spain": "Madrid"
-};
+    // Make City Name empty initially
+    if (locationText) locationText.innerText = "";
 
-async function getWeather(cityOrCountry = null, lat = null, lon = null) {
-    let apiUrl;
-    if (!cityOrCountry && lat === null && lon === null) {
-        cityOrCountry = document.getElementById("city").value.trim();
+    // Auto-fetch weather based on user's location (without asking)
+    fetch("https://ipapi.co/json/")
+        .then((response) => response.json())
+        .then((data) => {
+            if (data && data.city) {
+                locationText.innerText = data.city; // Show detected city
+                getWeather(data.city);
+            } else {
+                locationText.innerText = "Delhi"; // Default if location fails
+                getWeather("Delhi");
+            }
+        })
+        .catch(() => {
+            locationText.innerText = "Delhi"; // Default if API fails
+            getWeather("Delhi");
+        });
+
+    // Add keypress event for Enter key
+    if (cityInput) {
+        cityInput.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                getWeather(cityInput.value);
+            }
+        });
     }
+});
 
-    if (!cityOrCountry && lat === null && lon === null) {
-        alert("Please enter a city or country name.");
-        return;
-    }
-
-    if (capitalCities[cityOrCountry]) {
-        cityOrCountry = capitalCities[cityOrCountry];
-    }
-
-    apiUrl = lat !== null && lon !== null
-        ? `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
-        : `https://api.openweathermap.org/data/2.5/weather?q=${cityOrCountry}&appid=${apiKey}&units=metric`;
+async function getWeather(city = "Delhi") {
+    const API_KEY = "3fcd1d33745f573bf4ae7d9f58f7e85a";
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 
     try {
-        const response = await fetch(apiUrl);
+        console.log(`🔍 Fetching Weather Data from: ${url}`);
+        const response = await fetch(url);
         const data = await response.json();
 
         if (data.cod !== 200) {
-            alert("Location not found!");
+            console.error(`❌ Error fetching weather: ${data.message}`);
             return;
         }
 
-        document.getElementById("location").innerText = `${data.name}, ${data.sys.country}`;
-        document.getElementById("temperature").innerText = data.main.temp;
-        document.getElementById("feels_like").innerText = data.main.feels_like;
-        document.getElementById("humidity").innerText = data.main.humidity;
-        document.getElementById("wind").innerText = data.wind.speed;
-        document.getElementById("pressure").innerText = data.main.pressure;
-        document.getElementById("sunrise").innerText = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
-        document.getElementById("sunset").innerText = new Date(data.sys.sunset * 1000).toLocaleTimeString();
-        document.getElementById("description").innerText = data.weather[0].description;
-        document.getElementById("weather-icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-
-        await getAirQuality(data.coord.lat, data.coord.lon);
-        await getUVIndex(data.coord.lat, data.coord.lon);
-        await getForecast(data.coord.lat, data.coord.lon);
+        console.log("🌦️ Weather API Response:", data);
+        updateWeatherUI(data);
     } catch (error) {
-        console.error("Error fetching weather data:", error);
+        console.error("❌ Error fetching weather data:", error);
     }
 }
 
-async function getAirQuality(lat, lon) {
+function updateWeatherUI(data) {
+    if (!data || !data.main) {
+        console.error("❌ Error: Invalid weather data received.");
+        return;
+    }
+
+    const weatherData = {
+        location: data.name || "Unknown Location",
+        description: data.weather[0]?.description || "N/A",
+        temperature: data.main.temp.toFixed(1),
+        feels_like: data.main.feels_like.toFixed(1),
+        humidity: data.main.humidity,
+        wind: data.wind.speed.toFixed(1),
+        pressure: data.main.pressure,
+        sunrise: new Date(data.sys.sunrise * 1000).toLocaleTimeString(),
+        sunset: new Date(data.sys.sunset * 1000).toLocaleTimeString(),
+    };
+
+    // Update weather icon
+    const weatherIcon = document.getElementById("weather-icon");
+    if (weatherIcon && data.weather[0]?.icon) {
+        weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        weatherIcon.alt = data.weather[0]?.description || "Weather Icon";
+    }
+
+    // Update all elements in the UI
+    Object.keys(weatherData).forEach((key) => {
+        const element = document.getElementById(key);
+        if (!element) {
+            console.warn(`⚠️ Missing Element: #${key}`);
+            return;
+        }
+        element.innerText = weatherData[key];
+    });
+
+    console.log("✅ Weather data updated in UI!");
+}
+
+
+// --- CHARTS ---
+async function getWeatherForecast() {
+    const city = document.getElementById("city").value.trim() || "Delhi";
+    const apiKey = "3fcd1d33745f573bf4ae7d9f58f7e85a";
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`);
+        const response = await fetch(forecastUrl);
+        if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
+
         const data = await response.json();
-        document.getElementById("aqi").innerText = data.list[0].main.aqi;
+        console.log("📊 Forecast API Response:", data);
+
+        updateCharts(data);
     } catch (error) {
-        console.error("Error fetching AQI:", error);
+        console.error("❌ Error fetching forecast data:", error);
     }
 }
 
-async function getUVIndex(lat, lon) {
-    try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`);
-        const data = await response.json();
-        document.getElementById("uv").innerText = data.value;
-    } catch (error) {
-        console.error("Error fetching UV Index:", error);
+function updateCharts(data) {
+    if (!data || !data.list) {
+        console.error("❌ Error: Invalid forecast data received.");
+        return;
     }
+
+    const hourlyLabels = [];
+    const hourlyTemps = [];
+
+    const dailyLabels = [];
+    const dailyTemps = [];
+
+    // Process the forecast data
+    data.list.forEach((entry, index) => {
+        const date = new Date(entry.dt * 1000);
+        const hour = date.getHours();
+
+        // Hourly data for 24h
+        if (index < 8) {
+            hourlyLabels.push(`${hour}:00`);
+            hourlyTemps.push(entry.main.temp.toFixed(1));
+        }
+
+        // Daily data (every 8th entry is roughly a new day)
+        if (index % 8 === 0) {
+            dailyLabels.push(date.toLocaleDateString());
+            dailyTemps.push(entry.main.temp.toFixed(1));
+        }
+    });
+
+    renderChart("hourlyChart", "Temperature (°C) - Next 24H", hourlyLabels, hourlyTemps);
+    renderChart("dailyChart", "Temperature (°C) - Next 5 Days", dailyLabels, dailyTemps);
 }
 
-async function getForecast(lat, lon) {
-    try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
-        const data = await response.json();
-
-        const labels = data.list.map(item => new Date(item.dt * 1000).toLocaleTimeString());
-        const temps = data.list.map(item => item.main.temp);
-
-        updateChart("hourlyChart", labels.slice(0, 8), temps.slice(0, 8), "24-Hour Forecast");
-        updateChart("dailyChart", labels.filter((_, i) => i % 8 === 0), temps.filter((_, i) => i % 8 === 0), "5-Day Forecast");
-    } catch (error) {
-        console.error("Error fetching forecast:", error);
+function renderChart(canvasId, label, labels, data) {
+    const ctx = document.getElementById(canvasId);
+    if (!ctx) {
+        console.error(`❌ Missing Canvas Element: #${canvasId}`);
+        return;
     }
-}
 
-function updateChart(canvasId, labels, data, label) {
-    const canvas = document.getElementById(canvasId);
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-
-    if (canvasId === "hourlyChart" && hourlyChartInstance) hourlyChartInstance.destroy();
-    if (canvasId === "dailyChart" && dailyChartInstance) dailyChartInstance.destroy();
-
-    const chartInstance = new Chart(ctx, {
+    new Chart(ctx, {
         type: "line",
         data: {
             labels: labels,
             datasets: [{
                 label: label,
                 data: data,
-                borderColor: "#ff9800",
-                backgroundColor: "rgba(255, 152, 0, 0.2)",
-                borderWidth: 2
-            }]
+                borderColor: "rgb(255, 60, 0)",
+                fill: false,
+                tension: 0.3,
+            }],
         },
-        options: { responsive: true, maintainAspectRatio: false }
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: { title: { display: true, text: "Time" } },
+                y: { title: { display: true, text: "Temperature (°C)" } },
+            },
+        },
     });
-
-    if (canvasId === "hourlyChart") hourlyChartInstance = chartInstance;
-    if (canvasId === "dailyChart") dailyChartInstance = chartInstance;
 }
 
-function getLocationWeather() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            (position) => getWeather(null, position.coords.latitude, position.coords.longitude),
-            () => getWeather("Delhi")
-        );
-    } else {
-        getWeather("Delhi");
-    }
-}
+// Fetch initial forecast data
+document.addEventListener("DOMContentLoaded", getWeatherForecast);
+
 
 // mail submission 
 document.getElementById("newsletter-form").addEventListener("submit", function(event) {
@@ -539,60 +576,3 @@ function enableLazyLoading() {
 // Call this function when translation starts
 enableLazyLoading();
 
-// Check and request location permission
-function checkAndRequestLocation() {
-    navigator.permissions.query({ name: "geolocation" }).then((permissionStatus) => {
-        if (permissionStatus.state === "granted") {
-            console.log("Permission already granted. Using stored location.");
-            getStoredLocation();
-        } else if (permissionStatus.state === "prompt") {
-            requestLocationPermission();
-        } else {
-            console.log("Permission denied. Cannot access location.");
-        }
-
-        // Listen for permission changes (e.g., user changes in settings)
-        permissionStatus.onchange = () => {
-            console.log("Permission changed to:", permissionStatus.state);
-            if (permissionStatus.state === "granted") {
-                requestLocationPermission();
-            }
-        };
-    });
-}
-
-// Function to request location
-function requestLocationPermission() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                const userLocation = {
-                    latitude: position.coords.latitude,
-                    longitude: position.coords.longitude,
-                    timestamp: position.timestamp
-                };
-                // Store location data in localStorage
-                localStorage.setItem("userLocation", JSON.stringify(userLocation));
-                console.log("Location stored:", userLocation);
-            },
-            (error) => {
-                console.error("Error getting location:", error);
-            }
-        );
-    } else {
-        console.error("Geolocation is not supported by this browser.");
-    }
-}
-
-// Function to get stored location
-function getStoredLocation() {
-    const storedLocation = localStorage.getItem("userLocation");
-    if (storedLocation) {
-        console.log("Stored Location:", JSON.parse(storedLocation));
-    } else {
-        console.log("No stored location found.");
-    }
-}
-
-// Run the function
-checkAndRequestLocation();

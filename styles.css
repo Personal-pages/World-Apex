@@ -13,6 +13,49 @@ body {
     
     
 }
+/* ✅ 1. Fix Image & Video Layout Shift */
+img, video {
+    
+    height: auto;
+    aspect-ratio: 16/9; /* Ensures space is reserved */
+}
+
+/* ✅ 2. Prevent Font Loading Shifts */
+@font-face {
+    font-family: 'CustomFont';
+    src: url('customfont.woff2') format('woff2');
+    font-display: swap; /* Show fallback font immediately */
+}
+
+/* ✅ 3. Reserve Space for Ads & Iframes */
+.ad-container, .iframe-container {
+    min-height: 250px; /* Prevents shifting when ads load */
+}
+
+/* ✅ 4. Prevent Lazy-Loaded Elements from Shifting */
+.lazy-load {
+    min-height: 300px; /* Adjust height based on expected content */
+}
+
+/* ✅ 5. Fix Sticky Navbar & Buttons */
+.navbar {
+    height: 60px; /* Ensures navbar doesn't push content */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 1000;
+}
+
+/* ✅ 6. Prevent Buttons from Causing Shifts */
+.button {
+    min-width: 120px;
+    min-height: 40px; /* Ensures buttons don’t resize suddenly */
+}
+
+/* ✅ 7. Reduce Animation-Triggered Layout Shifts */
+
+
 /* THEME TOGGLE BUTTON */
 .theme-switcher {
     cursor: pointer;
@@ -66,7 +109,7 @@ header {
 }
 
 .logo span {
-    color: #f4720ef3; /* Vibrant Orange */
+    color: #ff6f00; /* Vibrant Orange */
 }
 
 /* Navigation Menu */
@@ -93,15 +136,10 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff7300; /* Orange Hover */
+    color: #ff5900; /* Orange Hover */
 }
 
-/* Navbar */
-/* .nav-bar {
-    background-color: #1A1A1A; Charcoal Grey
-    padding: 12px 20px;
-    border-bottom: 2px solid #FF9800;
-} */
+
 
 .nav-bar ul {
     list-style: none;
@@ -136,13 +174,13 @@ nav ul li a:hover {
     bottom: -5px;
     width: 0%;
     height: 2px;
-    background-color: #ff7300;
+    background-color: #ff4d00;
     transition: all 0.3s ease-in-out;
     transform: translateX(-50%);
 }
 
 .nav-bar ul li a:hover {
-    color: #FF9800;
+    color: #ff6600;
 }
 
 .nav-bar ul li a:hover::after {
@@ -515,7 +553,7 @@ footer {
 
 .news-content p {
     font-size: 14px;
-    color: #aaa;
+    color: #575757;
     margin-bottom: 10px;
 }
 
@@ -1291,3 +1329,98 @@ height: 180px;
 min-width: 120px;
 }
 }
+
+footer#chat-footer {
+    background: #1f1f1f;
+    border-top: 2px solid #ff5500;
+    padding: 15px;
+  }
+
+  #chat-container {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  #chat-box {
+    max-height: 250px;
+    overflow-y: auto;
+    background: #2b2b2b;
+    border: 1px solid #ff9800;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .pinned-msg {
+    background: #3c2f1f;
+    border-left: 4px solid #ff9800;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #ff7707;
+  }
+
+  #chat-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  #chat-form input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #222222;
+    border-radius: 5px;
+    background: #7b7b7b;
+    color: #fff;
+    flex: 1;
+  }
+
+  #chat-form button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  #chat-form button:hover {
+    background: #e05a00;
+  }
+
+  .material-icons {
+    font-size: 18px;
+  }
+
+  .message {
+    padding: 6px;
+    margin: 4px 0;
+    border-radius: 5px;
+    background: #1e1e1e;
+  }
+
+  .owner {
+    background: #ff8f80;
+    font-weight: bold;
+    padding: 6px;
+    color: #171717;
+    border-left: 4px solid #ff7300;
+    border-radius: 5px;
+    margin: 4px 0;
+  }
+
+  @media (max-width: 500px) {
+    #chat-form {
+      flex-direction: column;
+    }
+    #chat-box {
+      max-height: 200px;
+    }
+  }

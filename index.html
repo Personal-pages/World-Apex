@@ -4,10 +4,10 @@
 <head>
     <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-2022659342961679">
     
-    <title>WorldApex - Latest Global News & Updates</title>
+    <title>WorldApex</title>
     <meta name="description" content="Stay updated with the latest global news, breaking stories, and in-depth reports on politics, sports, business, and more.">
 
     <!-- Open Graph Meta Tags (For Facebook, LinkedIn, WhatsApp) -->
@@ -81,7 +81,7 @@
 </head>
 
 
-<body onload="getLocationWeather()">
+<body>
 
     <!-- HEADER -->
     <header>
@@ -92,17 +92,28 @@
                     <li><a data-translate href="index.html">Home</a></li>
                     <li><a data-translate href="#" id="contact-link">Contact</a></li>
                     <li><a data-translate href="#" class="scroll-link" data-section="World-section">World</a></li>
-                    <div class="dropdown">
-                        <select id="language">
-                            <option value="en" selected>English 🇬🇧</option>
-                            <option value="es">Español 🇪🇸</option>
-                            <option value="fr">Français 🇫🇷</option>
-                            <option value="de">Deutsch 🇩🇪</option>
-                            <option value="hi">हिन्दी 🇮🇳</option>
-                            <option value="ar">العربية 🇸🇦</option>
-                            <option value="zh">中文 🇨🇳</option>
-                        </select>
-                    </div>
+                
+                    <script>
+                        // Some dynamic logic here
+                    </script>
+                    <template>
+                        <!-- Maybe a future template for something -->
+                    </template>
+                    
+                    <label>
+                        <div class="dropdown">
+                            <select id="language">
+                                <option value="en" selected>English 🇬🇧</option>
+                                <option value="es">Español 🇪🇸</option>
+                                <option value="fr">Français 🇫🇷</option>
+                                <option value="de">Deutsch 🇩🇪</option>
+                                <option value="hi">हिन्दी 🇮🇳</option>
+                                <option value="ar">العربية 🇸🇦</option>
+                                <option value="zh">中文 🇨🇳</option>
+                            </select>
+                        </div>
+                    </label>
+                    
                                        
                     <div class="theme-switcher" onclick="toggleTheme()">
                         <span class="material-icons" id="theme-icon">dark_mode</span>
@@ -138,13 +149,12 @@
         </div>
         <section id="Top-section" class="news-container">
 
-
             <div class="news-card">
                 <img src="cartosat-myanmar.png" onerror="this.style.display='none';" alt="CARTOSAT-3 Myanmar Earthquake">
                 <div class="news-content">
                     <h2 data-translate>ISRO’s CARTOSAT-3 Captures Myanmar Earthquake Destruction</h2>
                     <p data-translate>High-resolution images from ISRO’s CARTOSAT-3 satellite reveal extensive damage in Myanmar after a powerful earthquake. The images will aid disaster response teams in assessing the affected areas.</p>
-                    <a data-translate href="cartosat-myanmar.html">Read More</a>
+                    <a data-translate href="cartosat-myanmar.html">Know More</a>
                 </div>
             </div>
             
@@ -154,7 +164,7 @@
                 <div class="news-content">
                     <h2 data-translate>Myanmar Hit by 5.1 Magnitude Earthquake Near Mandalay</h2>
                     <p data-translate>A 5.1 magnitude earthquake struck near Mandalay, Myanmar, marking the latest in a series of aftershocks. No major damages have been reported, but residents remain on high alert.</p>
-                    <a data-translate href="myanmar-earthquake.html">Read More</a>
+                    <a data-translate href="myanmar-earthquake.html">Know More</a>
                 </div>
             </div>
             
@@ -164,7 +174,7 @@
                 <div class="news-content">
                     <h2 data-translate>China Conducts Military Patrol in South China Sea, Warns Philippines</h2>
                     <p data-translate>China has carried out military patrols in the South China Sea, issuing a warning to the Philippines over territorial disputes. Beijing claims the patrols are a response to what it calls “provocative actions” by Manila in contested waters.</p>
-                    <a data-translate href="china-patrol.html">Read More</a>
+                    <a data-translate href="china-patrol.html">Know More</a>
                 </div>
             </div>
             
@@ -174,7 +184,7 @@
                 <div class="news-content">
                     <h2 data-translate  >Elon Musk's SpaceX Dragon Capsule Returns Astronauts After Extended ISS Mission</h2>
                     <p data-translate    >After spending 286 days in space, NASA astronauts Sunita Williams and Butch Wilmore safely returned to Earth aboard SpaceX’s Dragon capsule. Their mission was extended due to Boeing Starliner delays.</p>
-                    <a data-translate href="spacex-return.html">Read More</a>
+                    <a data-translate href="spacex-return.html">Know More</a>
                 </div>
             </div>
 
@@ -183,7 +193,7 @@
                 <div class="news-content">
                     <h2 data-translate   >Philadelphia Eagles Make Key Moves in NFL Free Agency</h2>
                     <p data-translate    >The Philadelphia Eagles have signed key defensive players, including Azeez Ojulari and Adoree' Jackson, while offloading others to manage their salary cap efficiently.</p>
-                    <a data-translate href="eagles-free-agency.html">Read More</a>
+                    <a data-translate href="eagles-free-agency.html">Know More</a>
                 </div>
             </div>
 
@@ -192,7 +202,7 @@
                 <div class="news-content">
                     <h2 data-translate   >Japan Begins Post-Earthquake Recovery Efforts</h2>
                     <p data-translate>Japan has started recovery operations after a massive 7.8-magnitude earthquake struck the country, displacing thousands and causing significant damage to infrastructure.</p>
-                    <a data-translate href="japan-earthquakehtml">Read More</a>
+                    <a data-translate href="japan-earthquakehtml">Know More</a>
                 </div>
             </div>
 
@@ -201,7 +211,7 @@
                 <div class="news-content">
                     <h2 data-translate>Major Tech Layoffs: Thousands Lose Jobs Amid Economic Slowdown</h2>
                     <p data-translate>Tech giants including Google, Amazon, and Meta have announced mass layoffs as companies struggle with declining revenue and AI-driven job automation.</p>
-                    <a data-translate href="tech-layoffs.html">Read More</a>
+                    <a data-translate href="tech-layoffs.html">Know More</a>
                 </div>
             </div>
 
@@ -210,7 +220,7 @@
                 <div class="news-content">
                     <h2 data-translate>Israeli Government Faces Crisis Amid Protests and Political Turmoil</h2>
                     <p data-translate>Mass protests continue in Israel as the government faces backlash over judicial reforms and corruption scandals, pushing the country into political instability.</p>
-                    <a data-translate href="israel-crisis.html">Read More</a>
+                    <a data-translate href="israel-crisis.html">Know More</a>
                 </div>
             </div>
             
@@ -220,7 +230,7 @@
                 <div class="news-content">
                     <h2 data-translate>Trump and Putin Agree to Temporary Ceasefire in Ukraine</h2>
                     <p data-translate>Former U.S. President Donald Trump and Russian President Vladimir Putin have agreed on a temporary ceasefire in Ukraine. The deal, mediated by European nations, aims to reduce ongoing hostilities but remains fragile as key terms are still being negotiated. Many experts doubt the long-term sustainability of the agreement.</p>
-                    <a data-translate href="Trump&sunita.html">Read More</a>
+                    <a data-translate href="Trump&sunita.html">Know More</a>
                 </div>
             </div>
             
@@ -240,7 +250,7 @@
                 <div class="news-content">
                     <h2 data-translate>“Never Thought About This”: Ashwani Kumar Reflects on His Dream IPL Debut</h2>
                     <p data-translate>Young talent Ashwani Kumar made a stunning IPL debut, leaving fans and experts impressed. Speaking about his performance, he said he just followed his process without overthinking, making the moment even more special.</p>
-                    <a data-translate href="ashwani-kumar-ipl2025.html">Read More</a>
+                    <a data-translate href="ashwani-kumar-ipl2025.html">Know More</a>
                 </div>
             </div>
 
@@ -249,7 +259,7 @@
     <div class="news-content">
         <h2 data-translate>Trump Imposes 25% Tariff on Automobile Imports, Aims for $100 Billion in Tax Revenue</h2>
         <p data-translate>Former U.S. President Donald Trump has announced a 25% tariff on automobile imports, a move expected to generate $100 billion in tax revenues. The decision is part of his broader economic strategy to boost domestic manufacturing and reduce trade deficits.</p>
-        <a data-translate href="trump-auto-tariff.html">Read More</a>
+        <a data-translate href="trump-auto-tariff.html">Know More</a>
     </div>
 </div>
 
@@ -259,7 +269,7 @@
                 <div class="news-content">
                     <h2 data-translate>Trump Explains Why He Hasn’t Invited Sunita Williams to the White House Yet</h2>
                     <p data-translate>Former U.S. President Donald Trump explained why astronaut Sunita Williams has not yet been invited to the White House. He cited scheduling challenges and Williams’ ongoing space missions as key reasons. Trump assured that an invitation will be sent soon to recognize her contributions to space exploration.</p>
-                    <a data-translate href="Trump&sunita.html">Read More</a>
+                    <a data-translate href="Trump&sunita.html">Know More</a>
                 </div>
             </div>
 
@@ -268,7 +278,7 @@
                 <div class="news-content">
                     <h2 data-translate>Sports: Epic Showdown in Football Finals</h2>
                     <p data-translate>The championship match saw a thrilling last-minute goal...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -277,7 +287,7 @@
                 <div class="news-content">
                     <h2 data-translate>Entertainment: New Movie Breaks Records</h2>
                     <p data-translate>The latest blockbuster has shattered all box office records...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -286,7 +296,7 @@
                 <div class="news-content">
                     <h2 data-translate>Health: New Diet Trends for 2025</h2>
                     <p data-translate>Experts reveal the latest diet plans that actually work...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -295,7 +305,7 @@
                 <div class="news-content">
                     <h2 data-translate>Science: NASA’s New Space Mission</h2>
                     <p data-translate>NASA announces a groundbreaking mission to explore deep space...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -304,7 +314,7 @@
                 <div class="news-content">
                     <h2 data-translate>Business: Startup Boom in 2025</h2>
                     <p data-translate>New startups are emerging with innovative solutions...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
             <div class="news-card"    >
@@ -312,7 +322,7 @@
                 <div class="news-content">
                     <h2 data-translate>Travel: Top Destinations for 2025</h2>
                     <p data-translate>Explore the most breathtaking places to visit this year...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -321,7 +331,7 @@
                 <div class="news-content">
                     <h2 data-translate>Finance: Cryptocurrency Trends</h2>
                     <p data-translate>Experts predict the future of digital currencies in 2025...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
             <div>
@@ -341,7 +351,7 @@
                 <div class="news-content">
                     <h2 data-translate>“Never Thought About This”: Ashwani Kumar Reflects on His Dream IPL Debut</h2>
                     <p data-translate>Young talent Ashwani Kumar made a stunning IPL debut, leaving fans and experts impressed. Speaking about his performance, he said he just followed his process without overthinking, making the moment even more special.</p>
-                    <a data-translate href="ashwani-kumar-ipl2025.html">Read More</a>
+                    <a data-translate href="ashwani-kumar-ipl2025.html">Know More</a>
                 </div>
             </div>
             
@@ -351,7 +361,7 @@
                 <div class="news-content">
                     <h2 data-translate>IPL 2025: Rajasthan Royals Edge Chennai Super Kings in Thriller</h2>
                     <p data-translate>Nitish Rana and Wanindu Hasaranga put on a stellar performance as Rajasthan Royals secured a hard-fought victory over Chennai Super Kings. The match saw intense moments, with RR holding their nerves till the end.</p>
-                    <a data-translate href="ipl-rr-csk.html">Read More</a>
+                    <a data-translate href="ipl-rr-csk.html">Know More</a>
                 </div>
             </div>
             
@@ -361,7 +371,7 @@
                 <div class="news-content">
                     <h2 data-translate>Breaking News: Market Hits Record High</h2>
                     <p data-translate>The stock market surged to an all-time high today...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -370,7 +380,7 @@
                 <div class="news-content">
                     <h2 data-translate>Tech: AI Revolutionizing Healthcare</h2>
                     <p data-translate>AI is transforming the healthcare industry with innovative solutions...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -379,7 +389,7 @@
                 <div class="news-content">
                     <h2 data-translate>Sports: Epic Showdown in Football Finals</h2>
                     <p data-translate>The championship match saw a thrilling last-minute goal...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -388,7 +398,7 @@
                 <div class="news-content">
                     <h2 data-translate>Entertainment: New Movie Breaks Records</h2>
                     <p data-translate>The latest blockbuster has shattered all box office records...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -397,7 +407,7 @@
                 <div class="news-content">
                     <h2 data-translate>Health: New Diet Trends for 2025</h2>
                     <p data-translate>Experts reveal the latest diet plans that actually work...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -406,7 +416,7 @@
                 <div class="news-content">
                     <h2 data-translate>Science: NASA’s New Space Mission</h2>
                     <p data-translate>NASA announces a groundbreaking mission to explore deep space...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -415,7 +425,7 @@
                 <div class="news-content">
                     <h2 data-translate>Business: Startup Boom in 2025</h2>
                     <p data-translate>New startups are emerging with innovative solutions...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
             <div class="news-card"    >
@@ -423,7 +433,7 @@
                 <div class="news-content">
                     <h2 data-translate>Travel: Top Destinations for 2025</h2>
                     <p data-translate>Explore the most breathtaking places to visit this year...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -432,7 +442,7 @@
                 <div class="news-content">
                     <h2 data-translate>Finance: Cryptocurrency Trends</h2>
                     <p data-translate>Experts predict the future of digital currencies in 2025...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
             <div>
@@ -451,7 +461,7 @@
                 <div class="news-content">
                     <h2 data-translate>Vicky Kaushal’s ‘Chhaava’ Faces Online Circulation, Police Begin Investigation</h2>
                     <p data-translate>Vicky Kaushal’s upcoming film ‘Chhaava’ has surfaced online, prompting authorities to take action. A case has been registered, and officials are looking into the matter to prevent further distribution.</p>
-                    <a data-translate href="vicky-kaushal-chhaava-news.html">Read More</a>
+                    <a data-translate href="vicky-kaushal-chhaava-news.html">Know More</a>
                 </div>
             </div>
             
@@ -461,7 +471,7 @@
                 <div class="news-content">
                     <h2 data-translate>Lisa Ray Criticizes Airlines for Denying Medical Waiver for Ailing Father.</h2>
                     <p data-translate>Actress Lisa Ray has slammed airlines for refusing a medical waiver request for her critically ill father. She called the decision “inhumane” and urged airlines to show compassion in medical emergencies.</p>
-                    <a data-translate href="lisa-ray-airline-controversy.html">Read More</a>
+                    <a data-translate href="lisa-ray-airline-controversy.html">Know More</a>
                 </div>
             </div>
             
@@ -471,7 +481,7 @@
                 <div class="news-content">
                     <h2 data-translate>Tech: AI Revolutionizing Healthcare</h2>
                     <p data-translate>AI is transforming the healthcare industry with innovative solutions...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -480,7 +490,7 @@
                 <div class="news-content">
                     <h2 data-translate>Sports: Epic Showdown in Football Finals</h2>
                     <p data-translate>The championship match saw a thrilling last-minute goal...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -489,7 +499,7 @@
                 <div class="news-content">
                     <h2 data-translate>Entertainment: New Movie Breaks Records</h2>
                     <p data-translate>The latest blockbuster has shattered all box office records...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -498,7 +508,7 @@
                 <div class="news-content">
                     <h2 data-translate>Health: New Diet Trends for 2025</h2>
                     <p data-translate>Experts reveal the latest diet plans that actually work...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -507,7 +517,7 @@
                 <div class="news-content">
                     <h2 data-translate>Science: NASA’s New Space Mission</h2>
                     <p data-translate>NASA announces a groundbreaking mission to explore deep space...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -516,7 +526,7 @@
                 <div class="news-content">
                     <h2 data-translate>Business: Startup Boom in 2025</h2>
                     <p data-translate>New startups are emerging with innovative solutions...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
             <div class="news-card"    >
@@ -524,7 +534,7 @@
                 <div class="news-content">
                     <h2 data-translate>Travel: Top Destinations for 2025</h2>
                     <p data-translate>Explore the most breathtaking places to visit this year...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -533,7 +543,7 @@
                 <div class="news-content">
                     <h2 data-translate>Finance: Cryptocurrency Trends</h2>
                     <p data-translate>Experts predict the future of digital currencies in 2025...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
             <div>
@@ -551,7 +561,7 @@
                 <div class="news-content">
                     <h2 data-translate>Breaking News: Market Hits Record High</h2>
                     <p data-translate>The stock market surged to an all-time high today...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -560,7 +570,7 @@
                 <div class="news-content">
                     <h2 data-translate>China Conducts Military Patrol in South China Sea, Warns Philippines</h2>
                     <p data-translate>China has carried out military patrols in the South China Sea, issuing a warning to the Philippines over territorial disputes. Beijing claims the patrols are a response to what it calls “provocative actions” by Manila in contested waters.</p>
-                    <a data-translate href="china-patrol.html">Read More</a>
+                    <a data-translate href="china-patrol.html">Know More</a>
                 </div>
             </div>
             
@@ -570,7 +580,7 @@
                 <div class="news-content">
                     <h2 data-translate>Sports: Epic Showdown in Football Finals</h2>
                     <p data-translate>The championship match saw a thrilling last-minute goal...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -579,7 +589,7 @@
                 <div class="news-content">
                     <h2 data-translate>Entertainment: New Movie Breaks Records</h2>
                     <p data-translate>The latest blockbuster has shattered all box office records...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -588,7 +598,7 @@
                 <div class="news-content">
                     <h2 data-translate>Health: New Diet Trends for 2025</h2>
                     <p data-translate>Experts reveal the latest diet plans that actually work...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -597,7 +607,7 @@
                 <div class="news-content">
                     <h2 data-translate>Science: NASA’s New Space Mission</h2>
                     <p data-translate>NASA announces a groundbreaking mission to explore deep space...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -606,7 +616,7 @@
                 <div class="news-content">
                     <h2 data-translate>Business: Startup Boom in 2025</h2>
                     <p data-translate>New startups are emerging with innovative solutions...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
             <div class="news-card"    >
@@ -614,7 +624,7 @@
                 <div class="news-content">
                     <h2 data-translate>Travel: Top Destinations for 2025</h2>
                     <p data-translate>Explore the most breathtaking places to visit this year...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -623,7 +633,7 @@
                 <div class="news-content">
                     <h2 data-translate>Finance: Cryptocurrency Trends</h2>
                     <p data-translate>Experts predict the future of digital currencies in 2025...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
             <div>
@@ -643,7 +653,7 @@
                 <div class="news-content">
                     <h2 data-translate>Waqf Bill: INDIA Bloc Engages in Debate, Pushes for Voting in Parliament</h2>
                     <p data-translate>In a strategic move, the INDIA bloc opted for discussion instead of protest or walkout on the Waqf Bill. Opposition leaders are pressing for a detailed debate and a formal vote in Parliament.</p>
-                    <a data-translate href="waqf-bill-debate.html">Read More</a>
+                    <a data-translate href="waqf-bill-debate.html">Know More</a>
                 </div>
             </div>
 
@@ -652,7 +662,7 @@
                 <div class="news-content">
                     <h2 data-translate>Rahul Gandhi Calls Opposition to Caste Census ‘Anti-National’. </h2>
                     <p data-translate>Rahul Gandhi has strongly defended the caste census, stating that opposing it is an ‘anti-national’ act. He argued that the census is essential for ensuring social justice and equitable resource distribution.</p>
-                    <a data-translate href="rahul-gandhi-caste-census.html">Read More</a>
+                    <a data-translate href="rahul-gandhi-caste-census.html">Know More</a>
                 </div>
             </div>
             
@@ -662,7 +672,7 @@
                 <div class="news-content">
                     <h2 data-translate>Tech: AI Revolutionizing Healthcare</h2>
                     <p data-translate>AI is transforming the healthcare industry with innovative solutions...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -671,7 +681,7 @@
                 <div class="news-content">
                     <h2 data-translate>Sports: Epic Showdown in Football Finals</h2>
                     <p data-translate>The championship match saw a thrilling last-minute goal...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -680,7 +690,7 @@
                 <div class="news-content">
                     <h2 data-translate>Entertainment: New Movie Breaks Records</h2>
                     <p data-translate>The latest blockbuster has shattered all box office records...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -689,7 +699,7 @@
                 <div class="news-content">
                     <h2 data-translate>Health: New Diet Trends for 2025</h2>
                     <p data-translate>Experts reveal the latest diet plans that actually work...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -698,7 +708,7 @@
                 <div class="news-content">
                     <h2 data-translate>Science: NASA’s New Space Mission</h2>
                     <p data-translate>NASA announces a groundbreaking mission to explore deep space...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -707,7 +717,7 @@
                 <div class="news-content">
                     <h2 data-translate>Business: Startup Boom in 2025</h2>
                     <p data-translate>New startups are emerging with innovative solutions...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
             <div class="news-card"    >
@@ -715,7 +725,7 @@
                 <div class="news-content">
                     <h2 data-translate>Travel: Top Destinations for 2025</h2>
                     <p data-translate>Explore the most breathtaking places to visit this year...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -724,7 +734,7 @@
                 <div class="news-content">
                     <h2 data-translate>Finance: Cryptocurrency Trends</h2>
                     <p data-translate>Experts predict the future of digital currencies in 2025...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
             <div>
@@ -742,7 +752,7 @@
                 <div class="news-content">
                     <h2 data-translate>Nvidia to Open Quantum Computing Lab, CEO Confirms.</h2>
                     <p data-translate>Nvidia CEO Jensen Huang announced plans to open a quantum computing lab to accelerate research in AI and next-gen computing. The lab aims to integrate quantum technology with Nvidia’s advanced GPUs for breakthroughs in computing power.</p>
-                    <a data-translate href="nvidia-quantum-lab.html">Read More</a>
+                    <a data-translate href="nvidia-quantum-lab.html">Know More</a>
                 </div>
             </div>
             
@@ -752,7 +762,7 @@
                 <div class="news-content">
                     <h2 data-translate>Tech: AI Revolutionizing Healthcare</h2>
                     <p data-translate>AI is transforming the healthcare industry with innovative solutions...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -761,7 +771,7 @@
                 <div class="news-content">
                     <h2 data-translate>Sports: Epic Showdown in Football Finals</h2>
                     <p data-translate>The championship match saw a thrilling last-minute goal...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -770,7 +780,7 @@
                 <div class="news-content">
                     <h2 data-translate>Entertainment: New Movie Breaks Records</h2>
                     <p data-translate>The latest blockbuster has shattered all box office records...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -779,7 +789,7 @@
                 <div class="news-content">
                     <h2 data-translate>Health: New Diet Trends for 2025</h2>
                     <p data-translate>Experts reveal the latest diet plans that actually work...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -788,7 +798,7 @@
                 <div class="news-content">
                     <h2 data-translate>Science: NASA’s New Space Mission</h2>
                     <p data-translate>NASA announces a groundbreaking mission to explore deep space...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -797,7 +807,7 @@
                 <div class="news-content">
                     <h2 data-translate>Business: Startup Boom in 2025</h2>
                     <p data-translate>New startups are emerging with innovative solutions...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
             <div class="news-card"    >
@@ -805,7 +815,7 @@
                 <div class="news-content">
                     <h2 data-translate>Travel: Top Destinations for 2025</h2>
                     <p data-translate>Explore the most breathtaking places to visit this year...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -814,7 +824,7 @@
                 <div class="news-content">
                     <h2 data-translate>Finance: Cryptocurrency Trends</h2>
                     <p data-translate>Experts predict the future of digital currencies in 2025...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
             <div>
@@ -832,7 +842,7 @@
                 <div class="news-content">
                     <h2 data-translate>Breaking News: Market Hits Record High</h2>
                     <p data-translate>The stock market surged to an all-time high today...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -841,7 +851,7 @@
                 <div class="news-content">
                     <h2 data-translate>Tech: AI Revolutionizing Healthcare</h2>
                     <p data-translate>AI is transforming the healthcare industry with innovative solutions...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -850,7 +860,7 @@
                 <div class="news-content">
                     <h2 data-translate>Sports: Epic Showdown in Football Finals</h2>
                     <p data-translate>The championship match saw a thrilling last-minute goal...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -859,7 +869,7 @@
                 <div class="news-content">
                     <h2 data-translate>Entertainment: New Movie Breaks Records</h2>
                     <p data-translate>The latest blockbuster has shattered all box office records...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -868,7 +878,7 @@
                 <div class="news-content">
                     <h2 data-translate>Health: New Diet Trends for 2025</h2>
                     <p data-translate>Experts reveal the latest diet plans that actually work...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -877,7 +887,7 @@
                 <div class="news-content">
                     <h2 data-translate>Science: NASA’s New Space Mission</h2>
                     <p data-translate>NASA announces a groundbreaking mission to explore deep space...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -886,7 +896,7 @@
                 <div class="news-content">
                     <h2 data-translate>Business: Startup Boom in 2025</h2>
                     <p data-translate>New startups are emerging with innovative solutions...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
             <div class="news-card"    >
@@ -894,7 +904,7 @@
                 <div class="news-content">
                     <h2 data-translate>Travel: Top Destinations for 2025</h2>
                     <p data-translate>Explore the most breathtaking places to visit this year...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
 
@@ -903,7 +913,7 @@
                 <div class="news-content">
                     <h2 data-translate>Finance: Cryptocurrency Trends</h2>
                     <p data-translate>Experts predict the future of digital currencies in 2025...</p>
-                    <a data-translate href="#">Read More</a>
+                    <a data-translate href="#">Know More</a>
                 </div>
             </div>
             <div>
@@ -918,50 +928,43 @@
         <section id="weather-section">
             <div class="container">
                 <h1 data-translate>Weather App</h1>
+ <!-- Search Box -->
+ <div class="search">
+    <input type="text" id="city" placeholder="Enter city or postal code">
+    <span class="material-icons search-icon" onclick="getWeather()">search</span>
+</div>
 
-                <!-- Search Box -->
-                <div class="search">
-                    <input type="text" id="city" placeholder="Enter city or postal code">
-                    <span class="material-icons search-icon" onclick="getWeather()">search</span>
-                </div>
+<!-- Weather Details -->
+<h2 data-translate id="location">City Name</h2>
+<div id="weather-icon-container">
+    <img id="weather-icon" src="" alt="Weather Icon">
+</div>
+<h3 data-translate id="weather-description"><span id="description"></span></h3>
 
-                <!-- Weather Details -->
-                <h2 data-translate  id="location">City Name</h2>
-                <div id="weather-icon-container">
-                    <img id="weather-icon" src="" alt="Weather Icon">
-                </div>
-                <h3 data-translate id="weather-description"><span id="description"></span></h3>
-
-                <div class="weather-container">
-                    <div class="weather-box"><span class="material-icons">thermostat</span>
-                        <p data-translate class="result"><b>Temperature:</b> <span id="temperature"></span>°C</p>
-                    </div>
-                    <div class="weather-box"><span class="material-icons">device_thermostat</span>
-                        <p data-translate class="result"><b>Real Feel:</b> <span id="feels_like"></span>°C</p>
-                    </div>
-                    <div class="weather-box"><span class="material-icons">air</span>
-                        <p data-translate class="result"><b>Wind Speed:</b> <span id="wind"></span> KM/H</p>
-                    </div>
-                    <div class="weather-box"><span class="material-icons">water_drop</span>
-                        <p data-translate class="result"><b>Humidity:</b> <span id="humidity"></span>%</p>
-                    </div>
-                    <div class="weather-box"><span class="material-icons">speed</span>
-                        <p data-translate class="result"><b>Pressure:</b> <span id="pressure"></span> Pa</p>
-                    </div>
-                    <div class="weather-box"><span class="material-icons">eco</span>
-                        <p data-translate class="result"><b>Air Quality:</b> <span id="aqi"></span></p>
-                    </div>
-                    <div class="weather-box"><span class="material-icons">wb_sunny</span>
-                        <p data-translate class="result"><b>UV Index:</b> <span id="uv"></span></p>
-                    </div>
-                    <div class="weather-box"><span class="material-icons">wb_twilight</span>
-                        <p data-translate class="result"><b>Sunrise:</b> <span id="sunrise"></span></p>
-                    </div>
-                    <div class="weather-box"><span class="material-icons">nights_stay</span>
-                        <p data-translate class="result"><b>Sunset:</b> <span id="sunset"></span></p>
-                    </div>
-                </div>
-
+<div class="weather-container">
+    <div class="weather-box"><span class="material-icons">thermostat</span>
+        <p class="result"><b>Temperature:</b> <span id="temperature"></span>°C</p>
+    </div>
+    <div class="weather-box"><span class="material-icons">device_thermostat</span>
+        <p class="result"><b>Real Feel:</b> <span id="feels_like"></span>°C</p>
+    </div>
+    <div class="weather-box"><span class="material-icons">air</span>
+        <p class="result"><b>Wind Speed:</b> <span id="wind"></span> km/h</p>
+    </div>
+    <div class="weather-box"><span class="material-icons">water_drop</span>
+        <p class="result"><b>Humidity:</b> <span id="humidity"></span>%</p>
+    </div>
+    <div class="weather-box"><span class="material-icons">speed</span>
+        <p class="result"><b>Pressure:</b> <span id="pressure"></span> Pa</p>
+    </div>
+    <div class="weather-box"><span class="material-icons">wb_twilight</span>
+        <p class="result"><b>Sunrise:</b> <span id="sunrise"></span></p>
+    </div>
+    <div class="weather-box"><span class="material-icons">nights_stay</span>
+        <p class="result"><b>Sunset:</b> <span id="sunset"></span></p>
+    </div>
+</div>
+</div>
                 <!-- Graphs -->
                 <h2 data-translate>24-Hour Forecast</h2>
                 <div class="chart-container"><canvas id="hourlyChart"></canvas></div>
@@ -1002,7 +1005,96 @@
                     <a  href="Instagram-link"><img src="IN.png" alt="Instagram"></a>
                 </div>
             </div>
-
+            <div class="footer-section">
+                <footer id="chat-footer">
+                    <div id="chat-container">
+                      <h3 data-translate="chat.title">💬Live Chat</h3>
+                      <div id="chat-box">
+                        <div class="pinned-msg">
+                          <p data-translate="chat.pinned">
+                            🚀 <strong>Welcome to <strong>World Apex</strong>!</strong><br>
+                            Engage in real-time discussions, share your thoughts, and stay connected.<br>
+                            ⚡ Let’s keep it interactive, respectful, and fun for everyone.
+                          </p>
+                        </div>
+                        <div id="messages"></div>
+                      </div>
+                      <div id="chat-form">
+                        <input type="email" id="email" placeholder="Your Email" data-translate="chat.emailPlaceholder" />
+                        <input type="text" id="message" placeholder="Type a message..." data-translate="chat.messagePlaceholder" />
+                        <button id="sendBtn" >
+                          <span class="material-icons">send</span>
+                        </button>
+                      </div>
+                    </div>
+                  </footer>
+                  
+            
+              <!-- Firebase Scripts -->
+              <script type="module">
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+                import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+            
+                const firebaseConfig = {
+                  apiKey: "AIzaSyDVtyvBDN4elZ__rFBXlDdCI7lKFWV41aE",
+                  authDomain: "my-comment-9aa1d.firebaseapp.com",
+                  projectId: "my-comment-9aa1d",
+                  storageBucket: "my-comment-9aa1d.firebasestorage.app",
+                  messagingSenderId: "101822856762",
+                  appId: "1:101822856762:web:a13833ad14674ec1ef7f03",
+                  measurementId: "G-HTQFVMSD9F"
+                };
+            
+                const app = initializeApp(firebaseConfig);
+                const db = getFirestore(app);
+            
+                const ownerEmail = "iambasantkumar2000@gmail.com"; // Replace with your actual email
+            
+                async function sendMessage() {
+                  const email = document.getElementById("email").value.trim();
+                  const message = document.getElementById("message").value.trim();
+                  if (!email || !message) return;
+            
+                  await addDoc(collection(db, "messages"), {
+                    email,
+                    message,
+                    timestamp: serverTimestamp()
+                  });
+            
+                  document.getElementById("message").value = "";
+                }
+            
+                function loadMessages() {
+                  const q = query(collection(db, "messages"), orderBy("timestamp"));
+                  onSnapshot(q, (snapshot) => {
+                    const msgBox = document.getElementById("messages");
+                    msgBox.innerHTML = "";
+                    snapshot.forEach((doc) => {
+                      const data = doc.data();
+                      const isOwner = data.email === ownerEmail;
+                      const className = isOwner ? "owner" : "message";
+                      const displayName = isOwner ? "World Apex" : data.email;
+            
+                      if (data.message && data.email) {
+                        const msgHTML = `<p class="${className}"><strong>${displayName}:</strong> ${data.message}</p>`;
+                        msgBox.insertAdjacentHTML("beforeend", msgHTML);
+                      }
+                    });
+                    msgBox.scrollTop = msgBox.scrollHeight;
+                  });
+                }
+            
+                document.getElementById("sendBtn").addEventListener("click", sendMessage);
+                document.getElementById("message").addEventListener("keydown", (e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                  }
+                });
+            
+                loadMessages();
+              </script>
+            </div>
             <div class="footer-section">
                 <h3 data-translate>Newsletter</h3>
                 <p data-translate>Subscribe to our newsletter for daily updates.</p>
