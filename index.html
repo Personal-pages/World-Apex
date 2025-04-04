@@ -61,7 +61,7 @@
             "https://www.linkedin.com/company/WorldapexX"
         ],
         "description": "Stay updated with the latest global news, breaking stories, and in-depth reports on politics, sports, business, and more.",
-        "foundingDate": "2025-03-30",
+        "foundingDate": "2025-01-01",
         "founders": [
             {
                 "@type": "Person",
@@ -1042,7 +1042,7 @@
                 const app = initializeApp(firebaseConfig);
                 const db = getFirestore(app);
             
-                const ownerEmail = "iambasantkumar2000@gmail.com"; // Replace with your actual email
+                const ownerEmail = "iambasantkumar2000@gmail.com"; 
             
                 async function sendMessage() {
                   const email = document.getElementById("email").value.trim();
@@ -1123,10 +1123,10 @@
             let texts = [];
             let elementMap = new Map();
     
-            // Collect text while ignoring elements without the class
+            
             elements.forEach((el, index) => {
                 if (!el.dataset.originalText) {
-                    el.dataset.originalText = el.textContent.trim(); // Store original text
+                    el.dataset.originalText = el.textContent.trim(); 
                 }
                 texts.push(el.dataset.originalText);
                 elementMap.set(index, el);
@@ -1155,7 +1155,7 @@
     
                 if (data.result) {
                     elementMap.forEach((el, index) => {
-                        el.textContent = data.result[index]; // Update only the translatable elements
+                        el.textContent = data.result[index]; 
                     });
                 } else {
                     console.error("Translation failed: No results received.");
@@ -1173,25 +1173,25 @@
 
             // Listen for Enter key press
             cityInput.addEventListener("keypress", function (event) {
-                console.log("Key pressed:", event.key); // Debugging
+                console.log("Key pressed:", event.key); 
                 if (event.key === "Enter" || event.keyCode === 13) {
                     event.preventDefault();
                     getWeather();
                 }
             });
 
-            // Listen for search button click
+            
             searchBtn.addEventListener("click", getWeather);
         });
 
-        // Function to fetch weather (for now, just displays alert)
+        
         function getWeather() {
             let city = document.getElementById("city").value.trim();
-            console.log("City input:", city); // Debugging
+            console.log("City input:", city); 
 
             if (city !== "") {
                 alert("Fetching weather for: " + city);
-                // Here, you can add your API call logic
+                
             } else {
                 alert("Please enter a valid city or postal code.");
             }
