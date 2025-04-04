@@ -519,45 +519,52 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const recommendations = [
-        { img: "X.webp", title: "Stock Market Surges Amid Economic Optimism" },
-        { img: "logo.webp", title: "AI Breakthroughs: What’s Coming Next in 2025" },
+        { img: "X.webp", title: "Stock Market Surges Amid Economic Optimism", link: "index.html" },
+        { img: "logo.webp", title: "AI Breakthroughs: What’s Coming Next in 2025", link: "index.html" },
         {
             img: "cartosat-myanmar.webp",
-            title: "ISRO’s CARTOSAT-3 Captures Myanmar Earthquake Destruction"
+            title: "ISRO’s CARTOSAT-3 Captures Myanmar Earthquake Destruction",
+            link: "cartosat-myanmar.html"
         },
         {
             img: "myanmar-earthquake.webp",
-            title: "Myanmar Hit by 5.1 Magnitude Earthquake Near Mandalay"
+            title: "Myanmar Hit by 5.1 Magnitude Earthquake Near Mandalay",
+            link: "myanmar-earthquake.html"
         },
         {
             img: "china-patrol1.webp",
-            title: "China Conducts Military Patrol in South China Sea, Warns Philippines"
+            title: "China Conducts Military Patrol in South China Sea, Warns Philippines",
+            link: "china-patrol.html"
         }
     ];
-    
 
     const container = document.getElementById("recommendations-container");
 
-    // Shuffle & Pick 4 Random
+    // Shuffle and pick 4 recommendations
     const shuffled = recommendations.sort(() => 0.5 - Math.random()).slice(0, 4);
-
-    // Create a fragment for smooth insertion (avoids flashing issues)
     const fragment = document.createDocumentFragment();
 
     shuffled.forEach(rec => {
         const recDiv = document.createElement("div");
         recDiv.classList.add("recommendation");
+        // Set the pointer cursor
+        recDiv.style.cursor = "pointer";
+
+        // Make the whole recommendation clickable
+        recDiv.addEventListener("click", () => {
+            window.location.href = rec.link;
+        });
 
         const img = new Image();
         img.src = rec.img;
-        img.alt = "Image";
-        img.style.display = "none"; // Hide initially to avoid flicker
+        img.alt = rec.title;
+        img.style.display = "none";
         img.onload = function () {
-            this.style.display = "block"; // Show only when fully loaded
+            this.style.display = "block";
         };
         img.onerror = function () {
-            this.src = "logo.jpg"; // Replace with fallback image
-            this.style.display = "block"; // Ensure fallback shows
+            this.src = "logo.jpg";
+            this.style.display = "block";
         };
 
         const p = document.createElement("p");
@@ -570,47 +577,10 @@ document.addEventListener("DOMContentLoaded", function () {
         fragment.appendChild(recDiv);
     });
 
-    // Append all at once (prevents reflow glitches)
     container.appendChild(fragment);
 });
 
-function enableLazyLoading() {
-    document.querySelectorAll("p").forEach((p) => {
-        p.classList.add("translating"); // Apply content-visibility only during translation
-    });
-}
 
 // Call this function when translation starts
 enableLazyLoading();
 
-const fallbackImage = 'logo.webp';
-
-function applyFallback(img) {
-  if (!img.dataset.fallbackSet) {
-    img.onerror = function () {
-      this.onerror = null;
-      this.src = fallbackImage;
-    };
-    img.dataset.fallbackSet = "true";
-  }
-}
-
-// Apply fallback to all existing images
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('img').forEach(applyFallback);
-});
-
-// Watch for dynamically added images
-const observer = new MutationObserver(mutations => {
-  mutations.forEach(mutation => {
-    mutation.addedNodes.forEach(node => {
-      if (node.tagName === 'IMG') {
-        applyFallback(node);
-      } else if (node.querySelectorAll) {
-        node.querySelectorAll('img').forEach(applyFallback);
-      }
-    });
-  });
-});
-
-observer.observe(document.body, { childList: true, subtree: true });
