@@ -519,22 +519,19 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const recommendations = [
-        { img: "X.webp", title: "Stock Market Surges Amid Economic Optimism", link: "index.html" },
-        { img: "logo.webp", title: "AI Breakthroughs: What’s Coming Next in 2025", link: "index.html" },
+        { img: "X.webp", title: "Stock Market Surges Amid Economic Optimism" },
+        { img: "logo.webp", title: "AI Breakthroughs: What’s Coming Next in 2025" },
         {
             img: "cartosat-myanmar.webp",
-            title: "ISRO’s CARTOSAT-3 Captures Myanmar Earthquake Destruction",
-            link: "cartosat-myanmar.html"
+            title: "ISRO’s CARTOSAT-3 Captures Myanmar Earthquake Destruction"
         },
         {
             img: "myanmar-earthquake.webp",
-            title: "Myanmar Hit by 5.1 Magnitude Earthquake Near Mandalay",
-            link: "myanmar-earthquake.html"
+            title: "Myanmar Hit by 5.1 Magnitude Earthquake Near Mandalay"
         },
         {
             img: "china-patrol1.webp",
-            title: "China Conducts Military Patrol in South China Sea, Warns Philippines",
-            link: "china-patrol.html"
+            title: "China Conducts Military Patrol in South China Sea, Warns Philippines"
         }
     ];
     
@@ -555,14 +552,12 @@ document.addEventListener("DOMContentLoaded", function () {
         img.src = rec.img;
         img.alt = "Image";
         img.style.display = "none"; // Hide initially to avoid flicker
-
         img.onload = function () {
             this.style.display = "block"; // Show only when fully loaded
         };
-
         img.onerror = function () {
             this.src = "logo.jpg"; // Replace with fallback image
-            this.style.display = "block";
+            this.style.display = "block"; // Ensure fallback shows
         };
 
         const p = document.createElement("p");
@@ -572,21 +567,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         recDiv.appendChild(img);
         recDiv.appendChild(p);
-
-        // 🔗 Add redirection on click
-        recDiv.addEventListener("click", () => {
-            window.location.href = rec.link;
-        });
-
-        recDiv.style.cursor = "pointer";
-
         fragment.appendChild(recDiv);
     });
 
     // Append all at once (prevents reflow glitches)
     container.appendChild(fragment);
 });
-
 
 function enableLazyLoading() {
     document.querySelectorAll("p").forEach((p) => {
@@ -599,32 +585,32 @@ enableLazyLoading();
 
 const fallbackImage = 'logo.webp';
 
-  function applyFallback(img) {
-    if (!img.dataset.fallbackSet) {
-      img.onerror = function () {
-        this.onerror = null;
-        this.src = fallbackImage;
-      };
-      img.dataset.fallbackSet = "true";
-    }
+function applyFallback(img) {
+  if (!img.dataset.fallbackSet) {
+    img.onerror = function () {
+      this.onerror = null;
+      this.src = fallbackImage;
+    };
+    img.dataset.fallbackSet = "true";
   }
+}
 
-  // Apply fallback to all existing images
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('img').forEach(applyFallback);
-  });
+// Apply fallback to all existing images
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('img').forEach(applyFallback);
+});
 
-  // Watch for dynamically added images
-  const observer = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-      mutation.addedNodes.forEach(node => {
-        if (node.tagName === 'IMG') {
-          applyFallback(node);
-        } else if (node.querySelectorAll) {
-          node.querySelectorAll('img').forEach(applyFallback);
-        }
-      });
+// Watch for dynamically added images
+const observer = new MutationObserver(mutations => {
+  mutations.forEach(mutation => {
+    mutation.addedNodes.forEach(node => {
+      if (node.tagName === 'IMG') {
+        applyFallback(node);
+      } else if (node.querySelectorAll) {
+        node.querySelectorAll('img').forEach(applyFallback);
+      }
     });
   });
+});
 
-  observer.observe(document.body, { childList: true, subtree: true });
+observer.observe(document.body, { childList: true, subtree: true });
