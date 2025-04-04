@@ -521,8 +521,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const recommendations = [
         { img: "X.webp", title: "Stock Market Surges Amid Economic Optimism", link: "index.html" },
         { img: "logo.webp", title: "AI Breakthroughs: What’s Coming Next in 2025", link: "index.html" },
-    
+        {
+            img: "cartosat-myanmar.webp",
+            title: "ISRO’s CARTOSAT-3 Captures Myanmar Earthquake Destruction",
+            link: "cartosat-myanmar.html"
+        },
+        {
+            img: "myanmar-earthquake.webp",
+            title: "Myanmar Hit by 5.1 Magnitude Earthquake Near Mandalay",
+            link: "myanmar-earthquake.html"
+        },
+        {
+            img: "china-patrol1.webp",
+            title: "China Conducts Military Patrol in South China Sea, Warns Philippines",
+            link: "china-patrol.html"
+        }
     ];
+    
 
     const container = document.getElementById("recommendations-container");
 
@@ -540,12 +555,14 @@ document.addEventListener("DOMContentLoaded", function () {
         img.src = rec.img;
         img.alt = "Image";
         img.style.display = "none"; // Hide initially to avoid flicker
+
         img.onload = function () {
             this.style.display = "block"; // Show only when fully loaded
         };
+
         img.onerror = function () {
             this.src = "logo.jpg"; // Replace with fallback image
-            this.style.display = "block"; // Ensure fallback shows
+            this.style.display = "block";
         };
 
         const p = document.createElement("p");
@@ -555,12 +572,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
         recDiv.appendChild(img);
         recDiv.appendChild(p);
+
+        // 🔗 Add redirection on click
+        recDiv.addEventListener("click", () => {
+            window.location.href = rec.link;
+        });
+
+        recDiv.style.cursor = "pointer";
+
         fragment.appendChild(recDiv);
     });
 
     // Append all at once (prevents reflow glitches)
     container.appendChild(fragment);
 });
+
 
 function enableLazyLoading() {
     document.querySelectorAll("p").forEach((p) => {
