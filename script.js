@@ -527,9 +527,9 @@ document.addEventListener("DOMContentLoaded", function () {
             link: "cartosat-myanmar.html"
         },
         {
-            img: "myanmar-earthquake.webp",
-            title: "Myanmar Hit by 5.1 Magnitude Earthquake Near Mandalay",
-            link: "myanmar-earthquake.html"
+            img: "csk-vs-dc-2025.avif",
+            title: "IPL 2025: DC Breaks Chepauk Jinx, Beats CSK by 25 Runs",
+            link: "ipl2025-csk-vs-dc.html"
         },
         {
             img: "kancha-gachibowli.avif",
