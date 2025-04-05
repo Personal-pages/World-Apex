@@ -577,14 +577,5 @@ document.addEventListener("DOMContentLoaded", function () {
         fragment.appendChild(recDiv);
     });
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const container = document.querySelector('.chat-container');
-        if (container) {
-          container.appendChild(fragment);
-        } else {
-          console.error('Chat container not found in DOM.');
-        }
-      });
-      
+    container.appendChild(fragment);
 });
-
