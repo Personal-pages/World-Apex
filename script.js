@@ -532,9 +532,9 @@ document.addEventListener("DOMContentLoaded", function () {
             link: "myanmar-earthquake.html"
         },
         {
-            img: "china-patrol1.webp",
-            title: "China Conducts Military Patrol in South China Sea, Warns Philippines",
-            link: "china-patrol.html"
+            img: "kancha-gachibowli.avif",
+            title: "SC Raises Alarm Over Destruction in Kancha Gachibowli ‘Forest’",
+            link: "kancha-gachibowli-sc.html"
         },
         {
             img: "nvidia-quantum.webp",
