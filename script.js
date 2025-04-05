@@ -535,6 +535,11 @@ document.addEventListener("DOMContentLoaded", function () {
             img: "china-patrol1.webp",
             title: "China Conducts Military Patrol in South China Sea, Warns Philippines",
             link: "china-patrol.html"
+        },
+        {
+            img: "nvidia-quantum.webp",
+            title: "Nvidia to Open Quantum Computing Lab, CEO Confirms.",
+            link: "nvidia-quantum-lab.html"
         }
     ];
 
