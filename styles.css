@@ -105,11 +105,36 @@ header {
     font-weight: bold;
     letter-spacing: 1px;
     font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    background: linear-gradient(45deg, #ff6f00, #ffcc00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 6px rgba(255, 111, 0, 0.7);
 }
 
 .logo span {
-    color: #ff6f00; 
+    background: linear-gradient(45deg, #ffcc00, #ff6f00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
+
+
+@media (max-width: 600px) {
+    .logo {
+        font-size: 22px;
+    }
+}
+
 
 /* Navigation Menu */
 nav ul {
