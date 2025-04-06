@@ -519,12 +519,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const recommendations = [
-        { img: "X.webp", title: "Stock Market Surges Amid Economic Optimism", link: "index.html" },
+        
         { img: "logo.webp", title: "AI Breakthroughs: What’s Coming Next in 2025", link: "index.html" },
         {
-            img: "cartosat-myanmar.webp",
-            title: "ISRO’s CARTOSAT-3 Captures Myanmar Earthquake Destruction",
-            link: "cartosat-myanmar.html"
+            img: "kiren-rijiju-manipur.webp",
+            title: "Kiren Rijiju Defends Holding Manipur Debate Past Midnight",
+            link: "rijiju-manipur-debate.html"
         },
         {
             img: "csk-vs-dc-2025.avif",
