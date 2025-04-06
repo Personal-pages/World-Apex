@@ -520,7 +520,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 document.addEventListener("DOMContentLoaded", function () {
     const recommendations = [
         
-        { img: "logo.webp", title: "AI Breakthroughs: What’s Coming Next in 2025", link: "index.html" },
+        { img: "amit-shah-chennai.avif", title: "Amit Shah to Visit Chennai Amid AIADMK-BJP Alliance Buzz", link: "amit-shah-chennai-visit.html" },
         {
             img: "kiren-rijiju-manipur.webp",
             title: "Kiren Rijiju Defends Holding Manipur Debate Past Midnight",
