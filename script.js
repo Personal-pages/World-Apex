@@ -522,9 +522,9 @@ document.addEventListener("DOMContentLoaded", function () {
         
         { img: "amit-shah-chennai.avif", title: "Amit Shah to Visit Chennai Amid AIADMK-BJP Alliance Buzz", link: "amit-shah-chennai-visit.html" },
         {
-            img: "kiren-rijiju-manipur.webp",
-            title: "Kiren Rijiju Defends Holding Manipur Debate Past Midnight",
-            link: "rijiju-manipur-debate.html"
+            img: "srh-vs-gt-ipl2025.avif",
+            title: "IPL 2025, SRH vs GT: Siraj and Gill Star as Titans Crush Sunrisers",
+            link: "srh-vs-gt-ipl2025.html"
         },
         {
             img: "csk-vs-dc-2025.avif",
