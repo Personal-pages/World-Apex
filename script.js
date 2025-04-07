@@ -537,9 +537,9 @@ document.addEventListener("DOMContentLoaded", function () {
             link: "kancha-gachibowli-sc.html"
         },
         {
-            img: "nvidia-quantum.webp",
-            title: "Nvidia to Open Quantum Computing Lab, CEO Confirms.",
-            link: "nvidia-quantum-lab.html"
+            img: "nintendo-switch2.avif",
+            title: "Nintendo Delays Switch 2 Pre-Orders in U.S. Amid Tariff Uncertainty",
+            link: "nintendo-switch2-delay.html"
         }
     ];
 
