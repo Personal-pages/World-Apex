@@ -527,7 +527,7 @@ document.addEventListener("DOMContentLoaded", function () {
             link: "srh-vs-gt-ipl2025.html"
         },
         {
-            img: "peddi-ram-charan.aviff",
+            img: "peddi-ram-charan2.avif",
             title: "‘Peddi’ First Glimpse Out: Ram Charan Shines in Buchi Babu Sana’s Next",
             link: "peddi-firstlook.html"
         },
