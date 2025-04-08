@@ -527,9 +527,9 @@ document.addEventListener("DOMContentLoaded", function () {
             link: "srh-vs-gt-ipl2025.html"
         },
         {
-            img: "csk-vs-dc-2025.avif",
-            title: "IPL 2025: DC Breaks Chepauk Jinx, Beats CSK by 25 Runs",
-            link: "ipl2025-csk-vs-dc.html"
+            img: "peddi-ram-charan.aviff",
+            title: "‘Peddi’ First Glimpse Out: Ram Charan Shines in Buchi Babu Sana’s Next",
+            link: "peddi-firstlook.html"
         },
         {
             img: "kancha-gachibowli.avif",
