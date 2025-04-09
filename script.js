@@ -584,3 +584,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
     container.appendChild(fragment);
 });
+
+let slider = document.querySelector('.slider-wrapper');
+    let dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+    let startX, isDragging = false, moveX = 0;
+
+    function updateSlidePosition() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    }
+
+    function moveToSlide(index) {
+        currentIndex = index;
+        updateSlidePosition();
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % dots.length;
+        updateSlidePosition();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + dots.length) % dots.length;
+        updateSlidePosition();
+    }
+
+    slider.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        moveX = e.clientX - startX;
+    });
+
+    slider.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        if (moveX < -50) nextSlide();
+        else if (moveX > 50) prevSlide();
+        isDragging = false;
+        moveX = 0;
+    });
+
+    slider.addEventListener('mouseleave', () => isDragging = false);
+    
+    setInterval(nextSlide, 5000);
