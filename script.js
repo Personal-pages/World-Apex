@@ -540,6 +540,11 @@ document.addEventListener("DOMContentLoaded", function () {
             img: "nintendo-switch2.avif",
             title: "Nintendo Delays Switch 2 Pre-Orders in U.S. Amid Tariff Uncertainty",
             link: "nintendo-switch2-delay.html"
+        },
+        {
+            img: "messi-inter-miami.avif",
+            title: "Messi Leads Inter Miami to Stunning 3-Goal Comeback vs LAFC",
+            link: "messi-miami-concacaf.html"
         }
     ];
 
