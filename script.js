@@ -519,34 +519,44 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const recommendations = [
-        
-        { img: "amit-shah-chennai.avif", title: "Amit Shah to Visit Chennai Amid AIADMK-BJP Alliance Buzz", link: "amit-shah-chennai-visit.html" },
+        {
+            img: "amit-shah-chennai.avif",
+            title: "Amit Shah to Visit Chennai Amid AIADMK-BJP Alliance Buzz",
+            link: "amit-shah-chennai-visit.html",
+            dataTranslate: "Amit Shah to Visit Chennai Amid AIADMK-BJP Alliance Buzz"
+        },
         {
             img: "srh-vs-gt-ipl2025.avif",
             title: "IPL 2025, SRH vs GT: Siraj and Gill Star as Titans Crush Sunrisers",
-            link: "srh-vs-gt-ipl2025.html"
+            link: "srh-vs-gt-ipl2025.html",
+            dataTranslate: "IPL 2025, SRH vs GT: Siraj and Gill Star as Titans Crush Sunrisers"
         },
         {
             img: "peddi-ram-charan2.avif",
             title: "‘Peddi’ First Glimpse Out: Ram Charan Shines in Buchi Babu Sana’s Next",
-            link: "peddi-firstlook.html"
+            link: "peddi-firstlook.html",
+            dataTranslate: "‘Peddi’ First Glimpse Out: Ram Charan Shines in Buchi Babu Sana’s Next"
         },
         {
             img: "kancha-gachibowli.avif",
             title: "SC Raises Alarm Over Destruction in Kancha Gachibowli ‘Forest’",
-            link: "kancha-gachibowli-sc.html"
+            link: "kancha-gachibowli-sc.html",
+            dataTranslate: "SC Raises Alarm Over Destruction in Kancha Gachibowli ‘Forest’"
         },
         {
             img: "nintendo-switch2.avif",
             title: "Nintendo Delays Switch 2 Pre-Orders in U.S. Amid Tariff Uncertainty",
-            link: "nintendo-switch2-delay.html"
+            link: "nintendo-switch2-delay.html",
+            dataTranslate: "Nintendo Delays Switch 2 Pre-Orders in U.S. Amid Tariff Uncertainty"
         },
         {
             img: "messi-inter-miami.avif",
             title: "Messi Leads Inter Miami to Stunning 3-Goal Comeback vs LAFC",
-            link: "messi-miami-concacaf.html"
+            link: "messi-miami-concacaf.html",
+            dataTranslate: "Messi Leads Inter Miami to Stunning 3-Goal Comeback vs LAFC"
         }
     ];
+    
 
     const container = document.getElementById("recommendations-container");
 
