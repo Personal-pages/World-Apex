@@ -50,7 +50,7 @@ document.querySelectorAll('.scroll-link').forEach(link => {
     });
 });
 
-const lastUpdateFromServer = "2025-04-13T15:00:00Z";  // Simulate last update timestamp (manual update)
+const lastUpdateFromServer = "2025-04-14T02:35:00Z";  // Simulate last update timestamp (manual update)
 
 // Function to check if the page should refresh
 async function checkForUpdates() {
@@ -544,12 +544,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const recommendations = [
-        {
-            img: "amit-shah-chennai.avif",
-            title: "Amit Shah to Visit Chennai Amid AIADMK-BJP Alliance Buzz",
-            link: "amit-shah-chennai-visit.html",
-            dataTranslate: "Amit Shah to Visit Chennai Amid AIADMK-BJP Alliance Buzz"
-        },
+        
         {
             img: "srh-vs-gt-ipl2025.avif",
             title: "IPL 2025, SRH vs GT: Siraj and Gill Star as Titans Crush Sunrisers",
@@ -557,10 +552,10 @@ document.addEventListener("DOMContentLoaded", function () {
             dataTranslate: "IPL 2025, SRH vs GT: Siraj and Gill Star as Titans Crush Sunrisers"
         },
         {
-            img: "peddi-ram-charan2.avif",
-            title: "‘Peddi’ First Glimpse Out: Ram Charan Shines in Buchi Babu Sana’s Next",
-            link: "peddi-firstlook.html",
-            dataTranslate: "‘Peddi’ First Glimpse Out: Ram Charan Shines in Buchi Babu Sana’s Next"
+            img: "drdo-energy-weapon.avif",
+            title: "DRDO Tests Directed Energy Weapon System to Disable Drones, Missiles",
+            link: "drdo-energy-weapon.html",
+            dataTranslate: "DRDO Tests Directed Energy Weapon System to Disable Drones, Missiles"
         },
         {
             img: "kancha-gachibowli.avif",
