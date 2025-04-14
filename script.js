@@ -50,19 +50,18 @@ document.querySelectorAll('.scroll-link').forEach(link => {
     });
 });
 
-const lastUpdateFromServer = "2025-04-14T02:35:00Z";  // Simulate last update timestamp (manual update)
-
+const lastUpdateFromServer = "2025-04-14T11:12:00Z";  
 // Function to check if the page should refresh
 async function checkForUpdates() {
   const storedLastUpdate = localStorage.getItem('lastUpdate');
-  const firstVisit = localStorage.getItem('firstVisit'); // Check if it's the first visit
+  const firstVisit = localStorage.getItem('firstVisit'); 
 
   // If it's the first visit, refresh the page
   if (!firstVisit) {
-    localStorage.setItem('firstVisit', 'true');  // Set first visit flag
-    location.reload();  // Reload the page on first visit
+    localStorage.setItem('firstVisit', 'true');  
+    location.reload();  
   } else {
-    // If the stored timestamp is different from the server's last update, refresh the page
+    
     if (storedLastUpdate !== lastUpdateFromServer) {
       location.reload();  // Refresh the page
       localStorage.setItem('lastUpdate', lastUpdateFromServer);  // Update the stored timestamp
@@ -70,8 +69,8 @@ async function checkForUpdates() {
   }
 }
 
-// Periodically check for updates every 10 seconds
-setInterval(checkForUpdates, 10000);  // 10000 ms = 10 seconds
+
+setInterval(checkForUpdates, 10000);  
 
 // Initial check when the page loads
 checkForUpdates(); 
@@ -546,10 +545,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const recommendations = [
         
         {
-            img: "srh-vs-gt-ipl2025.avif",
-            title: "IPL 2025, SRH vs GT: Siraj and Gill Star as Titans Crush Sunrisers",
-            link: "srh-vs-gt-ipl2025.html",
-            dataTranslate: "IPL 2025, SRH vs GT: Siraj and Gill Star as Titans Crush Sunrisers"
+            img: "genetic-mapping-india.avif",
+            title: "How Will Genetic Mapping of Indians Help? | Explained",
+            link: "genetic-mapping-india.html",
+            dataTranslate: "How Will Genetic Mapping of Indians Help? | Explained"
         },
         {
             img: "drdo-energy-weapon.avif",
