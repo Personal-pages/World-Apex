@@ -50,30 +50,7 @@ document.querySelectorAll('.scroll-link').forEach(link => {
     });
 });
 
-const lastUpdateFromServer = "2025-04-14T11:12:00Z";  
-// Function to check if the page should refresh
-async function checkForUpdates() {
-  const storedLastUpdate = localStorage.getItem('lastUpdate');
-  const firstVisit = localStorage.getItem('firstVisit'); 
 
-  // If it's the first visit, refresh the page
-  if (!firstVisit) {
-    localStorage.setItem('firstVisit', 'true');  
-    location.reload();  
-  } else {
-    
-    if (storedLastUpdate !== lastUpdateFromServer) {
-      location.reload();  // Refresh the page
-      localStorage.setItem('lastUpdate', lastUpdateFromServer);  // Update the stored timestamp
-    }
-  }
-}
-
-
-setInterval(checkForUpdates, 10000);  
-
-// Initial check when the page loads
-checkForUpdates(); 
 // weather
 document.addEventListener("DOMContentLoaded", () => {
     const cityInput = document.getElementById("city");
