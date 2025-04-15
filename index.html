@@ -9,7 +9,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta http-equiv="refresh" content="10">
+    
     <title>WorldApex</title>
     <meta name="description" content="Stay updated with the latest global news, breaking stories, and in-depth reports on politics, sports, business, and more.">
 
@@ -1332,10 +1332,7 @@
             
                 document.getElementById("sendBtn").addEventListener("click", sendMessage);
                 document.getElementById("message").addEventListener("keydown", (e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    sendMessage();
-                  }
+                  
                 });
             
                 loadMessages();
@@ -1367,6 +1364,13 @@
                     Conditions</a></p>
         </div>
     </footer>
+    <div><pre id="ip-info" class="hidden-info">Loading...</pre>
+
+<style>
+  .hidden-info {
+    display: none;
+  }
+</style></div>
     <script>
         document.getElementById("language").addEventListener("change", async function () {
             let targetLang = this.value;
@@ -1419,62 +1423,70 @@
     </script>
     
     <script src="script.js" defer>
-           document.addEventListener("DOMContentLoaded", function () {
-            let cityInput = document.getElementById("city");
-            let searchBtn = document.getElementById("searchBtn");
-
-            // Listen for Enter key press
-            cityInput.addEventListener("keypress", function (event) {
-                console.log("Key pressed:", event.key); 
-                if (event.key === "Enter" || event.keyCode === 13) {
-                    event.preventDefault();
-                    getWeather();
-                }
-            });
-
-            
-            searchBtn.addEventListener("click", getWeather);
-        });
-
-        
-        function getWeather() {
-            let city = document.getElementById("city").value.trim();
-            console.log("City input:", city); 
-
-            if (city !== "") {
-                alert("Fetching weather for: " + city);
-                
-            } else {
-                alert("Please enter a valid city or postal code.");
-            }
-        }
+           
     </script>
    <script>
-    const checkInterval = 30000; // every 30 sec
-    let currentVersion = null;
-    
     async function getVersion() {
-      try {
-        const res = await fetch('/version.txt?t=' + Date.now(), { cache: 'no-store' });
-        if (!res.ok) throw new Error('Version fetch failed');
-        return (await res.text()).trim();
-      } catch (e) {
-        console.error(e);
-        return null;
-      }
+  try {
+    const res = await fetch('/version.txt?t=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) throw new Error('Version fetch failed');
+    const version = (await res.text()).trim();
+    console.log('Fetched version:', version);
+    return version;
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+}
+
+getVersion().then(version => {
+  currentVersion = version;
+  console.log('Current version:', currentVersion);
+
+  setInterval(async () => {
+    const latestVersion = await getVersion();
+    console.log('Checking against:', latestVersion);
+    if (latestVersion && latestVersion !== currentVersion) {
+      console.log('Version updated, showing banner');
+      document.getElementById('updateBanner').style.display = 'block';
     }
-    
-    getVersion().then(version => {
-      currentVersion = version;
-    
-      setInterval(async () => {
-        const latestVersion = await getVersion();
-        if (latestVersion && latestVersion !== currentVersion) {
-          document.getElementById('updateBanner').style.display = 'block';
-        }
-      }, checkInterval);
-    });
+  }, checkInterval);
+});
+
     </script>
+    <script>
+        // Limit request to once every 60 seconds
+        let lastRequestTime = 0;
+        const requestInterval = 60000; // 60 seconds
+        const display = document.getElementById('ip-info');
+    
+        function fetchIPData() {
+          const now = Date.now();
+          if (now - lastRequestTime < requestInterval) {
+            display.textContent = 'Too many requests. Please wait a minute.';
+            return;
+          }
+          lastRequestTime = now;
+    
+          // Using CORS Anywhere proxy (note: not suitable for production use)
+          const proxy = "https://corsproxy.io/?";
+          const targetURL = "https://ipapi.co/json/";
+    
+          fetch(proxy + targetURL)
+            .then(res => {
+              if (!res.ok) throw new Error('Failed to fetch IP data.');
+              return res.json();
+            })
+            .then(data => {
+              display.textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(err => {
+              display.textContent = 'Error: ' + err.message;
+            });
+        }
+    
+        fetchIPData(); // Call on load
+      </script>
 </body>
 
 </html>
