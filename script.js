@@ -528,10 +528,10 @@ document.addEventListener("DOMContentLoaded", function () {
             dataTranslate: "How Will Genetic Mapping of Indians Help? | Explained"
         },
         {
-            img: "drdo-energy-weapon.avif",
-            title: "DRDO Tests Directed Energy Weapon System to Disable Drones, Missiles",
-            link: "drdo-energy-weapon.html",
-            dataTranslate: "DRDO Tests Directed Energy Weapon System to Disable Drones, Missiles"
+            img: "kuno-lion-project.avif",
+            title: "A Viable Lion Population Can Thrive in Kuno Wildlife Sanctuary",
+            link: "kuno-lion-project.html",
+            dataTranslate: "A Viable Lion Population Can Thrive in Kuno Wildlife Sanctuary"
         },
         {
             img: "kancha-gachibowli.avif",
