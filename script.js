@@ -528,10 +528,10 @@ document.addEventListener("DOMContentLoaded", function () {
             dataTranslate: "How Will Genetic Mapping of Indians Help? | Explained"
         },
         {
-            img: "kuno-lion-project.avif",
-            title: "A Viable Lion Population Can Thrive in Kuno Wildlife Sanctuary",
-            link: "kuno-lion-project.html",
-            dataTranslate: "A Viable Lion Population Can Thrive in Kuno Wildlife Sanctuary"
+            img: "/images/shubhanshu-shukla-space.avif",
+            title: "Indian Astronaut Shubhanshu Shukla Set for Space Travel in May",
+            link: "/shubhanshu-shukla-space.html",
+            dataTranslate: "Indian Astronaut Shubhanshu Shukla Set for Space Travel in May"
         },
         {
             img: "kancha-gachibowli.avif",
@@ -540,10 +540,10 @@ document.addEventListener("DOMContentLoaded", function () {
             dataTranslate: "SC Raises Alarm Over Destruction in Kancha Gachibowli ‘Forest’"
         },
         {
-            img: "nintendo-switch2.avif",
-            title: "Nintendo Delays Switch 2 Pre-Orders in U.S. Amid Tariff Uncertainty",
-            link: "nintendo-switch2-delay.html",
-            dataTranslate: "Nintendo Delays Switch 2 Pre-Orders in U.S. Amid Tariff Uncertainty"
+            img: "indian-doctor-fraud.avif",
+            title: "Indian-Origin Doctor Convicted in U.S. for Health Care Fraud Conspiracies",
+            link: "indian-doctor-us-fraud.html",
+            dataTranslate: "Indian-Origin Doctor Convicted in U.S. for Health Care Fraud Conspiracies"
         },
         {
             img: "messi-inter-miami.avif",
