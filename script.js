@@ -546,10 +546,10 @@ document.addEventListener("DOMContentLoaded", function () {
             dataTranslate: "Indian-Origin Doctor Convicted in U.S. for Health Care Fraud Conspiracies"
         },
         {
-            img: "messi-inter-miami.avif",
-            title: "Messi Leads Inter Miami to Stunning 3-Goal Comeback vs LAFC",
-            link: "messi-miami-concacaf.html",
-            dataTranslate: "Messi Leads Inter Miami to Stunning 3-Goal Comeback vs LAFC"
+            img: "/images/ananya-panday-chanel.avif",
+            title: "Ananya Panday Becomes Chanel’s First-Ever Brand Ambassador from India",
+            link: "ananya-panday-chanel.html",
+            dataTranslate: "Ananya Panday Becomes Chanel’s First-Ever Brand Ambassador from India"
         }
     ];
     
