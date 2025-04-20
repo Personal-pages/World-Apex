@@ -535,33 +535,22 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "India's First Prototype Fast-Breeder Reactor to Be Commissioned by September 2026",
             img: "https://worldapex.space/images/fast-breeder-reactor-india.avif",
-            link: "fast-breeder-reactor-india.html",
+            link: "https://worldapex.space/fast-breeder-reactor-india.html",
             "data-translate": "true"
         },
         {
             title: "Ananya Panday Joins Chanel as First Indian Brand Ambassador",
             img: "https://worldapex.space/images/ananya-panday-chanel.avif",
-            link: "ananya-panday-chanel.html",
+            link: "https://worldapex.space/ananya-panday-chanel.html",
             "data-translate": "true"
         },
         {
             title: "Deepika Padukone, Amitabh Bachchan-starrer 'Piku' to Re-Release in May",
             img: "https://worldapex.space/images/piku-re-release.avif",
-            link: "piku-re-release.html",
+            link: "https://worldapex.space/piku-re-release.html",
             "data-translate": "true"
         },
-        {
-            title: "NASA Announces New Mars Exploration Mission for 2026",
-            img: "https://worldapex.space/images/space-exploration-new-mission.avif",
-            link: "space-exploration-new-mission.html",
-            "data-translate": "true"
-        },
-        {
-            title: "Researchers Unveil Next-Generation AI Breakthrough in Natural Language Processing",
-            img: "pannel.webp",
-            link: "https://worldapex.space",
-            "data-translate": "true"
-        }
+       
     ];
 
     // Shuffle the recommendations array and pick 4 random items
@@ -587,7 +576,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.style.display = "block";
         };
         img.onerror = function () {
-            this.src = "logo.jpg";
+            this.src = "https://worldapex.space/pannel.webp"; // Fallback image
             this.style.display = "block";
         };
 
