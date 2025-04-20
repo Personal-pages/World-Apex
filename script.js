@@ -519,54 +519,22 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const recommendations = [
-        
-        {
-            img: "genetic-mapping-india.avif",
-            title: "How Will Genetic Mapping of Indians Help? | Explained",
-            link: "genetic-mapping-india.html",
-            dataTranslate: "How Will Genetic Mapping of Indians Help? | Explained"
-        },
-        {
-            img: "/images/shubhanshu-shukla-space.avif",
-            title: "Indian Astronaut Shubhanshu Shukla Set for Space Travel in May",
-            link: "/shubhanshu-shukla-space.html",
-            dataTranslate: "Indian Astronaut Shubhanshu Shukla Set for Space Travel in May"
-        },
-        {
-            img: "kancha-gachibowli.avif",
-            title: "SC Raises Alarm Over Destruction in Kancha Gachibowli ‘Forest’",
-            link: "kancha-gachibowli-sc.html",
-            dataTranslate: "SC Raises Alarm Over Destruction in Kancha Gachibowli ‘Forest’"
-        },
-        {
-            img: "indian-doctor-fraud.avif",
-            title: "Indian-Origin Doctor Convicted in U.S. for Health Care Fraud Conspiracies",
-            link: "indian-doctor-us-fraud.html",
-            dataTranslate: "Indian-Origin Doctor Convicted in U.S. for Health Care Fraud Conspiracies"
-        },
-        {
-            img: "/images/ananya-panday-chanel.avif",
-            title: "Ananya Panday Becomes Chanel’s First-Ever Brand Ambassador from India",
-            link: "ananya-panday-chanel.html",
-            dataTranslate: "Ananya Panday Becomes Chanel’s First-Ever Brand Ambassador from India"
-        }
-    ];
-    
-
     const container = document.getElementById("recommendations-container");
+    if (!container) {
+        console.warn(" #recommendations-container not found in DOM");
+        return; // Stop further execution
+    }
 
-    // Shuffle and pick 4 recommendations
+    const recommendations = [ /* your array */ ];
+
     const shuffled = recommendations.sort(() => 0.5 - Math.random()).slice(0, 4);
     const fragment = document.createDocumentFragment();
 
     shuffled.forEach(rec => {
         const recDiv = document.createElement("div");
         recDiv.classList.add("recommendation");
-        // Set the pointer cursor
         recDiv.style.cursor = "pointer";
 
-        // Make the whole recommendation clickable
         recDiv.addEventListener("click", () => {
             window.location.href = rec.link;
         });
@@ -596,10 +564,16 @@ document.addEventListener("DOMContentLoaded", function () {
     container.appendChild(fragment);
 });
 
-let slider = document.querySelector('.slider-wrapper');
-    let dots = document.querySelectorAll('.dot');
+document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.querySelector('.slider-wrapper');
+    const dots = document.querySelectorAll('.dot');
     let currentIndex = 0;
     let startX, isDragging = false, moveX = 0;
+
+    if (!slider) {
+        console.warn(" .slider-wrapper not found in DOM");
+        return;
+    }
 
     function updateSlidePosition() {
         slider.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -642,3 +616,4 @@ let slider = document.querySelector('.slider-wrapper');
     slider.addEventListener('mouseleave', () => isDragging = false);
     
     setInterval(nextSlide, 5000);
+});

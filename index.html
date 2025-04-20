@@ -80,6 +80,13 @@
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Firebase App (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+
+    <!-- Firebase Firestore (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+
 
     <!-- Google Adsense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2022659342961679"
@@ -1372,63 +1379,67 @@
               <script type="module">
                 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
                 import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
-            
+              
                 const firebaseConfig = {
                   apiKey: "AIzaSyDVtyvBDN4elZ__rFBXlDdCI7lKFWV41aE",
                   authDomain: "my-comment-9aa1d.firebaseapp.com",
                   projectId: "my-comment-9aa1d",
-                  storageBucket: "my-comment-9aa1d.firebasestorage.app",
+                  storageBucket: "my-comment-9aa1d.appspot.com",
                   messagingSenderId: "101822856762",
                   appId: "1:101822856762:web:a13833ad14674ec1ef7f03",
                   measurementId: "G-HTQFVMSD9F"
                 };
-            
+              
                 const app = initializeApp(firebaseConfig);
                 const db = getFirestore(app);
-            
-                const ownerEmail = "iambasantkumar2000@gmail.com"; 
-            
+              
+                const ownerEmail = "iambasantkumar2000@gmail.com";
+              
+                // Send message to Firestore
                 async function sendMessage() {
                   const email = document.getElementById("email").value.trim();
                   const message = document.getElementById("message").value.trim();
                   if (!email || !message) return;
-            
+              
                   await addDoc(collection(db, "messages"), {
                     email,
                     message,
                     timestamp: serverTimestamp()
                   });
-            
+              
                   document.getElementById("message").value = "";
                 }
-            
+              
+                // Load messages from Firestore
                 function loadMessages() {
                   const q = query(collection(db, "messages"), orderBy("timestamp"));
                   onSnapshot(q, (snapshot) => {
                     const msgBox = document.getElementById("messages");
-                    msgBox.innerHTML = "";
+                    msgBox.innerHTML = "";  // Clear current messages
                     snapshot.forEach((doc) => {
                       const data = doc.data();
                       const isOwner = data.email === ownerEmail;
                       const className = isOwner ? "owner" : "message";
                       const displayName = isOwner ? "World Apex" : data.email;
-            
+              
                       if (data.message && data.email) {
                         const msgHTML = `<p class="${className}"><strong>${displayName}:</strong> ${data.message}</p>`;
                         msgBox.insertAdjacentHTML("beforeend", msgHTML);
                       }
                     });
-                    msgBox.scrollTop = msgBox.scrollHeight;
+                    msgBox.scrollTop = msgBox.scrollHeight;  // Scroll to the latest message
                   });
                 }
-            
+              
+                // Event listener for the send button
                 document.getElementById("sendBtn").addEventListener("click", sendMessage);
-                document.getElementById("message").addEventListener("keydown", (e) => {
-                  
-                });
-            
+              
+                // Load messages initially
                 loadMessages();
+              
               </script>
+              
+              
             </div>
             <div class="footer-section">
                 <h3 data-translate>Newsletter</h3>
@@ -1456,13 +1467,6 @@
                     Conditions</a></p>
         </div>
     </footer>
-    <div><pre id="ip-info" class="hidden-info">Loading...</pre>
-
-<style>
-  .hidden-info {
-    display: none;
-  }
-</style></div>
     <script>
         document.getElementById("language").addEventListener("change", async function () {
             let targetLang = this.value;
@@ -1542,43 +1546,37 @@ getVersion().then(version => {
       console.log('Version updated, showing banner');
       document.getElementById('updateBanner').style.display = 'block';
     }
-  }, checkInterval);
+  }, 60000); 
 });
 
     </script>
     <script>
-        // Limit request to once every 60 seconds
-        let lastRequestTime = 0;
-        const requestInterval = 60000; // 60 seconds
-        const display = document.getElementById('ip-info');
-    
-        function fetchIPData() {
-          const now = Date.now();
-          if (now - lastRequestTime < requestInterval) {
-            display.textContent = 'Too many requests. Please wait a minute.';
-            return;
-          }
-          lastRequestTime = now;
-    
-          // Using CORS Anywhere proxy (note: not suitable for production use)
-          const proxy = "https://corsproxy.io/?";
-          const targetURL = "https://ipapi.co/json/";
-    
-          fetch(proxy + targetURL)
-            .then(res => {
-              if (!res.ok) throw new Error('Failed to fetch IP data.');
-              return res.json();
-            })
-            .then(data => {
-              display.textContent = JSON.stringify(data, null, 2);
-            })
-            .catch(err => {
-              display.textContent = 'Error: ' + err.message;
-            });
+        if ('geolocation' in navigator) {
+            // Ask the user for permission to access their location
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    // Success - We got the position!
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    console.log(`User's location: Latitude: ${lat}, Longitude: ${lon}`);
+                    
+                    // You can use lat and lon here to fetch weather data for the user's location
+                },
+                function(error) {
+                    // Handle errors, e.g., user denied permission or location retrieval failed
+                    if (error.code === error.PERMISSION_DENIED) {
+                        alert("Location permission denied. The app needs your location for weather information.");
+                    } else {
+                        alert("Failed to retrieve location.");
+                    }
+                }
+            );
+        } else {
+            alert("Geolocation is not supported by this browser.");
         }
+    </script>
     
-        fetchIPData(); // Call on load
-      </script>
+    
 </body>
 
 </html>
