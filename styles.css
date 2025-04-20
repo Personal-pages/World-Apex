@@ -1161,6 +1161,16 @@ select option {
     flex-shrink: 0;
     margin-top: 50px;
 }
+.icon-text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .material-icons {
+    font-size: 20px;
+    vertical-align: middle;
+  }
+
 .main-news-content {
     flex: 1;
     min-width: 0; 
