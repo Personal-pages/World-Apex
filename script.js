@@ -463,7 +463,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Event listener for language change
     languageSelect.addEventListener("change", async function () {
         let targetLang = this.value;
-        localStorage.setItem("selectedLanguage", targetLang); // Save selection
+        localStorage.setItem("selectedLanguage", targetLang); 
         await translatePage(targetLang);
     });
 
@@ -475,7 +475,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         elements.forEach((el, index) => {
             if (!el.dataset.originalText) {
-                el.dataset.originalText = el.textContent.trim(); // Store original text
+                el.dataset.originalText = el.textContent.trim(); 
             }
             texts.push(el.dataset.originalText);
             elementMap.set(index, el);
@@ -525,16 +525,56 @@ document.addEventListener("DOMContentLoaded", function () {
         return; // Stop further execution
     }
 
-    const recommendations = [ /* your array */ ];
+    const recommendations = [
+        {
+            title: "Zelenskyy Says Ukraine Will Observe Easter Truce, Alleges Violations by Russia",
+            img: "https://worldapex.space/images/zelenskyy-easter-truce.avif",
+            link: "https://worldapex.space/News/World/ukraine-easter-truce.html",
+            "data-translate": "true"
+        },
+        {
+            title: "India's First Prototype Fast-Breeder Reactor to Be Commissioned by September 2026",
+            img: "https://worldapex.space/images/fast-breeder-reactor-india.avif",
+            link: "fast-breeder-reactor-india.html",
+            "data-translate": "true"
+        },
+        {
+            title: "Ananya Panday Joins Chanel as First Indian Brand Ambassador",
+            img: "https://worldapex.space/images/ananya-panday-chanel.avif",
+            link: "ananya-panday-chanel.html",
+            "data-translate": "true"
+        },
+        {
+            title: "Deepika Padukone, Amitabh Bachchan-starrer 'Piku' to Re-Release in May",
+            img: "https://worldapex.space/images/piku-re-release.avif",
+            link: "piku-re-release.html",
+            "data-translate": "true"
+        },
+        {
+            title: "NASA Announces New Mars Exploration Mission for 2026",
+            img: "https://worldapex.space/images/space-exploration-new-mission.avif",
+            link: "space-exploration-new-mission.html",
+            "data-translate": "true"
+        },
+        {
+            title: "Researchers Unveil Next-Generation AI Breakthrough in Natural Language Processing",
+            img: "pannel.webp",
+            link: "https://worldapex.space",
+            "data-translate": "true"
+        }
+    ];
 
+    // Shuffle the recommendations array and pick 4 random items
     const shuffled = recommendations.sort(() => 0.5 - Math.random()).slice(0, 4);
-    const fragment = document.createDocumentFragment();
 
+    // Create the fragment to hold the recommendations
+    const fragment = document.createDocumentFragment();
     shuffled.forEach(rec => {
         const recDiv = document.createElement("div");
         recDiv.classList.add("recommendation");
         recDiv.style.cursor = "pointer";
 
+        // Handle click to redirect to the news article
         recDiv.addEventListener("click", () => {
             window.location.href = rec.link;
         });
@@ -563,6 +603,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     container.appendChild(fragment);
 });
+// Slider
 
 document.addEventListener("DOMContentLoaded", () => {
     const slider = document.querySelector('.slider-wrapper');
