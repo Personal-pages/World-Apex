@@ -545,9 +545,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "data-translate": "true"
         },
         {
-            title: "Deepika Padukone, Amitabh Bachchan-starrer 'Piku' to Re-Release in May",
-            img: "https://worldapex.space/images/piku-re-release.avif",
-            link: "https://worldapex.space/piku-re-release.html",
+            title: "India Targets 23% GDP Share from Manufacturing, Boosted by Sunrise Sectors",
+            img: "https://worldapex.space/images/india-manufacturing-growth.avif",
+            link: "https://worldapex.space/News/World/india-manufacturing-gdp.html",
             "data-translate": "true"
         },
        
