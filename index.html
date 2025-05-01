@@ -660,7 +660,7 @@
               
                 const ownerEmail = "iambasantkumar2000@gmail.com";
               
-                // Send message to Firestore
+                
                 async function sendMessage() {
                   const email = document.getElementById("email").value.trim();
                   const message = document.getElementById("message").value.trim();
@@ -675,12 +675,12 @@
                   document.getElementById("message").value = "";
                 }
               
-                // Load messages from Firestore
+               
                 function loadMessages() {
                   const q = query(collection(db, "messages"), orderBy("timestamp"));
                   onSnapshot(q, (snapshot) => {
                     const msgBox = document.getElementById("messages");
-                    msgBox.innerHTML = "";  // Clear current messages
+                    msgBox.innerHTML = "";  
                     snapshot.forEach((doc) => {
                       const data = doc.data();
                       const isOwner = data.email === ownerEmail;
@@ -692,14 +692,14 @@
                         msgBox.insertAdjacentHTML("beforeend", msgHTML);
                       }
                     });
-                    msgBox.scrollTop = msgBox.scrollHeight;  // Scroll to the latest message
+                    msgBox.scrollTop = msgBox.scrollHeight;  
                   });
                 }
               
-                // Event listener for the send button
+               
                 document.getElementById("sendBtn").addEventListener("click", sendMessage);
               
-                // Load messages initially
+                
                 loadMessages();
               
               </script>
@@ -792,18 +792,18 @@ getVersion().then(version => {
     </script>
     <script>
         if ('geolocation' in navigator) {
-            // Ask the user for permission to access their location
+           
             navigator.geolocation.getCurrentPosition(
                 function(position) {
-                    // Success - We got the position!
+                    
                     const lat = position.coords.latitude;
                     const lon = position.coords.longitude;
                     console.log(`User's location: Latitude: ${lat}, Longitude: ${lon}`);
                     
-                    // You can use lat and lon here to fetch weather data for the user's location
+                    
                 },
                 function(error) {
-                    // Handle errors, e.g., user denied permission or location retrieval failed
+                    
                     if (error.code === error.PERMISSION_DENIED) {
                         alert("Location permission denied. The app needs your location for weather information.");
                     } else {
@@ -817,17 +817,17 @@ getVersion().then(version => {
     </script>
   <div id="consent-popup" class="consent-popup">
     <div class="consent-box">
-      <h3>We Value Your Privacy</h3>
-      <p>
-        By using World Apex, you agree to our 
-        <a href="legal/terms.html" target="_blank">Terms & Conditions</a>, 
-        <a href="legal/policy.html" target="_blank">Privacy Policy</a>, and 
-        <a href="legal/cookies.html" target="_blank">Cookie Policy</a>.
+      <h3 data-translate>We Value Your Privacy</h3>
+      <p >
+        <span data-translate>By using World Apex, you agree to our </span>
+        <a data-translate href="legal/terms.html" target="_blank">Terms & Conditions</a>, 
+        <a data-translate href="legal/policy.html" target="_blank">Privacy Policy</a>, <span data-translate>and</span> 
+        <a data-translate href="legal/cookies.html" target="_blank">Cookie Policy</a>.
       </p>
   
       <label>
         <input type="checkbox" id="consent-check">
-        I have read and agree to the policies.
+        <p data-translate> I have read and agree to the policies.</p>
       </label>
       
       <button id="accept-btn" disabled><span class="btn-text">Accept</span></button>
@@ -971,6 +971,7 @@ getVersion().then(version => {
         flex-direction: column;
       }
     }
+    
   </style>
   
   <script>
@@ -1010,7 +1011,7 @@ getVersion().then(version => {
         `;
         button.appendChild(loader);
   
-        // Optional: after loading, hide consent popup
+       
         setTimeout(() => {
           document.getElementById('consent-popup').style.display = 'none';
           localStorage.setItem('cookieConsent', 'true');
@@ -1019,9 +1020,9 @@ getVersion().then(version => {
     });
   
     // Hide popup if already accepted
-    if (localStorage.getItem('cookieConsent') === 'true') {
-      document.getElementById('consent-popup').style.display = 'none';
-    }
+    // if (localStorage.getItem('cookieConsent') === 'true') {
+    //   document.getElementById('consent-popup').style.display = 'none';
+    // }
   </script>
     
 </body>
