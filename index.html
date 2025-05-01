@@ -1020,9 +1020,9 @@ getVersion().then(version => {
     });
   
     // Hide popup if already accepted
-    // if (localStorage.getItem('cookieConsent') === 'true') {
-    //   document.getElementById('consent-popup').style.display = 'none';
-    // }
+    if (localStorage.getItem('cookieConsent') === 'true') {
+      document.getElementById('consent-popup').style.display = 'none';
+    }
   </script>
     
 </body>
