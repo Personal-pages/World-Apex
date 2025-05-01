@@ -817,6 +817,8 @@ getVersion().then(version => {
     </script>
   <div id="consent-popup" class="consent-popup">
     <div class="consent-box">
+      <span id="toggle-consent" class="material-icons arrow-icon">keyboard_arrow_down</span>
+    
       <h3 data-translate>We Value Your Privacy</h3>
       <p >
         <span data-translate>By using World Apex, you agree to our </span>
@@ -850,6 +852,7 @@ getVersion().then(version => {
     }
   
     .consent-box {
+      position: relative;
       max-width: 600px;
       margin: 0 auto;
       text-align: center;
@@ -971,9 +974,28 @@ getVersion().then(version => {
         flex-direction: column;
       }
     }
-    
+    .arrow-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.2s ease;
+  z-index: 1000;
+}
+
+/* Hover effect for down arrow */
+.arrow-icon:hover {
+  color: #f44336; /* Red on hover */
+  transform: translateY(5px) scale(1.2);
+}
   </style>
-  
+  <script>
+    document.getElementById("toggle-consent").onclick = function () {
+      document.getElementById("consent-popup").style.transform = "translateY(100%)";
+    };
+  </script>
   <script>
     const checkbox = document.getElementById('consent-check');
     const button = document.getElementById('accept-btn');
