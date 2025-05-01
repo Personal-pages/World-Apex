@@ -21,8 +21,8 @@ window.addEventListener('scroll', function() {
     
     if (currentScroll > lastScrollTop) {
         // Scrolling down
-        header.style.top = '-60px';  // Move header up
-        navBar.style.top = '-60px';  // Move nav-bar up (hidden)
+        header.style.top = '-80px';  // Move header up
+        navBar.style.top = '-80px';  // Move nav-bar up (hidden)
     } else {
         // Scrolling up
         header.style.top = '0';      // Bring header back down
@@ -468,7 +468,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     async function translatePage(targetLang) {
-        let elements = document.querySelectorAll("[data-translate], .translatable");
+        let elements = document.querySelectorAll("[data-translate], #translatable");
 
         let texts = [];
         let elementMap = new Map();

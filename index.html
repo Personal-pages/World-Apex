@@ -97,14 +97,82 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- HEADER -->   
+    <style>
+      
+      @media (max-width: 767px) {
+  #menu-toggle {
+    background-color: rgba(240, 106, 40, 0.94) !important;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    z-index: 1001;
+    padding: 0.5rem;
+    border-radius: 6px;
+  }
+}
+
+@media (min-width: 768px) {
+  #menu-toggle {
+    display: none !important; 
+  }
+}
+      .bar {
+        width: 22px;
+        height: 2px;
+        background: #ffffff !important;
+        transition: 0.3s ease;
+        mix-blend-mode: normal !important;
+      }
+      .menu-toggle.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+      }
+      .menu-toggle.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    
+      
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: flex;
+        }
+        #header-nav {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          width: 100%;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        #header-nav.show {
+          display: flex;
+          animation: fadeIn 0.3s ease;
+        }
+      }
+    
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-5px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
     <header>
         <div class="top-bar">
             <a href="index.html" class="logo">World <span> Apex</span></a>
             <nav>
                 <ul>
+                  <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                  </button>
                     <li><a data-translate href="index.html">Home</a></li>
-                    <li><a data-translate href="#" id="contact-link">Contact</a></li>
+                    <li><a data-translate href="#" id="contact-link">About</a></li>
                     <li><a data-translate href="#" class="scroll-link" data-section="World-section">World</a></li>
                 
                     
@@ -131,19 +199,36 @@
                
             </nav>
         </div>
-        <div id="header-nav" class="nav-bar">
+        <div id="header-nav" class="nav-bar"  >
             <ul>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="Trending-section">Trending</a></li>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="weather-section">Weather</a></li>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="Entertainment-section">Entertainment</a></li>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="sports-section">Sports</a></li>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="politics-section">Politics</a></li>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="Astrology-section">Astrology</a></li>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="Technology-section">Technology</a></li>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#" class="scroll-link" data-section="Top-section">Top News</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Trending-news.html" >Trending</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#weather-section" >Weather</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Entertainment-news.html" >Entertainment</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Sports-news.html" >Sports</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Poltitics-news.html" >Politics</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Astrology-news.html" >Astrology</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Technology-news.html" >Technology</a></li>
+                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="top-news.html" >Top News</a></li>
             </ul>
         </div>
     </header>
+    <script>
+      const toggleBtn = document.getElementById('menu-toggle');
+      const headerNav = document.getElementById('header-nav');
+    
+      toggleBtn.addEventListener('click', () => {
+        toggleBtn.classList.toggle('open');
+        headerNav.classList.toggle('show');
+      });
+    
+      
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+          headerNav.classList.remove('show');
+          toggleBtn.classList.remove('open');
+        }
+      });
+    </script>
 
     <!-- BREAKING NEWS TICKER -->
     <section class="breaking-news">
@@ -151,1110 +236,309 @@
     </section>
 
     <!-- MAIN CONTENT -->
-    <main1>
-        <div class="news-header" id="Top-section">
-            <h1 data-translate >Top News</h1>
-        </div>
-        <section id="Top-section" class="news-container">
-
-
-            <div class="news-card">
-                <img src="images/shubhanshu-shukla-space.avif" onerror="this.style.display='none';" alt="Shubhanshu Shukla Space Mission">
-                <div class="news-content">
-                  <h2 data-translate>Indian Astronaut Shubhanshu Shukla Set for Space Travel in May</h2>
-                  <p data-translate>
-                    Indian astronaut Shubhanshu Shukla is all set to embark on his maiden space journey this May. The mission marks a significant milestone for India's space ambitions, as Shukla will represent the country in an international crew focused on advanced orbital research.
-                  </p>
-                  <a data-translate href="shubhanshu-shukla-space.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="indian-doctor-fraud.avif" onerror="this.style.display='none';" alt="Indian-Origin Doctor Convicted">
-                <div class="news-content">
-                  <h2 data-translate>Indian-Origin Doctor Convicted in U.S. for Health Care Fraud Conspiracies</h2>
-                  <p data-translate>
-                    An Indian-origin doctor has been convicted in the United States for orchestrating health care fraud schemes involving false billing and kickbacks. The case exposed millions in fraudulent claims and highlights growing federal scrutiny on medical fraud in the U.S.
-                  </p>
-                  <a data-translate href="indian-doctor-us-fraud.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="genetic-mapping-india.avif" onerror="this.style.display='none';" alt="Genetic Mapping of Indians">
-                <div class="news-content">
-                  <h2 data-translate>How Will Genetic Mapping of Indians Help? | Explained</h2>
-                  <p data-translate>
-                    India’s push for genetic mapping aims to revolutionize healthcare by enabling early detection of diseases, personalized treatments, and better public health planning. Experts say it could also uncover population-specific risk factors and guide future medical research.
-                  </p>
-                  <a data-translate href="genetic-mapping-india.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="drdo-energy-weapon.avif" onerror="this.style.display='none';" alt="DRDO Directed Energy Weapon">
-                <div class="news-content">
-                  <h2 data-translate>DRDO Tests Directed Energy Weapon System to Disable Drones, Missiles</h2>
-                  <p data-translate>
-                    In a major technological breakthrough, DRDO has successfully tested a directed energy weapon (DEW) system capable of disabling enemy drones and missiles mid-air. The system uses high-energy lasers to neutralize aerial threats with precision and speed.
-                  </p>
-                  <a data-translate href="drdo-energy-weapon.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="kiren-rijiju-manipur.webp" onerror="this.style.display='none';" alt="Kiren Rijiju on Manipur Debate">
-                <div class="news-content">
-                  <h2 data-translate>Kiren Rijiju Defends Holding Manipur Debate Past Midnight</h2>
-                  <p data-translate>
-                    Union Minister Kiren Rijiju justified the late-night debate on Manipur, stating that the government is committed to discussing crucial issues irrespective of the hour. He emphasized that Parliament functions to serve the people and timing should not hinder important discussions.
-                  </p>
-                  <a data-translate href="rijiju-manipur-debate.html">Know More</a>
-                </div>
-            </div>
-              
-
-            <div class="news-card">
-                <img src="trump-third-term.webp" onerror="this.style.display='none';" alt="Donald Trump Term Limit">
-                <div class="news-content">
-                  <h2 data-translate>Can Donald Trump Legally Serve a Third Term?</h2>
-                  <p data-translate>
-                    Former U.S. President Donald Trump can run again in 2024, but not beyond. The U.S. Constitution’s 22nd Amendment restricts any individual to just two elected terms as president—consecutive or not. Since Trump has already served one term, he’s eligible for only one more, not a third.
-                  </p>
-                  <a data-translate href="trump-third-term.html">Know More</a>
-                </div>
-              </div>
-              
-
-            <div class="news-card">
-                <img src="cartosat-myanmar.webp" onerror="this.style.display='none';" alt="CARTOSAT-3 Myanmar Earthquake">
-                <div class="news-content">
-                    <h2 data-translate>ISRO’s CARTOSAT-3 Captures Myanmar Earthquake Destruction</h2>
-                    <p data-translate>High-resolution images from ISRO’s CARTOSAT-3 satellite reveal extensive damage in Myanmar after a powerful earthquake. The images will aid disaster response teams in assessing the affected areas.</p>
-                    <a data-translate href="cartosat-myanmar.html">Know More</a>
-                </div>
-            </div>
-            
-
-            <div class="news-card">
-                <img src="myanmar-earthquake.webp" onerror="this.style.display='none';" alt="Myanmar Earthquake">
-                <div class="news-content">
-                    <h2 data-translate>Myanmar Hit by 5.1 Magnitude Earthquake Near Mandalay</h2>
-                    <p data-translate>A 5.1 magnitude earthquake struck near Mandalay, Myanmar, marking the latest in a series of aftershocks. No major damages have been reported, but residents remain on high alert.</p>
-                    <a data-translate href="myanmar-earthquake.html">Know More</a>
-                </div>
-            </div>
-            
-
-            <div class="news-card">
-                <img src="china-patrol1.webp" onerror="this.style.display='none';" alt="China-Philippines Tensions">
-                <div class="news-content">
-                    <h2 data-translate>China Conducts Military Patrol in South China Sea, Warns Philippines</h2>
-                    <p data-translate>China has carried out military patrols in the South China Sea, issuing a warning to the Philippines over territorial disputes. Beijing claims the patrols are a response to what it calls “provocative actions” by Manila in contested waters.</p>
-                    <a data-translate href="china-patrol.html">Know More</a>
-                </div>
-            </div>
-            
-
-            <div class="news-card">
-                <img src="spacex-returns.webp" onerror="this.style.display='none';" alt="SpaceX Dragon Capsule">
-                <div class="news-content">
-                    <h2 data-translate  >Elon Musk's SpaceX Dragon Capsule Returns Astronauts After Extended ISS Mission</h2>
-                    <p data-translate    >After spending 286 days in space, NASA astronauts Sunita Williams and Butch Wilmore safely returned to Earth aboard SpaceX’s Dragon capsule. Their mission was extended due to Boeing Starliner delays.</p>
-                    <a data-translate href="spacex-return.html">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Philadelphia Eagles NFL Free Agency">
-                <div class="news-content">
-                    <h2 data-translate   >Philadelphia Eagles Make Key Moves in NFL Free Agency</h2>
-                    <p data-translate    >The Philadelphia Eagles have signed key defensive players, including Azeez Ojulari and Adoree' Jackson, while offloading others to manage their salary cap efficiently.</p>
-                    <a data-translate href="eagles-free-agency.html">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Japan Earthquake Recovery">
-                <div class="news-content">
-                    <h2 data-translate   >Japan Begins Post-Earthquake Recovery Efforts</h2>
-                    <p data-translate>Japan has started recovery operations after a massive 7.8-magnitude earthquake struck the country, displacing thousands and causing significant damage to infrastructure.</p>
-                    <a data-translate href="japan-earthquakehtml">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Tech Layoffs">
-                <div class="news-content">
-                    <h2 data-translate>Major Tech Layoffs: Thousands Lose Jobs Amid Economic Slowdown</h2>
-                    <p data-translate>Tech giants including Google, Amazon, and Meta have announced mass layoffs as companies struggle with declining revenue and AI-driven job automation.</p>
-                    <a data-translate href="tech-layoffs.html">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Israel Political Crisis">
-                <div class="news-content">
-                    <h2 data-translate>Israeli Government Faces Crisis Amid Protests and Political Turmoil</h2>
-                    <p data-translate>Mass protests continue in Israel as the government faces backlash over judicial reforms and corruption scandals, pushing the country into political instability.</p>
-                    <a data-translate href="israel-crisis.html">Know More</a>
-                </div>
-            </div>
-            
-            
-            <div class="news-card">
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Trump and Putin Agree to Temporary Ceasefire in Ukraine</h2>
-                    <p data-translate>Former U.S. President Donald Trump and Russian President Vladimir Putin have agreed on a temporary ceasefire in Ukraine. The deal, mediated by European nations, aims to reduce ongoing hostilities but remains fragile as key terms are still being negotiated. Many experts doubt the long-term sustainability of the agreement.</p>
-                    <a data-translate href="Trump&sunita.html">Know More</a>
-                </div>
-            </div>
-            
-            <div>
-                <a data-translate href="top-news.html" class="view-btn">View All</a>
-            </div>
-        </section>
-    </main1>
-    <main2>
-        <div class="news-header" id="Trending-section">
-            <h1 data-translate>Trending</h1>
-        </div>
-        <section id="Trending-section" class="news-container">
-
-
-            <div class="news-card">
-                <img src="kuno-lion-project.avif" onerror="this.style.display='none';" alt="Kuno Lions Relocation">
-                <div class="news-content">
-                  <h2 data-translate>“Kuno Can Sustain a Viable Lion Population,” Say Experts</h2>
-                  <p data-translate>
-                    Wildlife experts have reaffirmed that the Kuno National Park has sufficient space and resources to support a viable population of Asiatic lions. The statement boosts the ongoing plans to relocate lions from Gujarat’s Gir forest to promote biodiversity and reduce ecological risks.
-                  </p>
-                  <a data-translate href="kuno-lion-relocation.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="modi-myanmar-quake.webp" onerror="this.style.display='none';" alt="PM Modi with Myanmar General">
-                <div class="news-content">
-                    <h2 data-translate>PM Modi Assures Help to Myanmar in Earthquake Aftermath</h2>
-                    <p data-translate>Prime Minister Narendra Modi conveyed India’s full support to Myanmar’s Senior General following the 5.1 magnitude earthquake. He offered assistance in recovery efforts, reaffirming India’s solidarity with its neighbor during this crisis.</p>
-                    <a data-translate href="modi-myanmar-aid.html">Know More</a>
-                </div>
-            </div>
-            
-
-            <div class="news-card">
-                <img src="ashwani-kumar-ipl.webp" onerror="this.style.display='none';" alt="Ashwani Kumar IPL Debut">
-                <div class="news-content">
-                    <h2 data-translate>“Never Thought About This”: Ashwani Kumar Reflects on His Dream IPL Debut</h2>
-                    <p data-translate>Young talent Ashwani Kumar made a stunning IPL debut, leaving fans and experts impressed. Speaking about his performance, he said he just followed his process without overthinking, making the moment even more special.</p>
-                    <a data-translate href="ashwani-kumar-ipl2025.html">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card">
-    <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-    <div class="news-content">
-        <h2 data-translate>Trump Imposes 25% Tariff on Automobile Imports, Aims for $100 Billion in Tax Revenue</h2>
-        <p data-translate>Former U.S. President Donald Trump has announced a 25% tariff on automobile imports, a move expected to generate $100 billion in tax revenues. The decision is part of his broader economic strategy to boost domestic manufacturing and reduce trade deficits.</p>
-        <a data-translate href="trump-auto-tariff.html">Know More</a>
-    </div>
-</div>
-
-
-            <div class="news-card"  >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Trump Explains Why He Hasn’t Invited Sunita Williams to the White House Yet</h2>
-                    <p data-translate>Former U.S. President Donald Trump explained why astronaut Sunita Williams has not yet been invited to the White House. He cited scheduling challenges and Williams’ ongoing space missions as key reasons. Trump assured that an invitation will be sent soon to recognize her contributions to space exploration.</p>
-                    <a data-translate href="Trump&sunita.html">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"   >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Sports: Epic Showdown in Football Finals</h2>
-                    <p data-translate>The championship match saw a thrilling last-minute goal...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Entertainment: New Movie Breaks Records</h2>
-                    <p data-translate>The latest blockbuster has shattered all box office records...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Health: New Diet Trends for 2025</h2>
-                    <p data-translate>Experts reveal the latest diet plans that actually work...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Science: NASA’s New Space Mission</h2>
-                    <p data-translate>NASA announces a groundbreaking mission to explore deep space...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Business: Startup Boom in 2025</h2>
-                    <p data-translate>New startups are emerging with innovative solutions...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Travel: Top Destinations for 2025</h2>
-                    <p data-translate>Explore the most breathtaking places to visit this year...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Finance: Cryptocurrency Trends</h2>
-                    <p data-translate>Experts predict the future of digital currencies in 2025...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-            <div>
-                <a data-translate href="Trending-news.html" class="view-btn">View All</a>
-            </div>
-        </section>
-    </main2>
-    <main3>
-        <div class="news-header" id="sports-section">
-            <h1 data-translate>Sports</h1>
-        </div>
-        <section id="sports-section" class="news-container">
-
-
-            <div class="news-card">
-                <img src="messi-inter-miami.avif" onerror="this.style.display='none';" alt="Messi Inter Miami Comeback">
-                <div class="news-content">
-                  <h2 data-translate>Messi Leads Inter Miami to Stunning 3-Goal Comeback vs LAFC</h2>
-                  <p data-translate>
-                    Lionel Messi inspired Inter Miami to a thrilling 3-goal comeback victory over LAFC, securing their spot in the CONCACAF Champions Cup semifinals. With key assists and decisive build-up play, Messi once again proved to be the game-changer for his side.
-                  </p>
-                  <a data-translate href="messi-miami-concacaf.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="srh-vs-gt-ipl2025.avif" onerror="this.style.display='none';" alt="SRH vs GT Match IPL 2025">
-                <div class="news-content">
-                  <h2 data-translate>IPL 2025, SRH vs GT: Siraj and Gill Star as Titans Crush Sunrisers</h2>
-                  <p data-translate>
-                    In a dominant performance, Gujarat Titans overpowered Sunrisers Hyderabad with stellar displays from Mohammed Siraj and Shubman Gill. Siraj’s early breakthroughs set the tone, while Gill’s composed knock sealed a comfortable win for the Titans.
-                  </p>
-                  <a data-translate href="srh-vs-gt-ipl2025.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="csk-vs-dc-01.avif" onerror="this.style.display='none';" alt="CSK vs DC IPL 2025">
-                <div class="news-content">
-                  <h2 data-translate>IPL 2025: DC Breaks Chepauk Jinx, Beats CSK by 25 Runs</h2>
-                  <p data-translate>
-                    Delhi Capitals delivered an all-round performance to end their losing streak at Chepauk, defeating Chennai Super Kings by 25 runs. This emphatic win boosts DC's confidence early in the season as they dominate in both batting and bowling departments.
-                  </p>
-                  <a data-translate href="ipl-2025-csk-vs-dc.html">Know More</a>
-                </div>
-            </div>
-              
-
-
-            <div class="news-card">
-                <img src="ashwani-kumar-ipl.webp" onerror="this.style.display='none';" alt="Ashwani Kumar IPL Debut">
-                <div class="news-content">
-                    <h2 data-translate>“Never Thought About This”: Ashwani Kumar Reflects on His Dream IPL Debut</h2>
-                    <p data-translate>Young talent Ashwani Kumar made a stunning IPL debut, leaving fans and experts impressed. Speaking about his performance, he said he just followed his process without overthinking, making the moment even more special.</p>
-                    <a data-translate href="ashwani-kumar-ipl2025.html">Know More</a>
-                </div>
-            </div>
-            
-
-            <div class="news-card">
-                <img src="ipl-2025-rr-vs-csk.webp" onerror="this.style.display='none';" alt="RR vs CSK IPL 2025">
-                <div class="news-content">
-                    <h2 data-translate>IPL 2025: Rajasthan Royals Edge Chennai Super Kings in Thriller</h2>
-                    <p data-translate>Nitish Rana and Wanindu Hasaranga put on a stellar performance as Rajasthan Royals secured a hard-fought victory over Chennai Super Kings. The match saw intense moments, with RR holding their nerves till the end.</p>
-                    <a data-translate href="ipl-rr-csk.html">Know More</a>
-                </div>
-            </div>
-            
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Breaking News: Market Hits Record High</h2>
-                    <p data-translate>The stock market surged to an all-time high today...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"  >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Tech: AI Revolutionizing Healthcare</h2>
-                    <p data-translate>AI is transforming the healthcare industry with innovative solutions...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"   >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Sports: Epic Showdown in Football Finals</h2>
-                    <p data-translate>The championship match saw a thrilling last-minute goal...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Entertainment: New Movie Breaks Records</h2>
-                    <p data-translate>The latest blockbuster has shattered all box office records...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Health: New Diet Trends for 2025</h2>
-                    <p data-translate>Experts reveal the latest diet plans that actually work...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Science: NASA’s New Space Mission</h2>
-                    <p data-translate>NASA announces a groundbreaking mission to explore deep space...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Business: Startup Boom in 2025</h2>
-                    <p data-translate>New startups are emerging with innovative solutions...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Travel: Top Destinations for 2025</h2>
-                    <p data-translate>Explore the most breathtaking places to visit this year...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Finance: Cryptocurrency Trends</h2>
-                    <p data-translate>Experts predict the future of digital currencies in 2025...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-            <div>
-                <a data-translate href="Sports-news.html" class="view-btn">View All</a>
-            </div>
-        </section>
-    </main3>
-    <main4>
-        <div class="news-header" id="Entertainment">
-            <h1 data-translate>Entertainment</h1>
-        </div>
-        <section id="Entertainment-section" class="news-container">
-
-
-            <div class="news-card">
-                <img src="images/beauty-pageants-power.avif" onerror="this.style.display='none';" alt="Beauty Pageants and Power">
-                <div class="news-content">
-                  <h2 data-translate>What Beauty Pageants Reveal About Power and Priorities</h2>
-                  <p data-translate>
-                    Beauty pageants, once viewed purely as glamorous competitions, now reflect shifting global narratives about identity, influence, and social values. From cultural diplomacy to gender representation, these contests reveal how nations showcase their ideals—and what they choose to prioritize on a world stage.
-                  </p>
-                  <a data-translate href="News/Entertainment/beauty-pageants-power.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="images/ananya-panday-chanel.avif" onerror="this.style.display='none';" alt="Ananya Panday Chanel Ambassador">
-                <div class="news-content">
-                  <h2 data-translate>Ananya Panday Joins Chanel as First Indian Brand Ambassador</h2>
-                  <p data-translate>
-                    Chanel has officially announced Bollywood actress Ananya Panday as its first-ever brand ambassador from India. The move marks a major fashion milestone, as the French luxury label expands its presence in the Indian market. Ananya, known for her Gen Z appeal and rising influence in cinema, expressed her excitement on social media, calling it a dream come true. This partnership places her alongside global names and signals a growing spotlight on Indian talent in the luxury space.
-                  </p>
-                  <a data-translate href="ananya-panday-chanel.html">Know More</a>
-                </div>
-              </div>
-              
-              
-              
-
-
-            <div class="news-card">
-                <img src="images/piku-re-release.avif" onerror="this.style.display='none';" alt="Piku Re-Release Poster">
-                <div class="news-content">
-                  <h2 data-translate>Deepika Padukone, Amitabh Bachchan-starrer 'Piku' to Re-Release in May</h2>
-                  <p data-translate>
-                    To celebrate its 10th anniversary, the beloved 2015 film *Piku*, starring Deepika Padukone, Amitabh Bachchan, and the late Irrfan Khan, is set to return to theatres on May 9, 2025. Deepika shared the news on Instagram, expressing, "A film that will always have my heart – PIKU is back in theatres on 9th May, 2025 to celebrate its 10th Anniversary! Irrfan, we miss you! And think about you every so often…"
-                  </p>
-                  <a data-translate href="piku-re-release.html">Know More</a>
-                </div>
-              </div>
-
-
-            <div class="news-card">
-                <img src="saif-malaika-case.avif" onerror="this.style.display='none';" alt="Saif Ali Khan Hotel Brawl Case">
-                <div class="news-content">
-                  <h2 data-translate>Saif Ali Khan Hotel Brawl Case: Court Re-Issues Bailable Warrant Against Malaika Arora</h2>
-                  <p data-translate>
-                    A local court has re-issued a bailable warrant against actress Malaika Arora in connection with the long-pending Saif Ali Khan hotel brawl case. The warrant follows her repeated absence in court hearings related to the 2012 incident.
-                  </p>
-                  <a data-translate href="saif-malaika-court.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="kashmir-spring.avif" onerror="this.style.display='none';" alt="Spring Blossoms in Kashmir">
-                <div class="news-content">
-                  <h2 data-translate>Kashmir’s Hidden Spring Blooms Mesmerize Nature Lovers</h2>
-                  <p data-translate>
-                    Beyond its famous tulip gardens, Kashmir unveils a vibrant and lesser-known array of spring blooms across its valleys and foothills. From almond blossoms to rare wildflowers, the region is turning into a paradise for photographers and nature enthusiasts this season.
-                  </p>
-                  <a data-translate href="kashmir-spring-blooms.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="peddi-ram-charan.avif" onerror="this.style.display='none';" alt="First Glimpse of Ram Charan's Peddi">
-                <div class="news-content">
-                  <h2 data-translate>‘Peddi’ First Glimpse Out: Ram Charan Shines in Buchi Babu Sana’s Next</h2>
-                  <p data-translate>
-                    The makers of ‘Peddi’ have dropped the exciting first look featuring Ram Charan in a striking avatar. Directed by Buchi Babu Sana, the film now has an official release date, sparking excitement among fans eagerly awaiting the star’s next big-screen appearance.
-                  </p>
-                  <a data-translate href="peddi-firstlook.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="test-movie-review.avif" onerror="this.style.display='none';" alt="Test Movie Poster">
-                <div class="news-content">
-                  <h2 data-translate>‘Test’ Movie Review: Strong Characters Score Big in a Predictable Game</h2>
-                  <p data-translate>
-                    Despite a familiar and predictable narrative, *Test* manages to leave an impact thanks to its sharply written characters and emotionally grounded performances. The film builds momentum through subtle moments and heartfelt arcs, turning a routine script into a satisfying watch.
-                  </p>
-                  <a data-translate href="test-moviereview.html">Know More</a>
-                </div>
-              </div>
-              
-
-            <div class="news-card">
-                <img src="chhaava-movie.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Vicky Kaushal’s ‘Chhaava’ Faces Online Circulation, Police Begin Investigation</h2>
-                    <p data-translate>Vicky Kaushal’s upcoming film ‘Chhaava’ has surfaced online, prompting authorities to take action. A case has been registered, and officials are looking into the matter to prevent further distribution.</p>
-                    <a data-translate href="vicky-kaushal-chhaava-news.html">Know More</a>
-                </div>
-            </div>
-            
-
-            <div class="news-card">
-                <img src="lisa-ray.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Lisa Ray Criticizes Airlines for Denying Medical Waiver for Ailing Father.</h2>
-                    <p data-translate>Actress Lisa Ray has slammed airlines for refusing a medical waiver request for her critically ill father. She called the decision “inhumane” and urged airlines to show compassion in medical emergencies.</p>
-                    <a data-translate href="lisa-ray-airline-controversy.html">Know More</a>
-                </div>
-            </div>
-            
-
-            <div class="news-card"  >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Tech: AI Revolutionizing Healthcare</h2>
-                    <p data-translate>AI is transforming the healthcare industry with innovative solutions...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"   >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Sports: Epic Showdown in Football Finals</h2>
-                    <p data-translate>The championship match saw a thrilling last-minute goal...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Entertainment: New Movie Breaks Records</h2>
-                    <p data-translate>The latest blockbuster has shattered all box office records...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Health: New Diet Trends for 2025</h2>
-                    <p data-translate>Experts reveal the latest diet plans that actually work...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Science: NASA’s New Space Mission</h2>
-                    <p data-translate>NASA announces a groundbreaking mission to explore deep space...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Business: Startup Boom in 2025</h2>
-                    <p data-translate>New startups are emerging with innovative solutions...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Travel: Top Destinations for 2025</h2>
-                    <p data-translate>Explore the most breathtaking places to visit this year...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Finance: Cryptocurrency Trends</h2>
-                    <p data-translate>Experts predict the future of digital currencies in 2025...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-            <div>
-                <a data-translate href="Entertainment-news.html" class="view-btn">View All</a>
-            </div>
-        </section>
-    </main4>
-    <main5>
-        <div class="news-header" id="World-section">
-            <h1 data-translate>World</h1>
-        </div>
-        <section id="World-section" class="news-container">
-
-
-            <div class="news-card">
-                <img src="images/pahalgam-attack-meet.avif" onerror="this.style.display='none';" alt="Pahalgam Attack All-Party Meet">
-                <div class="news-content">
-                  <h2 data-translate>Govt to Hold All-Party Meet on Pahalgam Attack on April 24</h2>
-                  <p data-translate>
-                    In response to the recent attack in Pahalgam, the central government has called an all-party meeting on April 24. The session will focus on reviewing security measures and building a unified political approach to tackle terrorism in the region.
-                  </p>
-                  <a data-translate href="News/World/pahalgam-all-party-meet.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="images/india-manufacturing-growth.avif" onerror="this.style.display='none';" alt="India Manufacturing Growth">
-                <div class="news-content">
-                  <h2 data-translate>India Targets 23% GDP Share from Manufacturing, Boosted by Sunrise Sectors</h2>
-                  <p data-translate>
-                    Finance Minister Nirmala Sitharaman announced that India is aiming to nearly double the manufacturing sector's share in GDP to 23%. The growth will be driven by investments in sunrise sectors such as electronics, green energy, and semiconductors, marking a shift toward high-tech, sustainable production.
-                  </p>
-                  <a data-translate href="News/World/india-manufacturing-gdp.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="images/trump-hegseth-signal2.avif" onerror="this.style.display='none';" alt="Trump Supports Hegseth Signal Chat">
-                <div class="news-content">
-                  <h2 data-translate>Trump Backs Hegseth After Attack Plans Shared in Private Signal Chat</h2>
-                  <p data-translate>
-                    Former U.S. President Donald Trump continues to support Defense Secretary Pete Hegseth despite backlash over a second Signal chat where military details were shared with unauthorized recipients. The White House confirmed no classified data was leaked, but lawmakers are demanding accountability.
-                  </p>
-                  <a data-translate href="News/World/trump-hegseth-signal.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="images/zelenskyy-easter-truce.avif" onerror="this.style.display='none';" alt="Zelenskyy Easter Truce Ukraine Russia">
-                <div class="news-content">
-                  <h2 data-translate>Zelenskyy Says Ukraine Will Observe Easter Truce, Alleges Violations by Russia</h2>
-                  <p data-translate>
-                    Ukrainian President Volodymyr Zelenskyy said Kyiv will respect the Easter ceasefire proposed by Russia but accused Moscow of early violations. He urged global observers to monitor the situation closely and called for genuine commitment to peace during the holy period.
-                  </p>
-                  <a data-translate href="https://worldapex.space/News/World/ukraine-easter-truce.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="images/fast-breeder-reactor-india.avif" onerror="this.style.display='none';" alt="India Fast Breeder Reactor">
-                <div class="news-content">
-                  <h2 data-translate>India's First Prototype Fast-Breeder Reactor to Be Commissioned by September 2026</h2>
-                  <p data-translate>
-                    India is set to commission its first prototype fast-breeder reactor (PFBR) by September 2026, a major leap in the country’s nuclear energy capabilities. Developed by the Indira Gandhi Centre for Atomic Research (IGCAR), the reactor aims to use plutonium and uranium-238 efficiently, marking a pivotal move towards energy sustainability and self-reliance.
-                  </p>
-                  <a data-translate href="fast-breeder-reactor-india.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="images/civilian-thrashed-army-rajouri.avif" onerror="this.style.display='none';" alt="Civilian Thrashed by Army Officer in Rajouri">
-                <div class="news-content">
-                  <h2 data-translate>Civilian ‘Thrashed’ by Army Officer During Search Operations in Rajouri; Army Orders Inquiry</h2>
-                  <p data-translate>
-                    A civilian in Rajouri was allegedly assaulted by an Army officer during a search operation, sparking widespread outrage. The Army has ordered a formal inquiry into the incident, which has raised questions about the conduct of military personnel during such operations. The investigation is expected to clarify the circumstances surrounding the altercation and determine accountability.
-                  </p>
-                  <a data-translate href="civilian-thrashed-army-rajouri.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="china-vietnam-deals.avif" onerror="this.style.display='none';" alt="China Vietnam Agreements">
-                <div class="news-content">
-                  <h2 data-translate>China, Vietnam Sign Key Agreements on Supply Chains and Railway Cooperation</h2>
-                  <p data-translate>
-                    China and Vietnam have signed multiple agreements to strengthen supply chain integration and expand railway cooperation. The move aims to boost regional connectivity, trade efficiency, and strategic ties between the two neighbors.
-                  </p>
-                  <a data-translate href="china-vietnam-agreements.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="trump-global-tariffs.avif" onerror="this.style.display='none';" alt="Trump Global Tariffs Trade War">
-                <div class="news-content">
-                  <h2 data-translate>Trump’s Global Tariffs Spark Backlash as China, EU Strike Back</h2>
-                  <p data-translate>
-                    The global trade war intensifies as former U.S. President Donald Trump enforces sweeping tariffs on imports. In response, both China and the European Union have launched countermeasures, raising fears of a deeper economic standoff with global consequences.
-                  </p>
-                  <a data-translate href="trump-global-tariffs.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="kancha-gachibowli.avif" onerror="this.style.display='none';" alt="Kancha Gachibowli Forest Destruction">
-                <div class="news-content">
-                  <h2 data-translate>SC Raises Alarm Over Destruction in Kancha Gachibowli ‘Forest’</h2>
-                  <p data-translate>
-                    The Supreme Court expressed deep concern over the destruction in Kancha Gachibowli’s green zone, calling it an “alarming picture.” The court has sought urgent reports and emphasized the need for environmental safeguards in the rapidly urbanizing zone.
-                  </p>
-                  <a data-translate href="kancha-gachibowli-sc.html">Know More</a>
-                </div>
-            </div>
-              
-
-            <div class="news-card">
-                <img src="modi-sri-lanka.webp" onerror="this.style.display='none';" alt="PM Modi in Sri Lanka">
-                <div class="news-content">
-                  <h2 data-translate>PM Modi in Sri Lanka: Delegation-Level Talks Begin with President Dissanayake</h2>
-                  <p data-translate>
-                    Prime Minister Narendra Modi has arrived at the Presidential Secretariat in Colombo to commence high-level talks with Sri Lankan President Dissanayake. The visit is expected to focus on strengthening bilateral ties, regional cooperation, and economic collaboration.
-                  </p>
-                  <a data-translate href="modi-sri-lanka-visit.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Breaking News: Market Hits Record High</h2>
-                    <p data-translate>The stock market surged to an all-time high today...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="china-patrol1.webp" onerror="this.style.display='none';" alt="China-Philippines Tensions">
-                <div class="news-content">
-                    <h2 data-translate>China Conducts Military Patrol in South China Sea, Warns Philippines</h2>
-                    <p data-translate>China has carried out military patrols in the South China Sea, issuing a warning to the Philippines over territorial disputes. Beijing claims the patrols are a response to what it calls “provocative actions” by Manila in contested waters.</p>
-                    <a data-translate href="china-patrol.html">Know More</a>
-                </div>
-            </div>
-            
-
-            <div class="news-card"   >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Sports: Epic Showdown in Football Finals</h2>
-                    <p data-translate>The championship match saw a thrilling last-minute goal...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Entertainment: New Movie Breaks Records</h2>
-                    <p data-translate>The latest blockbuster has shattered all box office records...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Health: New Diet Trends for 2025</h2>
-                    <p data-translate>Experts reveal the latest diet plans that actually work...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Science: NASA’s New Space Mission</h2>
-                    <p data-translate>NASA announces a groundbreaking mission to explore deep space...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Business: Startup Boom in 2025</h2>
-                    <p data-translate>New startups are emerging with innovative solutions...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Travel: Top Destinations for 2025</h2>
-                    <p data-translate>Explore the most breathtaking places to visit this year...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Finance: Cryptocurrency Trends</h2>
-                    <p data-translate>Experts predict the future of digital currencies in 2025...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-            <div>
-                <a data-translate href="World-news.html" class="view-btn">View All</a>
-            </div>
-        </section>
-    </main5>
-    <main6>
-        <div class="news-header" id="politics-section">
-            <h1 data-translate>Politics</h1>
-        </div>
-        <section id="politics-section" class="news-container">
-
-
-            <div class="news-card">
-                <img src="amit-shah-chennai.avif" onerror="this.style.display='none';" alt="Amit Shah in Chennai">
-                <div class="news-content">
-                  <h2 data-translate>Amit Shah to Visit Chennai Amid AIADMK-BJP Alliance Buzz</h2>
-                  <p data-translate>
-                    Union Home Minister Amit Shah is scheduled to visit Chennai, fueling fresh speculation about a potential revival of the AIADMK-BJP alliance ahead of upcoming elections. His visit is seen as politically significant as party leaders prepare for key discussions.
-                  </p>
-                  <a data-translate href="amit-shah-chennai-visit.html">Know More</a>
-                </div>
-              </div>
-              
-
-
-            <div class="news-card">
-                <img src="waqf-bill2.webp" onerror="this.style.display='none';" alt="Waqf Bill Debate">
-                <div class="news-content">
-                    <h2 data-translate>Waqf Bill: INDIA Bloc Engages in Debate, Pushes for Voting in Parliament</h2>
-                    <p data-translate>In a strategic move, the INDIA bloc opted for discussion instead of protest or walkout on the Waqf Bill. Opposition leaders are pressing for a detailed debate and a formal vote in Parliament.</p>
-                    <a data-translate href="waqf-bill-debate.html">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="rahul-gandhi.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Rahul Gandhi Calls Opposition to Caste Census ‘Anti-National’. </h2>
-                    <p data-translate>Rahul Gandhi has strongly defended the caste census, stating that opposing it is an ‘anti-national’ act. He argued that the census is essential for ensuring social justice and equitable resource distribution.</p>
-                    <a data-translate href="rahul-gandhi-caste-census.html">Know More</a>
-                </div>
-            </div>
-            
-
-            <div class="news-card"  >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Tech: AI Revolutionizing Healthcare</h2>
-                    <p data-translate>AI is transforming the healthcare industry with innovative solutions...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"   >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Sports: Epic Showdown in Football Finals</h2>
-                    <p data-translate>The championship match saw a thrilling last-minute goal...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Entertainment: New Movie Breaks Records</h2>
-                    <p data-translate>The latest blockbuster has shattered all box office records...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Health: New Diet Trends for 2025</h2>
-                    <p data-translate>Experts reveal the latest diet plans that actually work...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Science: NASA’s New Space Mission</h2>
-                    <p data-translate>NASA announces a groundbreaking mission to explore deep space...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Business: Startup Boom in 2025</h2>
-                    <p data-translate>New startups are emerging with innovative solutions...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Travel: Top Destinations for 2025</h2>
-                    <p data-translate>Explore the most breathtaking places to visit this year...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Finance: Cryptocurrency Trends</h2>
-                    <p data-translate>Experts predict the future of digital currencies in 2025...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-            <div>
-                <a data-translate href="Poltitics-news.html" class="view-btn">View All</a>
-            </div>
-        </section>
-    </main6>
-    <main7>
-        <div class="news-header" id="Technology-section">
-            <h1 data-translate>Technology</h1>
-        </div>
-        <section id="Technology-section" class="news-container">
-
-
-            <div class="news-card">
-                <img src="intel-altera-sale.avif" onerror="this.style.display='none';" alt="Intel Altera Stake Sale">
-                <div class="news-content">
-                  <h2 data-translate>Intel to Sell Majority Stake in Altera for $4.46 Billion</h2>
-                  <p data-translate>
-                    Intel has announced the sale of its majority stake in Altera for $4.46 billion as part of its broader effort to fund internal restructuring and business revival. The move is aimed at accelerating Intel's push into AI and next-gen semiconductor innovation.
-                  </p>
-                  <a data-translate href="intel-altera-sale.html">Know More</a>
-                </div>
-              </div>
-              
-
-            <div class="news-card">
-                <img src="nintendo-switch2.avif" onerror="this.style.display='none';" alt="Nintendo Switch 2">
-                <div class="news-content">
-                  <h2 data-translate>Nintendo Delays Switch 2 Pre-Orders in U.S. Amid Tariff Uncertainty</h2>
-                  <p data-translate>
-                    Nintendo has postponed pre-orders for the much-awaited Switch 2 console in the U.S. due to trade uncertainty and potential electronic import tariffs. The company remains cautious as it monitors evolving policy developments.
-                  </p>
-                  <a data-translate href="nintendo-switch2-delay.html">Know More</a>
-                </div>
-            </div>
-              
-
-            <div class="news-card">
-                <img src="nvidia-quantum.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Nvidia to Open Quantum Computing Lab, CEO Confirms.</h2>
-                    <p data-translate>Nvidia CEO Jensen Huang announced plans to open a quantum computing lab to accelerate research in AI and next-gen computing. The lab aims to integrate quantum technology with Nvidia’s advanced GPUs for breakthroughs in computing power.</p>
-                    <a data-translate href="nvidia-quantum-lab.html">Know More</a>
-                </div>
-            </div>
-            
-
-            <div class="news-card"  >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Tech: AI Revolutionizing Healthcare</h2>
-                    <p data-translate>AI is transforming the healthcare industry with innovative solutions...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"   >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Sports: Epic Showdown in Football Finals</h2>
-                    <p data-translate>The championship match saw a thrilling last-minute goal...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Entertainment: New Movie Breaks Records</h2>
-                    <p data-translate>The latest blockbuster has shattered all box office records...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Health: New Diet Trends for 2025</h2>
-                    <p data-translate>Experts reveal the latest diet plans that actually work...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Science: NASA’s New Space Mission</h2>
-                    <p data-translate>NASA announces a groundbreaking mission to explore deep space...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Business: Startup Boom in 2025</h2>
-                    <p data-translate>New startups are emerging with innovative solutions...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Travel: Top Destinations for 2025</h2>
-                    <p data-translate>Explore the most breathtaking places to visit this year...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-
-            <div class="news-card"    >
-                <img src="pannel.webp" onerror="this.style.display='none';" alt="Image">
-                <div class="news-content">
-                    <h2 data-translate>Finance: Cryptocurrency Trends</h2>
-                    <p data-translate>Experts predict the future of digital currencies in 2025...</p>
-                    <a data-translate href="#">Know More</a>
-                </div>
-            </div>
-            <div>
-                <a data-translate href="Technology-news.html" class="view-btn">View All</a>
-            </div>
-        </section>
-    </main7>
-    <main8>
-        <div class="news-header" id="Astrology-section">
-            <h1 data-translate>Astrology</h1>
-        </div>
+    <main>
+      <style>
+        .mp-container {
+          border-radius: 10px;
+          box-shadow: 0 4px 10px var(--box-shadow);
+          padding: 1rem;
+          color: var(--paragraph-text);
+          transition: transform 0.3s ease;
+          background: var(--card-bg);
+          display: flex;
+          flex-direction: column;
+        }
+      
+        .mp-container h2 {
+          font-size: clamp(1.4rem, 2.5vw, 2rem);
+          margin-top: 0;
+          border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+          color: var(--heading-text);
+        }
+      
+        .mp-container p {
+          font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+          line-height: 1.6;
+          color: var(--paragraph-text);
+        }
+      
+        .thumb-inline {
+          width: 100%;
+          max-width: 360px;
+          height: auto;
+          float: left;
+          margin: 10px 20px 10px 0;
+          border-radius: 8px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          object-fit: cover;
+        }
+      
+        .thumb-inline:hover {
+          transform: scale(1.02);
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+      
+        #box5 .thumb-inline {
+          float: none;
+          display: block;
+          margin: 0 auto;
+          max-width: 500px;
+        }
+
+        #box7 .thumb-inline {
+          float: none;
+          display: block;
+          margin: 0 auto;
+          max-width: 500px;
+        }
+        .preview-hover {
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+        }
+      
+        .hover-box {
+          position: absolute;
+          bottom: 130%;
+          left: -100px;
+          width: 300px;
+          background: rgba(255, 255, 255, 0.07);
+          backdrop-filter: blur(8px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          color: #fff;
+          padding: 10px;
+          border-radius: 10px;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+          z-index: 999;
+          display: none;
+          transition: opacity 0.3s ease;
+        }
+      
+        .preview-hover:hover .hover-box {
+          display: block;
+        }
+      
+        .hover-box img {
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin-bottom: 8px;
+          border-radius: 8px;
+        }
+      
+        .hover-box p {
+          font-size: 0.9rem;
+          line-height: 1.4;
+          color: #f0f0f0;
+          margin: 0;
+        }
+      
+        #grid-layout {
+          display: grid;
+          grid-template-areas: 
+            "box1 box1"
+            "box2 box3"
+            "box4 box4"
+            "box5 box5"
+            "box6 box7";
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+      
+        #box1 { grid-area: box1; background: var(--card-bg); }
+        #box2 { grid-area: box2; background: var(--card-bg); }
+        #box3 { grid-area: box3; background: var(--card-bg); }
+        #box4 { grid-area: box4; background: var(--card-bg); }
+        #box5 { grid-area: box5; background: var(--card-bg); }
+        #box6 { grid-area: box6; background: var(--card-bg); }
+        #box7 { grid-area: box7; background: var(--card-bg); }
+      
+        /* Tablet/iPad view (resize images and keep layout almost same as desktop) */
+        @media (max-width: 1024px) {
+          #grid-layout {
+            grid-template-areas: 
+              "box1 box1"
+              "box2 box3"
+              "box4 box4"
+              "box5 box5"
+              "box6 box6"
+              "box7 box7";
+            grid-template-columns: 1fr 1fr;
+          }
+      
+          .thumb-inline {
+            max-width: 95%;
+            width: 100%;
+            float: none;
+            margin: 0 auto;
+          }
+      
+          #box5 .thumb-inline {
+            max-width: 95%;
+          }
+        }
+      
         
-    </main8>
+        @media (max-width: 768px) {
+          #grid-layout {
+            grid-template-areas: 
+              "box1"
+              "box2"
+              "box3"
+              "box4"
+              "box5"
+              "box6"
+              "box7";
+            grid-template-columns: 1fr;
+          }
+      
+          .thumb-inline {
+            max-width: 100%;
+            width: 100%;
+            float: none;
+            margin: 0 auto 1rem;
+          }
+      
+          #box5 .thumb-inline {
+            max-width: 100%;
+          }
+        }
+      
+        body.dark-mode .mp-p {
+          color: rgb(255, 255, 255);
+        }
+      
+        body.dark-mode .mp-a {
+          color: aqua;
+        }
+
+        @media (max-width: 768px) {
+          #box6 {
+          flex-direction: column !important;
+          align-items: center !important;
+          text-align: center;
+          gap: 1.2rem;
+        }
+
+        #box6 .news-header {
+          order: 1;
+          width: 100%;
+        }
+
+        #box6 .news-header h1 {
+          margin: 0;
+          text-align: left; 
+          padding: 0 1rem;
+        }
+
+        #box6 img.thumb-inline {
+          order: 2;
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+        }
+
+        #box6 .mp-p {
+          order: 3;
+          padding: 0 1rem;
+          font-size: 1rem;
+          line-height: 1.6;
+        }
+      }
+      </style>
+        <div id="grid-layout">
+          <div class="mp-container" id="box1">
+              <div class="news-header" >
+                  <h1 data-translate>From Today's Featured Article</h1>
+              </div>
+            <p class="mp-p">
+              <img src="pannel.webp" alt="Image description" class="thumb-inline"> <br><br><span data-translate="">This is some text before the image. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula nisl 
+              eget enim tempor, a volutpat ipsum vehicula. Sed sit amet elit sit amet lectus vestibulum tincidunt. Curabitur euismod 
+              libero nec nisi consectetur, id vehicula dui volutpat. 
+              This is some text after the image. Curabitur euismod libero nec nisi consectetur, id vehicula dui volutpat. Integer 
+              euismod nunc vel ante posuere, et auctor orci sollicitudin. Cras dapibus scelerisque elit,  This is an example of </span>
+              <a class="mp-a" href="https://worldapex.space/"><span class="preview-hover">
+                  <span data-translate style="text-decoration: underline; color: #41b905;">cursus lorem</span>
+                  <span class="hover-box">
+                    <img src="cartosat-myanmar.webp" alt="Preview Image" />
+                  </span>
+                </span></a>
+            </p>
+          </div>
+      
+          <div class="mp-container" id="box2">
+            <div class="news-header"  >
+                <h1 data-translate>In the News</h1>
+            </div>
+            <p class="mp-p">
+              <img class="thumb-inline" src="logo.png" alt="News image">
+              <span data-translate >Global leaders are gathering for a historic climate summit today to push forward with new environmental pledges. 
+              More on this developing story. The summit is expected to result in new global policies for reducing emissions and accelerating sustainable energy use. World leaders will collaborate to tackle the increasing challenge of climate change and its effects on the global environment.
+            </span></p>
+          </div>
+      
+          <div class="mp-container" id="box3">
+            <div class="news-header"  >
+                <h1 data-translate>On this day – April 24</h1>
+            </div>
+            <p class="mp-p">
+              <img class="thumb-inline" src="pannel.webp" alt="On this day image">
+              <span data-translate> On April 24, 1990, the Hubble Space Telescope was launched into orbit, revolutionizing our understanding of the universe.
+              The telescope has provided stunning images of distant galaxies and has significantly advanced our knowledge of space. Thanks to Hubble, we have been able to peer deeper into the cosmos than ever before, unlocking mysteries of the universe.
+            </span></p>
+          </div>
+      
+          <div class="mp-container" id="box4">
+            <div class="news-header"  >
+                <h1 data-translate>Did You Know ...</h1>
+            </div>
+            <p class="mp-p" data-translate>...that octopuses have three hearts and their blood is blue?</p>
+            <p class="mp-p" data-translate>...that honey never spoils and was found intact in ancient Egyptian tombs?</p>
+            <p class="mp-p" data-translate>...that the Eiffel Tower can grow taller during the summer due to the expansion of the metal in heat?</p>
+            <p class="mp-p" data-translate>...that the shortest war in history lasted only 38 to 45 minutes, between Britain and Zanzibar on August 27, 1896?</p>
+          </div>
+      
+          <div class="mp-container" id="box5">
+            <div class="news-header"  >
+                <h1 data-translate>Today's Featured Picture</h1>
+            </div>
+            <p class="mp-p">
+              <img class="thumb-inline" src="pannel.webp" alt="Featured Picture"><br><br> <span data-translate>This stunning image captures the radiant clouds of the Orion Nebula, a star-forming region located about 1,344 light-years from Earth.
+              The nebula is an iconic sight in the night sky, known for being one of the brightest nebulae visible to the naked eye. It is a place where new stars are being born, and its beauty has been the subject of fascination for astronomers and stargazers alike.
+            </span></p>
+          </div>
+          <div class="mp-container" id="box6" style="flex-direction: row; align-items: center; gap: 1rem;">
+            <img src="pannel.webp" alt="Entertainment Image" class="thumb-inline" style="max-width: 350px;">
+            <div>
+              <div class="news-header">
+                <h1 data-translate>Entertainment</h1>
+              </div>
+              <p data-translate class="mp-p">From red carpets to behind-the-scenes drama, the world of entertainment never sleeps. Stay updated on your favorite stars, movie releases, OTT shows, and viral pop culture moments that set the internet ablaze.</p>
+            </div>
+          </div>
+
+          <div class="mp-container" id="box7">
+            <div class="news-header">
+              <h1 data-translate>In Sports</h1>
+            </div><br>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+              <img src="https://worldapex.space/logo.png" alt="Sports Image" class="thumb-inline" style="max-width: 90%; margin-bottom: 1rem;">
+              <p data-translate class="mp-p" style="text-align: center;">Catch all the adrenaline-pumping updates from cricket, football, basketball, and more. From thrilling wins to unforgettable performances, this is your daily dose of action-packed sports coverage.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+      
+
     <main9>
-        <div class="news-header" id="weather-section">
+      <section id="weather-section">
+        <div class="news-header"  >
             <h1 data-translate>Weather</h1>
         </div>
-        <section id="weather-section">
+        
             <div class="container">
-                <h1 data-translate>Weather App</h1>
+                
  <!-- Search Box -->
  <div class="search">
     <input type="text" id="city" placeholder="Enter city or postal code">
@@ -1266,37 +550,37 @@
 <div id="weather-icon-container">
     <img id="weather-icon" src="" alt="Weather Icon">
 </div>
-<h3 data-translate id="weather-description"><span id="description"></span></h3>
+<h3 id="weather-description"><span data-translate id="description"></span></h3>
 
 <div class="weather-container">
     <div class="weather-box"><span class="material-icons">thermostat</span>
-        <p class="result"><b>Temperature:</b> <span id="temperature"></span>°C</p>
+        <p class="result"><b data-translate>Temperature:</b> <span id="temperature"></span>°C</p>
     </div>
     <div class="weather-box"><span class="material-icons">device_thermostat</span>
-        <p class="result"><b>Real Feel:</b> <span id="feels_like"></span>°C</p>
+        <p class="result"><b data-translate>Real Feel:</b> <span id="feels_like"></span>°C</p>
     </div>
     <div class="weather-box"><span class="material-icons">air</span>
-        <p class="result"><b>Wind Speed:</b> <span id="wind"></span> km/h</p>
+        <p class="result"><b data-translate>Wind Speed:</b> <span id="wind"></span> km/h</p>
     </div>
     <div class="weather-box"><span class="material-icons">water_drop</span>
-        <p class="result"><b>Humidity:</b> <span id="humidity"></span>%</p>
+        <p class="result"><b data-translate>Humidity:</b> <span id="humidity"></span>%</p>
     </div>
     <div class="weather-box"><span class="material-icons">speed</span>
-        <p class="result"><b>Pressure:</b> <span id="pressure"></span> Pa</p>
+        <p class="result"><b data-translate>Pressure:</b> <span id="pressure"></span> Pa</p>
     </div>
     <div class="weather-box"><span class="material-icons">wb_twilight</span>
-        <p class="result"><b>Sunrise:</b> <span id="sunrise"></span></p>
+        <p class="result"><b data-translate>Sunrise:</b> <span id="sunrise"></span></p>
     </div>
     <div class="weather-box"><span class="material-icons">nights_stay</span>
-        <p class="result"><b>Sunset:</b> <span id="sunset"></span></p>
+        <p class="result"><b data-translate>Sunset:</b> <span id="sunset"></span></p>
     </div>
 </div>
 </div>
                 <!-- Graphs -->
-                <h2 data-translate>24-Hour Forecast</h2>
+                <h2 class="mp-p" data-translate>24-Hour Forecast</h2>
                 <div class="chart-container"><canvas id="hourlyChart"></canvas></div>
 
-                <h2 data-translate>5-Day Forecast</h2>
+                <h2 class="mp-p" data-translate>5-Day Forecast</h2>
                 <div class="chart-container"><canvas id="dailyChart"></canvas></div>
             </div>
         </section>
@@ -1306,19 +590,18 @@
         <div class="footer-container">
             <div class="footer-section">
                 <h3 data-translate>About US </h3>
-                <p data-translate>World Apex delivers the latest headlines with accuracy and speed, covering politics, business,
-                    sports, and technology.</p>
+                <p style="color: rgb(0, 0, 0);" data-translate>At World Apex, we bring you the latest and most reliable news with a focus on accuracy, speed, and relevance. Covering diverse topics from politics and business to sports and technology, our team is dedicated to providing insightful and up-to-date information that matters. Stay informed with us as we navigate through the stories that shape our world.</p>
             </div>
 
             <div class="footer-section">
                 <h3 data-translate>Quick Links</h3>
                 <ul>
                     <li><a data-translate href="index.html">Home</a></li>
-                    <li><a data-translate href="#" class="scroll-link" data-section="World-section">World</a></li>
-                    <li><a data-translate href="#" class="scroll-link" data-section="politics-section">Politics</a></li>
-                    <li><a data-translate href="#" class="scroll-link" data-section="weather-section">Weather</a></li>
-                    <li><a data-translate href="#" class="scroll-link" data-section="Technology-section">Technology</a></li>
-                    <li><a data-translate href="#" class="scroll-link" data-section="sports-section">Sports</a></li>
+                    <li><a data-translate href="World-news.html" >World</a></li>
+                    <li><a data-translate href="Poltitics-news.html" >Politics</a></li>
+                    <li><a data-translate href="#weather-section" >Weather</a></li>
+                    <li><a data-translate href="Technology-news.html" >Technology</a></li>
+                    <li><a data-translate href="Sports-news.html" >Sports</a></li>
                     <li><a data-translate href="#">Contact</a></li>
                 </ul>
             </div>
@@ -1449,56 +732,31 @@
                     Conditions</a></p>
         </div>
     </footer>
-    <script>
-        document.getElementById("language").addEventListener("change", async function () {
-            let targetLang = this.value;
-            let elements = document.querySelectorAll("[data-translate], .translatable"); 
-
-            let texts = [];
-            let elementMap = new Map();
+    <style>
+    @media (max-width: 768px) {
+      .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
     
-            
-            elements.forEach((el, index) => {
-                if (!el.dataset.originalText) {
-                    el.dataset.originalText = el.textContent.trim(); 
-                }
-                texts.push(el.dataset.originalText);
-                elementMap.set(index, el);
-            });
+      .footer-section {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+      }
     
-            if (texts.length === 0) return;
+      .social-icons {
+        justify-content: center;
+      }
     
-            let requestData = {
-                from: "en",
-                to: targetLang,
-                data: texts,
-                platform: "api"
-            };
+      .footer-bottom {
+        text-align: center;
+      }
+    }
+    </style>
     
-            try {
-                let response = await fetch("https://api-b2b.backenster.com/b1/api/v3/translate", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": "Bearer a_hDUMEd7r1wJYYjRRrTnDy2n1EZiX24ksaOwRGN3KhJoosflDEMu3BCUKJAYk1ATBCVypEN23WrCAl6b3"
-                    },
-                    body: JSON.stringify(requestData)
-                });
-    
-                let data = await response.json();
-    
-                if (data.result) {
-                    elementMap.forEach((el, index) => {
-                        el.textContent = data.result[index]; 
-                    });
-                } else {
-                    console.error("Translation failed: No results received.");
-                }
-            } catch (error) {
-                console.error("Translation Error:", error);
-            }
-        });
-    </script>
     
     <script src="script.js" defer>
            
@@ -1557,7 +815,214 @@ getVersion().then(version => {
             alert("Geolocation is not supported by this browser.");
         }
     </script>
-    
+  <div id="consent-popup" class="consent-popup">
+    <div class="consent-box">
+      <h3>We Value Your Privacy</h3>
+      <p>
+        By using World Apex, you agree to our 
+        <a href="legal/terms.html" target="_blank">Terms & Conditions</a>, 
+        <a href="legal/policy.html" target="_blank">Privacy Policy</a>, and 
+        <a href="legal/cookies.html" target="_blank">Cookie Policy</a>.
+      </p>
+  
+      <label>
+        <input type="checkbox" id="consent-check">
+        I have read and agree to the policies.
+      </label>
+      
+      <button id="accept-btn" disabled><span class="btn-text">Accept</span></button>
+    </div>
+  </div>
+  
+  <style>
+    .consent-popup {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #1e1e1e;
+      color: #fff;
+      padding: 20px 10px;
+      z-index: 9999;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+      animation: fadeInUp 0.4s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .consent-box {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 10px;
+    }
+  
+    .consent-box h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+  
+    .consent-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+  
+    .consent-box a {
+      color: #4ea3ff;
+      text-decoration: underline;
+      word-break: break-word;
+    }
+  
+    .consent-box label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      margin: 10px 0;
+      flex-wrap: wrap;
+    }
+  
+    #accept-btn {
+      background: #4ea3ff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: fit-content;
+      margin: 10px auto 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 140px;
+      position: relative;
+      overflow: hidden;
+    }
+  
+    body:not(.dark-mode) #accept-btn:disabled {
+      background-color: #1e1e1e !important;
+      color: #ddd !important;
+      cursor: not-allowed;
+    }
+    body.dark-mode #accept-btn:disabled {
+      background-color: white !important;
+      color: #1e1e1e !important;
+    }
+    body.dark-mode #accept-btn {
+      background-color: white !important;
+      color: #1e1e1e !important;
+    }
+    body:not(.dark-mode) #accept-btn {
+      background-color: #1e1e1e !important;
+      color: #ddd !important;
+    }
+    .btn-text {
+      transition: opacity 0.3s ease;
+      background-color: transparent !important;
+      mix-blend-mode: normal !important;
+    }
+  
+    .loader-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 24px;
+      width: 24px;
+    }
+  
+    .loader-svg {
+      animation: spin 1s linear infinite;
+      width: 100%;
+      height: 100%;
+    }
+  
+    .loader-rect {
+      fill: #ffffff;
+    }
+  
+    @keyframes fadeInUp {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+  
+    @media (max-width: 480px) {
+      .consent-box {
+        padding: 5px;
+      }
+  
+      .consent-box h3 {
+        font-size: 1.1rem;
+      }
+  
+      .consent-box p {
+        font-size: 0.9rem;
+      }
+  
+      .consent-box label {
+        font-size: 0.85rem;
+        flex-direction: column;
+      }
+    }
+  </style>
+  
+  <script>
+    const checkbox = document.getElementById('consent-check');
+    const button = document.getElementById('accept-btn');
+    const btnText = button.querySelector('.btn-text');
+  
+    checkbox.addEventListener('change', function() {
+      button.disabled = !checkbox.checked;
+      if (checkbox.checked) {
+        button.style.setProperty('background-color', '#ff6f3f', 'important');
+        button.style.setProperty('color', '#ffffff', 'important');
+      } else {
+        button.style.setProperty('background-color', '#888', 'important');
+        button.style.setProperty('color', '#ddd', 'important');
+      }
+    });
+  
+    button.addEventListener('click', function() {
+      const existingLoader = button.querySelector('.loader-container');
+      if (!existingLoader) {
+        btnText.style.opacity = '0';
+        const loader = document.createElement("div");
+        loader.className = "loader-container";
+        loader.setAttribute("role", "progressbar");
+        loader.innerHTML = `
+          <svg class="loader-svg" viewBox="0 0 100 100" aria-label="Loading...">
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(-90 50 50)" opacity="0"></rect>
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(-45 50 50)" opacity="0.125"></rect>
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(0 50 50)" opacity="0.25"></rect>
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(45 50 50)" opacity="0.375"></rect>
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(90 50 50)" opacity="0.5"></rect>
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(135 50 50)" opacity="0.625"></rect>
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(180 50 50)" opacity="0.75"></rect>
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(225 50 50)" opacity="0.875"></rect>
+          </svg>
+        `;
+        button.appendChild(loader);
+  
+        // Optional: after loading, hide consent popup
+        setTimeout(() => {
+          document.getElementById('consent-popup').style.display = 'none';
+          localStorage.setItem('cookieConsent', 'true');
+        }, 1200); // simulate a loading time
+      }
+    });
+  
+    // Hide popup if already accepted
+    if (localStorage.getItem('cookieConsent') === 'true') {
+      document.getElementById('consent-popup').style.display = 'none';
+    }
+  </script>
     
 </body>
 
