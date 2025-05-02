@@ -358,7 +358,7 @@ footer {
 /* Footer Description */
 .footer-section p {
     font-size: 14px;
-    color: #ccc;
+    color: #2f2e2e;
     line-height: 1.6;
 }
 
@@ -428,10 +428,15 @@ footer {
     margin-bottom: 5px;
 }
 
+body.dark-mode .footer-section p {
+    font-size: 12px;
+    color: #eeeeee;
+    margin-bottom: 10px;
+}
 /* Description */
 .footer-section p {
     font-size: 12px;
-    color: #bbbbbb;
+    
     margin-bottom: 10px;
 }
 
@@ -1459,3 +1464,499 @@ footer#chat-footer {
   body.dark-mode .recommendation-list p {
     color: #eee; 
   }
+/* === BASE === */
+#box1 {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 880px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  #box1 .news-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  /* === IMAGE === */
+
+  
+  /* === ARTICLE TEXT === */
+  #box1 article h2 {
+    font-size: 1.5rem;
+    margin: 20px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #box1 article h3 {
+    font-size: 1.2rem;
+    margin-top: 16px;
+    color: inherit;
+  }
+  
+  #box1 article p,
+  #box1 article ul li {
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  #box1 article ul {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  
+  /* === "Explore More" Link === */
+  .read-more a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+    margin-top: 15px;
+    text-decoration: underline;
+    color: #41b905;
+    transition: color 0.3s ease;
+  }
+  
+  .read-more a:hover {
+    color: #388e00;
+  }
+  
+  /* === Icons === */
+  .material-icons {
+    font-size: 22px;
+    vertical-align: middle;
+    transition: transform 0.3s;
+  }
+  
+  .material-icons:hover {
+    transform: scale(1.2);
+  }
+  
+  /* === Light Mode === */
+  body:not(.dark-mode) #box1 {
+    background: #ffffff !important;
+    color: #1d1d1d !important;
+    border: 1px solid #e0e0e0;
+  }
+  
+  body:not(.dark-mode) .material-icons {
+    color: #333 !important;
+  }
+  
+  body:not(.dark-mode) .read-more a {
+    color: #41b905 !important;
+  }
+  
+  /* === Dark Mode === */
+  body.dark-mode #box1 {
+    background: #1e1e2f !important;
+    color: #f2f2f2 !important;
+    border: 1px solid #2c2c3c;
+  }
+  
+  body.dark-mode .material-icons {
+    color: #90caf9 !important;
+  }
+  
+  body.dark-mode .read-more a {
+    color: #90ee90 !important;
+  }
+  
+  body.dark-mode .read-more a:hover {
+    color: #5cb85c !important;
+  }
+
+  /* Scoped Image Styling */
+#box1 .thumb-inline {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 16px;
+  }
+  
+  /* Light & Dark Mode Styling */
+  body.dark-mode #box1,
+  body:not(.dark-mode) #box1 {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px auto;
+    transition: all 0.3s ease;
+  }
+  
+  body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+  }
+  
+  body:not(.dark-mode) {
+    --bg-color: #ffffff;
+    --text-color: #222222;
+  }
+  
+  /* List Icons Style */
+  #box1 ul {
+    padding-left: 1.5em;
+  }
+  
+  #box1 ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .material-icons {
+    font-size: 18px;
+    vertical-align: middle;
+    color: #41b905;
+  }
+  /* For all h2 and h3 inside #box1 */
+#box1 h2::before,
+#box1 h3::before {
+  content: 'arrow_forward';
+  font-family: 'Material Icons';
+  font-size: 20px;
+  color: #41b905; /* Match your accent */
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Optional: Style the headings */
+#box1 h2,
+#box1 h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  margin-top: 24px;
+  color: var(--text-color); /* responsive to dark/light */
+}
+/* Box 2 Container Styling */
+#box2.mp-container {
+    background: var(--bg);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    transition: background 0.3s ease;
+  }
+  
+  body.dark-mode #box2 {
+    --bg: #181818;
+  }
+  body:not(.dark-mode) #box2 {
+    --bg: #fefefe;
+  }
+  
+  /* Header Styling */
+  #box2 .news-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 18px;
+    padding-bottom: 6px;
+  }
+  #box2 .news-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+    position: relative;
+    padding-right: 28px;
+  }
+  #box2 .news-header .arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 26px;
+    color: #41b905;
+    transition: color 0.3s ease;
+  }
+  
+  body.dark-mode #box2 .news-header .arrow {
+    color: #00f7ff;
+  }
+  
+  body.dark-mode #box2 .news-header h1 {
+    --text: #fff;
+  }
+  body:not(.dark-mode) #box2 .news-header h1 {
+    --text: #222;
+  }
+  body.dark-mode #box2 .news-header {
+    --border: #333;
+  }
+  body:not(.dark-mode) #box2 .news-header {
+    --border: #ddd;
+  }
+  
+  /* Paragraph and Inline Image Styling */
+  #box2 .mp-p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+  body.dark-mode #box2 .mp-p {
+    --text: #ccc;
+  }
+  body:not(.dark-mode) #box2 .mp-p {
+    --text: #333;
+  }
+  
+  #box2 .thumb-inline {
+    width: 38%;
+    float: left;
+    margin: 0 20px 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  #box2 .thumb-inline:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Picture Image Fallback Responsive */
+  #box2 picture img.thumb-inline {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  /* Headings */
+  #box2 h2 {
+    font-size: 20px;
+    margin: 24px 0 10px;
+    color: var(--accent);
+  }
+  #box2 h3 {
+    font-size: 18px;
+    margin: 16px 0 8px;
+    color: var(--accent-sub);
+  }
+  
+  body.dark-mode #box2 h2 {
+    --accent: #4ecdc4;
+  }
+  body:not(.dark-mode) #box2 h2 {
+    --accent: #1a73e8;
+  }
+  body.dark-mode #box2 h3 {
+    --accent-sub: #6ee7b7;
+  }
+  body:not(.dark-mode) #box2 h3 {
+    --accent-sub: #0b5394;
+  }
+  
+  /* Article Inside Box */
+  #box2 article {
+    background-color: var(--article-bg);
+    padding: 16px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border-left: 4px solid var(--accent);
+    box-shadow: 0 0 6px rgba(0,0,0,0.05);
+  }
+  body.dark-mode #box2 article {
+    --article-bg: #222;
+  }
+  body:not(.dark-mode) #box2 article {
+    --article-bg: #fafafa;
+  }
+  
+  /* UL Styling Inside Article */
+  #box2 article ul {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  #box2 article ul li {
+    list-style: disc;
+    margin-bottom: 6px;
+  }
+  
+  /* Responsive Tweak */
+  @media screen and (max-width: 768px) {
+    #box2 .thumb-inline {
+      float: none;
+      width: 100%;
+      margin: 0 0 16px;
+    }
+  }
+  /* Common container styling */
+  #box3.mp-container {
+    background: var(--bg);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    transition: background 0.3s ease;
+  }
+  
+  body.dark-mode #box2 {
+    --bg: #181818;
+  }
+  body:not(.dark-mode) #box2 {
+    --bg: #fefefe;
+  }
+  
+  /* Header Styling */
+  #box3 .news-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 18px;
+    padding-bottom: 6px;
+  }
+  #box3 .news-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+    position: relative;
+    padding-right: 28px;
+  }
+  #box3 .news-header .arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 26px;
+    color: #41b905;
+    transition: color 0.3s ease;
+  }
+  
+  body.dark-mode #box3 .news-header .arrow {
+    color: #00f7ff;
+  }
+  
+  body.dark-mode #box3 .news-header h1 {
+    --text: #fff;
+  }
+  body:not(.dark-mode) #box3 .news-header h1 {
+    --text: #222;
+  }
+  body.dark-mode #box3 .news-header {
+    --border: #333;
+  }
+  body:not(.dark-mode) #box3 .news-header {
+    --border: #ddd;
+  }
+  
+  /* Paragraph and Inline Image Styling */
+  #box3 .mp-p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+  body.dark-mode #box3 .mp-p {
+    --text: #ccc;
+  }
+  body:not(.dark-mode) #box3 .mp-p {
+    --text: #333;
+  }
+  
+  #box3 .thumb-inline {
+    width: 38%;
+    float: left;
+    margin: 0 20px 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  #box3 .thumb-inline:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Picture Image Fallback Responsive */
+  #box3 picture img.thumb-inline {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  /* Headings */
+  #box3 h2 {
+    font-size: 20px;
+    margin: 24px 0 10px;
+    color: var(--accent);
+  }
+  #box3 h3 {
+    font-size: 18px;
+    margin: 16px 0 8px;
+    color: var(--accent-sub);
+  }
+  
+  body.dark-mode #box3 h2 {
+    --accent: #4ecdc4;
+  }
+  body:not(.dark-mode) #box3 h2 {
+    --accent: #1a73e8;
+  }
+  body.dark-mode #box3 h3 {
+    --accent-sub: #6ee7b7;
+  }
+  body:not(.dark-mode) #box3 h3 {
+    --accent-sub: #0b5394;
+  }
+  
+  /* Article Inside Box */
+  #box3 article {
+    background-color: var(--article-bg);
+    padding: 16px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border-left: 4px solid var(--accent);
+    box-shadow: 0 0 6px rgba(0,0,0,0.05);
+  }
+  body.dark-mode #box3 article {
+    --article-bg: #222;
+  }
+  body:not(.dark-mode) #box3 article {
+    --article-bg: #fafafa;
+  }
+  
+  /* UL Styling Inside Article */
+  #box3 article ul {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  #box3 article ul li {
+    list-style: disc;
+    margin-bottom: 6px;
+  }
+  
+  /* Responsive Tweak */
+  @media screen and (max-width: 768px) {
+    #box3 .thumb-inline {
+      float: none;
+      width: 100%;
+      margin: 0 0 16px;
+    }
+  }
+  #box2 h3::before,
+#box3 h3::before {
+  content: 'arrow_forward';
+  font-family: 'Material Icons';
+  font-size: 20px;
+  color: #e7169a; /* Match your accent */
+  margin-right: 8px;
+  vertical-align: middle;
+}
+body.dark-mode p {
+    color: aliceblue;
+}
+body.dark-mode li {
+    color: chartreuse;
+}
