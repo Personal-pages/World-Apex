@@ -34,7 +34,7 @@
     <link rel="shortcut icon" href="https://worldapex.space/logo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Styles & Fonts -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
@@ -92,76 +92,14 @@
     <!-- Google Adsense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2022659342961679"
      crossorigin="anonymous"></script>
-
+     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 
 
 <body>
 
     <!-- HEADER -->   
-    <style>
-      
-      @media (max-width: 767px) {
-  #menu-toggle {
-    background-color: rgba(240, 106, 40, 0.94) !important;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    z-index: 1001;
-    padding: 0.5rem;
-    border-radius: 6px;
-  }
-}
-
-@media (min-width: 768px) {
-  #menu-toggle {
-    display: none !important; 
-  }
-}
-      .bar {
-        width: 22px;
-        height: 2px;
-        background: #ffffff !important;
-        transition: 0.3s ease;
-        mix-blend-mode: normal !important;
-      }
-      .menu-toggle.open .bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-      .menu-toggle.open .bar:nth-child(2) {
-        opacity: 0;
-      }
-      .menu-toggle.open .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-      }
     
-      
-      @media (max-width: 768px) {
-        .menu-toggle {
-          display: flex;
-        }
-        #header-nav {
-          display: none;
-          flex-direction: column;
-          position: absolute;
-          top: 60px;
-          width: 100%;
-          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        #header-nav.show {
-          display: flex;
-          animation: fadeIn 0.3s ease;
-        }
-      }
-    
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(-5px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-    </style>
     <header>
         <div class="top-bar">
             <a href="index.html" class="logo">World <span> Apex</span></a>
@@ -202,34 +140,18 @@
         </div>
         <div id="header-nav" class="nav-bar"  >
             <ul>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Trending-news.html" >Trending</a></li>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="#weather-section" >Weather</a></li>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Entertainment-news.html" >Entertainment</a></li>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Sports-news.html" >Sports</a></li>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Poltitics-news.html" >Politics</a></li>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Astrology-news.html" >Astrology</a></li>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="Technology-news.html" >Technology</a></li>
-                <li style="background-color: #EDEDEDF3 !important;"><a data-translate href="top-news.html" >Top News</a></li>
+                <li><a data-translate href="Trending-news.html" >Trending</a></li>
+                <li><a data-translate href="#weather-section" >Weather</a></li>
+                <li><a data-translate href="Entertainment-news.html" >Entertainment</a></li>
+                <li><a data-translate href="Sports-news.html" >Sports</a></li>
+                <li><a data-translate href="Poltitics-news.html" >Politics</a></li>
+                <li><a data-translate href="Astrology-news.html" >Astrology</a></li>
+                <li><a data-translate href="Technology-news.html" >Technology</a></li>
+                <li><a data-translate href="top-news.html" >Top News</a></li>
             </ul>
         </div>
     </header>
-    <script>
-      const toggleBtn = document.getElementById('menu-toggle');
-      const headerNav = document.getElementById('header-nav');
     
-      toggleBtn.addEventListener('click', () => {
-        toggleBtn.classList.toggle('open');
-        headerNav.classList.toggle('show');
-      });
-    
-      
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-          headerNav.classList.remove('show');
-          toggleBtn.classList.remove('open');
-        }
-      });
-    </script>
 
     <!-- BREAKING NEWS TICKER -->
     <section class="breaking-news">
@@ -238,218 +160,6 @@
 
     <!-- MAIN CONTENT -->
     <main>
-      <style>
-        .mp-container {
-          border-radius: 10px;
-          box-shadow: 0 4px 10px var(--box-shadow);
-          padding: 1rem;
-          color: var(--paragraph-text);
-          transition: transform 0.3s ease;
-          background: var(--card-bg);
-          display: flex;
-          flex-direction: column;
-        }
-      
-        .mp-container h2 {
-          font-size: clamp(1.4rem, 2.5vw, 2rem);
-          margin-top: 0;
-          border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-          color: var(--heading-text);
-        }
-      
-        .mp-container p {
-          font-size: clamp(0.9rem, 1.5vw, 1.05rem);
-          line-height: 1.6;
-          color: var(--paragraph-text);
-        }
-      
-        .thumb-inline {
-          width: 100%;
-          max-width: 360px;
-          height: auto;
-          float: left;
-          margin: 10px 20px 10px 0;
-          border-radius: 8px;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          object-fit: cover;
-        }
-      
-        .thumb-inline:hover {
-          transform: scale(1.02);
-          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        }
-      
-        #box5 .thumb-inline {
-          float: none;
-          display: block;
-          margin: 0 auto;
-          max-width: 500px;
-        }
-
-        #box7 .thumb-inline {
-          float: none;
-          display: block;
-          margin: 0 auto;
-          max-width: 500px;
-        }
-        .preview-hover {
-          position: relative;
-          display: inline-block;
-          cursor: pointer;
-        }
-      
-        .hover-box {
-          position: absolute;
-          bottom: 130%;
-          left: -100px;
-          width: 300px;
-          background: rgba(255, 255, 255, 0.07);
-          backdrop-filter: blur(8px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          color: #fff;
-          padding: 10px;
-          border-radius: 10px;
-          box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-          z-index: 999;
-          display: none;
-          transition: opacity 0.3s ease;
-        }
-      
-        .preview-hover:hover .hover-box {
-          display: block;
-        }
-      
-        .hover-box img {
-          width: 100%;
-          max-width: 100%;
-          height: auto;
-          display: block;
-          margin-bottom: 8px;
-          border-radius: 8px;
-        }
-      
-        .hover-box p {
-          font-size: 0.9rem;
-          line-height: 1.4;
-          color: #f0f0f0;
-          margin: 0;
-        }
-      
-        #grid-layout {
-          display: grid;
-          grid-template-areas: 
-            "box1 box1"
-            "box2 box3"
-            "box4 box4"
-            "box5 box5"
-            "box6 box7";
-          grid-template-columns: 1fr 1fr;
-          gap: 1rem;
-        }
-      
-        #box1 { grid-area: box1; background: var(--card-bg); }
-        #box2 { grid-area: box2; background: var(--card-bg); }
-        #box3 { grid-area: box3; background: var(--card-bg); }
-        #box4 { grid-area: box4; background: var(--card-bg); }
-        #box5 { grid-area: box5; background: var(--card-bg); }
-        #box6 { grid-area: box6; background: var(--card-bg); }
-        #box7 { grid-area: box7; background: var(--card-bg); }
-      
-        /* Tablet/iPad view (resize images and keep layout almost same as desktop) */
-        @media (max-width: 1024px) {
-          #grid-layout {
-            grid-template-areas: 
-              "box1 box1"
-              "box2 box3"
-              "box4 box4"
-              "box5 box5"
-              "box6 box6"
-              "box7 box7"
-              "box8 box8";
-            grid-template-columns: 1fr 1fr;
-          }
-      
-          .thumb-inline {
-            max-width: 95%;
-            width: 100%;
-            float: none;
-            margin: 0 auto;
-          }
-      
-          #box5 .thumb-inline {
-            max-width: 95%;
-          }
-        }
-      
-        
-        @media (max-width: 768px) {
-          #grid-layout {
-            grid-template-areas: 
-              "box1"
-              "box2"
-              "box3"
-              "box4"
-              "box5"
-              "box6"
-              "box7"
-              "box8";
-            grid-template-columns: 1fr;
-          }
-      
-          .thumb-inline {
-            max-width: 100%;
-            width: 100%;
-            float: none;
-            margin: 0 auto 1rem;
-          }
-      
-          #box5 .thumb-inline {
-            max-width: 100%;
-          }
-        }
-      
-        body.dark-mode .mp-p {
-          color: rgb(255, 255, 255);
-        }
-      
-        body.dark-mode .mp-a {
-          color: aqua;
-        }
-
-        @media (max-width: 768px) {
-          #box6 {
-          flex-direction: column !important;
-          align-items: center !important;
-          text-align: center;
-          gap: 1.2rem;
-        }
-
-        #box6 .news-header {
-          order: 1;
-          width: 100%;
-        }
-
-        #box6 .news-header h1 {
-          margin: 0;
-          text-align: left; 
-          padding: 0 1rem;
-        }
-
-        #box6 img.thumb-inline {
-          order: 2;
-          width: 100%;
-          max-width: 100%;
-          height: auto;
-        }
-
-        #box6 .mp-p {
-          order: 3;
-          padding: 0 1rem;
-          font-size: 1rem;
-          line-height: 1.6;
-        }
-      }
-      </style>
         <div id="grid-layout">
           <!-- Google Material Icons Link (Ensure this is in <head>) -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -750,39 +460,15 @@
               <h1 data-translate>Tweetboard</h1>
             </div><br>
             <div>
-              <blockquote class="twitter-tweet"><p lang="en" dir="ltr">What Beauty Pageants Reveal About Power and Priorities - Beyond glam and crowns, beauty pageants. 💄🌍<a href="https://twitter.com/hashtag/BeautyPageants?src=hash&amp;ref_src=twsrc%5Etfw">#BeautyPageants</a> <a href="https://twitter.com/hashtag/PowerAndPolitics?src=hash&amp;ref_src=twsrc%5Etfw">#PowerAndPolitics</a> <a href="https://twitter.com/hashtag/CulturalLens?src=hash&amp;ref_src=twsrc%5Etfw">#CulturalLens</a> <a href="https://twitter.com/hashtag/PageantPolitics?src=hash&amp;ref_src=twsrc%5Etfw">#PageantPolitics</a> <a href="https://twitter.com/hashtag/SocialCommentary?src=hash&amp;ref_src=twsrc%5Etfw">#SocialCommentary</a> <a href="https://twitter.com/hashtag/NowTrending?src=hash&amp;ref_src=twsrc%5Etfw">#NowTrending</a> <a href="https://twitter.com/hashtag/GlobalPriorities?src=hash&amp;ref_src=twsrc%5Etfw">#GlobalPriorities</a> <a href="https://twitter.com/hashtag/BeyondTheCrown4o?src=hash&amp;ref_src=twsrc%5Etfw">#BeyondTheCrown4o</a><a href="https://t.co/rpU0Lg2nZI">https://t.co/rpU0Lg2nZI</a></p>&mdash; World Apex (@WorldApexX) <a href="https://twitter.com/WorldApexX/status/1915264321677885442?ref_src=twsrc%5Etfw">April 24, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <blockquote class="twitter-tweet"><p lang="en" dir="ltr">What Beauty Pageants Reveal About Power and Priorities - Beyond glam and crowns, beauty pageants. 💄🌍<a href="https://twitter.com/hashtag/BeautyPageants?src=hash&amp;ref_src=twsrc%5Etfw">#BeautyPageants</a> <a href="https://twitter.com/hashtag/PowerAndPolitics?src=hash&amp;ref_src=twsrc%5Etfw">#PowerAndPolitics</a> <a href="https://twitter.com/hashtag/CulturalLens?src=hash&amp;ref_src=twsrc%5Etfw">#CulturalLens</a> <a href="https://twitter.com/hashtag/PageantPolitics?src=hash&amp;ref_src=twsrc%5Etfw">#PageantPolitics</a> <a href="https://twitter.com/hashtag/SocialCommentary?src=hash&amp;ref_src=twsrc%5Etfw">#SocialCommentary</a> <a href="https://twitter.com/hashtag/NowTrending?src=hash&amp;ref_src=twsrc%5Etfw">#NowTrending</a> <a href="https://twitter.com/hashtag/GlobalPriorities?src=hash&amp;ref_src=twsrc%5Etfw">#GlobalPriorities</a> <a href="https://twitter.com/hashtag/BeyondTheCrown4o?src=hash&amp;ref_src=twsrc%5Etfw">#BeyondTheCrown4o</a><a href="https://t.co/rpU0Lg2nZI">https://t.co/rpU0Lg2nZI</a></p>&mdash; World Apex (@WorldApexX) <a href="https://twitter.com/WorldApexX/status/1915264321677885442?ref_src=twsrc%5Etfw">April 24, 2025</a></blockquote> 
               <br>
-              <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Govt calls all-party meet on April 24 over the Pahalgam terror attack 🇮🇳🕊️ , Aimed at unity, strategy &amp; security in Jammu &amp; Kashmir.<a href="https://twitter.com/hashtag/PahalgamAttack?src=hash&amp;ref_src=twsrc%5Etfw">#PahalgamAttack</a> <a href="https://twitter.com/hashtag/AllPartyMeet?src=hash&amp;ref_src=twsrc%5Etfw">#AllPartyMeet</a> <a href="https://twitter.com/hashtag/IndiaSecurity?src=hash&amp;ref_src=twsrc%5Etfw">#IndiaSecurity</a> <a href="https://twitter.com/hashtag/KashmirNews?src=hash&amp;ref_src=twsrc%5Etfw">#KashmirNews</a> <a href="https://twitter.com/hashtag/BreakingNews?src=hash&amp;ref_src=twsrc%5Etfw">#BreakingNews</a> <a href="https://twitter.com/hashtag/TerrorAlert4o?src=hash&amp;ref_src=twsrc%5Etfw">#TerrorAlert4o</a><a href="https://t.co/AErPJ3QJ0A">https://t.co/AErPJ3QJ0A</a></p>&mdash; World Apex (@WorldApexX) <a href="https://twitter.com/WorldApexX/status/1915094342680662517?ref_src=twsrc%5Etfw">April 23, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Govt calls all-party meet on April 24 over the Pahalgam terror attack 🇮🇳🕊️ , Aimed at unity, strategy &amp; security in Jammu &amp; Kashmir.<a href="https://twitter.com/hashtag/PahalgamAttack?src=hash&amp;ref_src=twsrc%5Etfw">#PahalgamAttack</a> <a href="https://twitter.com/hashtag/AllPartyMeet?src=hash&amp;ref_src=twsrc%5Etfw">#AllPartyMeet</a> <a href="https://twitter.com/hashtag/IndiaSecurity?src=hash&amp;ref_src=twsrc%5Etfw">#IndiaSecurity</a> <a href="https://twitter.com/hashtag/KashmirNews?src=hash&amp;ref_src=twsrc%5Etfw">#KashmirNews</a> <a href="https://twitter.com/hashtag/BreakingNews?src=hash&amp;ref_src=twsrc%5Etfw">#BreakingNews</a> <a href="https://twitter.com/hashtag/TerrorAlert4o?src=hash&amp;ref_src=twsrc%5Etfw">#TerrorAlert4o</a><a href="https://t.co/AErPJ3QJ0A">https://t.co/AErPJ3QJ0A</a></p>&mdash; World Apex (@WorldApexX) <a href="https://twitter.com/WorldApexX/status/1915094342680662517?ref_src=twsrc%5Etfw">April 23, 2025</a></blockquote> 
             </div>
           </div>
         </div>
       </main>
       
-      <script>
-        const applyTwitterTheme = () => {
-          const isDark = document.body.classList.contains("dark-mode");
-          const tweets = document.querySelectorAll('blockquote.twitter-tweet');
-        
-          tweets.forEach(tweet => {
-            if (isDark) {
-              tweet.setAttribute("data-theme", "dark");
-            } else {
-              tweet.removeAttribute("data-theme");
-            }
-          });
-        
-          if (window.twttr && twttr.widgets) {
-            twttr.widgets.load();
-          }
-        };
-        
-       
-        document.addEventListener("DOMContentLoaded", applyTwitterTheme);
-        
-       
-        const observer = new MutationObserver(applyTwitterTheme);
-        observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
-        </script>
+      
     <main>
       <section id="weather-section">
         <div class="news-header"  >
@@ -892,69 +578,6 @@
                   </footer>
                   
             
-              <!-- Firebase Scripts -->
-              <script type="module">
-                import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-                import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
-              
-                const firebaseConfig = {
-                  apiKey: "AIzaSyDVtyvBDN4elZ__rFBXlDdCI7lKFWV41aE",
-                  authDomain: "my-comment-9aa1d.firebaseapp.com",
-                  projectId: "my-comment-9aa1d",
-                  storageBucket: "my-comment-9aa1d.appspot.com",
-                  messagingSenderId: "101822856762",
-                  appId: "1:101822856762:web:a13833ad14674ec1ef7f03",
-                  measurementId: "G-HTQFVMSD9F"
-                };
-              
-                const app = initializeApp(firebaseConfig);
-                const db = getFirestore(app);
-              
-                const ownerEmail = "iambasantkumar2000@gmail.com";
-              
-                
-                async function sendMessage() {
-                  const email = document.getElementById("email").value.trim();
-                  const message = document.getElementById("message").value.trim();
-                  if (!email || !message) return;
-              
-                  await addDoc(collection(db, "messages"), {
-                    email,
-                    message,
-                    timestamp: serverTimestamp()
-                  });
-              
-                  document.getElementById("message").value = "";
-                }
-              
-               
-                function loadMessages() {
-                  const q = query(collection(db, "messages"), orderBy("timestamp"));
-                  onSnapshot(q, (snapshot) => {
-                    const msgBox = document.getElementById("messages");
-                    msgBox.innerHTML = "";  
-                    snapshot.forEach((doc) => {
-                      const data = doc.data();
-                      const isOwner = data.email === ownerEmail;
-                      const className = isOwner ? "owner" : "message";
-                      const displayName = isOwner ? "World Apex" : data.email;
-              
-                      if (data.message && data.email) {
-                        const msgHTML = `<p class="${className}"><strong>${displayName}:</strong> ${data.message}</p>`;
-                        msgBox.insertAdjacentHTML("beforeend", msgHTML);
-                      }
-                    });
-                    msgBox.scrollTop = msgBox.scrollHeight;  
-                  });
-                }
-              
-               
-                document.getElementById("sendBtn").addEventListener("click", sendMessage);
-              
-                
-                loadMessages();
-              
-              </script>
               
               
             </div>
@@ -984,89 +607,9 @@
                     Conditions</a></p>
         </div>
     </footer>
-    <style>
-    @media (max-width: 768px) {
-      .footer-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-    
-      .footer-section {
-        width: 100%;
-        max-width: 500px;
-        margin: 0 auto;
-      }
-    
-      .social-icons {
-        justify-content: center;
-      }
-    
-      .footer-bottom {
-        text-align: center;
-      }
-    }
-    </style>
     
     
-    <script src="script.js" defer>
-           
-    </script>
-   <script>
-    async function getVersion() {
-  try {
-    const res = await fetch('/version.txt?t=' + Date.now(), { cache: 'no-store' });
-    if (!res.ok) throw new Error('Version fetch failed');
-    const version = (await res.text()).trim();
-    console.log('Fetched version:', version);
-    return version;
-  } catch (e) {
-    console.error(e);
-    return null;
-  }
-}
-
-getVersion().then(version => {
-  currentVersion = version;
-  console.log('Current version:', currentVersion);
-
-  setInterval(async () => {
-    const latestVersion = await getVersion();
-    console.log('Checking against:', latestVersion);
-    if (latestVersion && latestVersion !== currentVersion) {
-      console.log('Version updated, showing banner');
-      document.getElementById('updateBanner').style.display = 'block';
-    }
-  }, 60000); 
-});
-
-    </script>
-    <script>
-        if ('geolocation' in navigator) {
-           
-            navigator.geolocation.getCurrentPosition(
-                function(position) {
-                    
-                    const lat = position.coords.latitude;
-                    const lon = position.coords.longitude;
-                    console.log(`User's location: Latitude: ${lat}, Longitude: ${lon}`);
-                    
-                    
-                },
-                function(error) {
-                    
-                    if (error.code === error.PERMISSION_DENIED) {
-                        alert("Location permission denied. The app needs your location for weather information.");
-                    } else {
-                        alert("Failed to retrieve location.");
-                    }
-                }
-            );
-        } else {
-            alert("Geolocation is not supported by this browser.");
-        }
-    </script>
+  
   <div id="consent-popup" class="consent-popup">
     <div class="consent-box">
       <span id="toggle-consent" class="material-icons arrow-icon">keyboard_arrow_down</span>
@@ -1088,217 +631,68 @@ getVersion().then(version => {
     </div>
   </div>
   
-  <style>
-    .consent-popup {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: #1e1e1e;
-      color: #fff;
-      padding: 20px 10px;
-      z-index: 9999;
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
-      animation: fadeInUp 0.4s ease;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
   
-    .consent-box {
-      position: relative;
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 10px;
-    }
-  
-    .consent-box h3 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
-  
-    .consent-box p {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-  
-    .consent-box a {
-      color: #4ea3ff;
-      text-decoration: underline;
-      word-break: break-word;
-    }
-  
-    .consent-box label {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      margin: 10px 0;
-      flex-wrap: wrap;
-    }
-  
-    #accept-btn {
-      background: #4ea3ff;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 0.95rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      width: fit-content;
-      margin: 10px auto 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 140px;
-      position: relative;
-      overflow: hidden;
-    }
-  
-    body:not(.dark-mode) #accept-btn:disabled {
-      background-color: #1e1e1e !important;
-      color: #ddd !important;
-      cursor: not-allowed;
-    }
-    body.dark-mode #accept-btn:disabled {
-      background-color: white !important;
-      color: #1e1e1e !important;
-    }
-    body.dark-mode #accept-btn {
-      background-color: white !important;
-      color: #1e1e1e !important;
-    }
-    body:not(.dark-mode) #accept-btn {
-      background-color: #1e1e1e !important;
-      color: #ddd !important;
-    }
-    .btn-text {
-      transition: opacity 0.3s ease;
-      background-color: transparent !important;
-      mix-blend-mode: normal !important;
-    }
-  
-    .loader-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      height: 24px;
-      width: 24px;
-    }
-  
-    .loader-svg {
-      animation: spin 1s linear infinite;
-      width: 100%;
-      height: 100%;
-    }
-  
-    .loader-rect {
-      fill: #ffffff;
-    }
-  
-    @keyframes fadeInUp {
-      from { transform: translateY(100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-  
-    @keyframes spin {
-      100% { transform: rotate(360deg); }
-    }
-  
-    @media (max-width: 480px) {
-      .consent-box {
-        padding: 5px;
-      }
-  
-      .consent-box h3 {
-        font-size: 1.1rem;
-      }
-  
-      .consent-box p {
-        font-size: 0.9rem;
-      }
-  
-      .consent-box label {
-        font-size: 0.85rem;
-        flex-direction: column;
-      }
-    }
-    .arrow-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 32px;
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.3s ease, color 0.2s ease;
-  z-index: 1000;
-}
-
-/* Hover effect for down arrow */
-.arrow-icon:hover {
-  color: #f44336; /* Red on hover */
-  transform: translateY(5px) scale(1.2);
-}
-  </style>
-  <script>
-    document.getElementById("toggle-consent").onclick = function () {
-      document.getElementById("consent-popup").style.transform = "translateY(100%)";
+    const firebaseConfig = {
+      apiKey: "AIzaSyDVtyvBDN4elZ__rFBXlDdCI7lKFWV41aE",
+      authDomain: "my-comment-9aa1d.firebaseapp.com",
+      projectId: "my-comment-9aa1d",
+      storageBucket: "my-comment-9aa1d.appspot.com",
+      messagingSenderId: "101822856762",
+      appId: "1:101822856762:web:a13833ad14674ec1ef7f03",
+      measurementId: "G-HTQFVMSD9F"
     };
-  </script>
-  <script>
-    const checkbox = document.getElementById('consent-check');
-    const button = document.getElementById('accept-btn');
-    const btnText = button.querySelector('.btn-text');
   
-    checkbox.addEventListener('change', function() {
-      button.disabled = !checkbox.checked;
-      if (checkbox.checked) {
-        button.style.setProperty('background-color', '#ff6f3f', 'important');
-        button.style.setProperty('color', '#ffffff', 'important');
-      } else {
-        button.style.setProperty('background-color', '#888', 'important');
-        button.style.setProperty('color', '#ddd', 'important');
-      }
-    });
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
   
-    button.addEventListener('click', function() {
-      const existingLoader = button.querySelector('.loader-container');
-      if (!existingLoader) {
-        btnText.style.opacity = '0';
-        const loader = document.createElement("div");
-        loader.className = "loader-container";
-        loader.setAttribute("role", "progressbar");
-        loader.innerHTML = `
-          <svg class="loader-svg" viewBox="0 0 100 100" aria-label="Loading...">
-            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(-90 50 50)" opacity="0"></rect>
-            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(-45 50 50)" opacity="0.125"></rect>
-            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(0 50 50)" opacity="0.25"></rect>
-            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(45 50 50)" opacity="0.375"></rect>
-            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(90 50 50)" opacity="0.5"></rect>
-            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(135 50 50)" opacity="0.625"></rect>
-            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(180 50 50)" opacity="0.75"></rect>
-            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(225 50 50)" opacity="0.875"></rect>
-          </svg>
-        `;
-        button.appendChild(loader);
+    const ownerEmail = "iambasantkumar2000@gmail.com";
   
-       
-        setTimeout(() => {
-          document.getElementById('consent-popup').style.display = 'none';
-          localStorage.setItem('cookieConsent', 'true');
-        }, 1000); 
-      }
-    });
-  
-    // Hide popup if already accepted
-    if (localStorage.getItem('cookieConsent') === 'true') {
-      document.getElementById('consent-popup').style.display = 'none';
-    }
-  </script>
     
+    async function sendMessage() {
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      if (!email || !message) return;
+  
+      await addDoc(collection(db, "messages"), {
+        email,
+        message,
+        timestamp: serverTimestamp()
+      });
+  
+      document.getElementById("message").value = "";
+    }
+  
+   
+    function loadMessages() {
+      const q = query(collection(db, "messages"), orderBy("timestamp"));
+      onSnapshot(q, (snapshot) => {
+        const msgBox = document.getElementById("messages");
+        msgBox.innerHTML = "";  
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          const isOwner = data.email === ownerEmail;
+          const className = isOwner ? "owner" : "message";
+          const displayName = isOwner ? "World Apex" : data.email;
+  
+          if (data.message && data.email) {
+            const msgHTML = `<p class="${className}"><strong>${displayName}:</strong> ${data.message}</p>`;
+            msgBox.insertAdjacentHTML("beforeend", msgHTML);
+          }
+        });
+        msgBox.scrollTop = msgBox.scrollHeight;  
+      });
+    }
+  
+   
+    document.getElementById("sendBtn").addEventListener("click", sendMessage);
+  
+    
+    loadMessages();
+  
+  </script><script src="script.js" defer></script>
 </body>
 
 </html>

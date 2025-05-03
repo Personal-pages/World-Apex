@@ -648,3 +648,132 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(nextSlide, 5000);
 });
 
+
+      const toggleBtn = document.getElementById('menu-toggle');
+      const headerNav = document.getElementById('header-nav');
+    
+      toggleBtn.addEventListener('click', () => {
+        toggleBtn.classList.toggle('open');
+        headerNav.classList.toggle('show');
+      });
+    
+      
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+          headerNav.classList.remove('show');
+          toggleBtn.classList.remove('open');
+        }
+      });
+
+        const applyTwitterTheme = () => {
+          const isDark = document.body.classList.contains("dark-mode");
+          const tweets = document.querySelectorAll('blockquote.twitter-tweet');
+        
+          tweets.forEach(tweet => {
+            if (isDark) {
+              tweet.setAttribute("data-theme", "dark");
+            } else {
+              tweet.removeAttribute("data-theme");
+            }
+          });
+        
+          if (window.twttr && twttr.widgets) {
+            twttr.widgets.load();
+          }
+        };
+        
+       
+        document.addEventListener("DOMContentLoaded", applyTwitterTheme);
+        
+       
+        const observer = new MutationObserver(applyTwitterTheme);
+        observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+
+
+              
+       
+
+
+    async function getVersion() {
+  try {
+    const res = await fetch('/version.txt?t=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) throw new Error('Version fetch failed');
+    const version = (await res.text()).trim();
+    console.log('Fetched version:', version);
+    return version;
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+}
+
+getVersion().then(version => {
+  currentVersion = version;
+  console.log('Current version:', currentVersion);
+
+  setInterval(async () => {
+    const latestVersion = await getVersion();
+    console.log('Checking against:', latestVersion);
+    if (latestVersion && latestVersion !== currentVersion) {
+      console.log('Version updated, showing banner');
+      document.getElementById('updateBanner').style.display = 'block';
+    }
+  }, 60000); 
+});
+
+
+    
+
+    const checkbox = document.getElementById('consent-check');
+    const button = document.getElementById('accept-btn');
+    const btnText = button.querySelector('.btn-text');
+  
+    checkbox.addEventListener('change', function() {
+      button.disabled = !checkbox.checked;
+      if (checkbox.checked) {
+        button.style.setProperty('background-color', '#ff6f3f', 'important');
+        button.style.setProperty('color', '#ffffff', 'important');
+      } else {
+        button.style.setProperty('background-color', '#888', 'important');
+        button.style.setProperty('color', '#ddd', 'important');
+      }
+    });
+  
+    button.addEventListener('click', function() {
+      const existingLoader = button.querySelector('.loader-container');
+      if (!existingLoader) {
+        btnText.style.opacity = '0';
+        const loader = document.createElement("div");
+        loader.className = "loader-container";
+        loader.setAttribute("role", "progressbar");
+        loader.innerHTML = `
+          <svg class="loader-svg" viewBox="0 0 100 100" aria-label="Loading...">
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(-90 50 50)" opacity="0"></rect>
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(-45 50 50)" opacity="0.125"></rect>
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(0 50 50)" opacity="0.25"></rect>
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(45 50 50)" opacity="0.375"></rect>
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(90 50 50)" opacity="0.5"></rect>
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(135 50 50)" opacity="0.625"></rect>
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(180 50 50)" opacity="0.75"></rect>
+            <rect class="loader-rect" height="10" rx="5" ry="5" width="28" x="67" y="45" transform="rotate(225 50 50)" opacity="0.875"></rect>
+          </svg>
+        `;
+        button.appendChild(loader);
+  
+       
+        setTimeout(() => {
+          document.getElementById('consent-popup').style.display = 'none';
+          localStorage.setItem('cookieConsent', 'true');
+        }, 1000); 
+      }
+    });
+  
+    // Hide popup if already accepted
+    if (localStorage.getItem('cookieConsent') === 'true') {
+      document.getElementById('consent-popup').style.display = 'none';
+    }
+document.getElementById("toggle-consent").onclick = function () {
+      document.getElementById("consent-popup").style.transform = "translateY(100%)";
+    };
+
+    
