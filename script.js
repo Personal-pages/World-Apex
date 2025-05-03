@@ -645,7 +645,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     slider.addEventListener('mouseleave', () => isDragging = false);
     
-    setInterval(nextSlide, 5000);
+    setInterval(nextSlide, 3500);
 });
 
 
@@ -718,7 +718,7 @@ getVersion().then(version => {
       console.log('Version updated, showing banner');
       document.getElementById('updateBanner').style.display = 'block';
     }
-  }, 60000); 
+  }, 30000); 
 });
 
 
@@ -764,7 +764,7 @@ getVersion().then(version => {
         setTimeout(() => {
           document.getElementById('consent-popup').style.display = 'none';
           localStorage.setItem('cookieConsent', 'true');
-        }, 1000); 
+        }, 400); 
       }
     });
   

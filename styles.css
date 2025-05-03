@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-
 html{
     scroll-behavior: smooth;
 }
@@ -20,11 +19,7 @@ img, video {
 }
 
 
-@font-face {
-    font-family: 'CustomFont';
-    src: url('customfont.woff2') format('woff2');
-    font-display: swap;
-}
+
 
 
 .ad-container, .iframe-container {
@@ -2294,11 +2289,13 @@ body.dark-mode li {
     }
   
     .consent-box a {
-      color: #4ea3ff;
+      color: blue;
       text-decoration: underline;
       word-break: break-word;
     }
-  
+    body.dark-mode .consent-box a{
+      color: bisque;
+    }
     .consent-box label {
       display: flex;
       align-items: center;

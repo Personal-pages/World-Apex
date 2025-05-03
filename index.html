@@ -34,12 +34,14 @@
     <link rel="shortcut icon" href="https://worldapex.space/logo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Styles & Fonts -->
+    <script src="script.js" defer></script>
     <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Google Material Icons -->
     <link rel="manifest" href="/manifest.json">
+    <link rel="preload" as="image" href="/images/1mayarticle.avif" />
     
 
 
@@ -170,8 +172,9 @@
   </div>
   <p class="mp-p">
     <picture>
-      <source srcset="/images/1mayarticle.avif" type="image/webp">
-      <img loading="lazy"  src="/images/1mayarticle.avif" alt="Amit Shah on Pahalgam attack" class="thumb-inline">
+      <source srcset="/images/1mayarticle.avif" type="image/avif">
+      <source srcset="/images/pannel.webp" type="image/webp">
+      <img loading="lazy" src="/images/pannel.webp" alt="Amit Shah on Pahalgam attack" class="thumb-inline">
     </picture>
     <br><br>
     <span data-translate>
@@ -280,7 +283,8 @@
     </p>
 
     <picture>
-      <source srcset="/images/1mayarticle.avif" type="image/webp">
+      <source srcset="/images/1mayarticle.avif" type="image/avif">
+      <source srcset="/images/pannel.webp" type="image/webp">
       <img loading="lazy"  src="/images/1mayarticle.avif" alt="North Korea Russia road link" class="thumb-inline">
     </picture>
 
@@ -354,7 +358,8 @@
     </p>
 
     <picture>
-      <source srcset="/images/1mayonthisday.avif" type="image/webp">
+      <source srcset="/images/1mayonthisday.avif" type="image/avif">
+      <source srcset="/images/pannel.webp" type="image/webp">
       <img loading="lazy"  src="/images/1mayonthisday.avif" alt="Cardinal Becciu" style="max-width: 350px; height: auto;" class="thumb-inline">
     </picture>
 
@@ -692,7 +697,7 @@
     
     loadMessages();
   
-  </script><script src="script.js" defer></script>
+  </script>
 </body>
 
 </html>
