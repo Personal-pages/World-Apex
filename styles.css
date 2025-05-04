@@ -13,9 +13,11 @@ body {
 }
 
 img, video {
-    
-    height: auto;
-    aspect-ratio: 16/9; 
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover; 
+  display: block;   
 }
 
 
