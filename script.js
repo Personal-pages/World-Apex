@@ -755,3 +755,12 @@ console.error = function (message, ...args) {
   if (typeof message === 'string' && message.includes("Permission policy 'WebShare'")) return;
   originalConsoleError.apply(console, [message, ...args]);
 };
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const popup = document.getElementById('consent-popup');
+    if (popup) {
+      popup.style.display = 'block';
+    }
+  }, 60 * 1000);
+});
