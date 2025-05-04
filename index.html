@@ -23,17 +23,17 @@
     <meta name="twitter:site" content="@WorldapexX">
     <link rel="shortcut icon" href="https://worldapex.space/logo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+    <script defer src="script.js"></script>
     <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="font.woff2" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-   
+    
 <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></noscript>
     <link rel="manifest" href="/manifest.json">
-    <script src="script.js" defer ></script>
+    
     <link rel="canonical" href="https://worldapex.space/">
     <meta name="robots" content="index, follow">
     <link rel="apple-touch-icon" href="https://worldapex.space/logo.png">
@@ -133,7 +133,14 @@
     <div class="content"><main>
       <div id="grid-layout">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<div class="mp-container" id="box1">
+<div class="mp-container" id="box1"><style>body.dark-mode #box1, body:not(.dark-mode) #box1 {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px auto;
+  transition: all 0.3s ease;
+}</style>
 <div class="news-header">
   <h1 data-translate>Today's Article</h1>
 </div>
